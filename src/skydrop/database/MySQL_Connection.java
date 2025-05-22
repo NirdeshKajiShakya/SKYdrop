@@ -9,5 +9,5 @@ package skydrop.database;
  * @author nirka
  */
 public class MySQL_Connection {
-    
+    // something
 }
