@@ -4,6 +4,8 @@
  */
 package skydrop;
 
+import skydrop.userDAO.UserDao;
+
 /**
  *
  * @author nirka
@@ -14,7 +16,10 @@ public class SKYdrop {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        UserDao userDao = new UserDao();
+        userDao.addUser("ram", 15);
+        userDao.listUsers();
+        
     }
     
 }
