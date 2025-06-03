@@ -13,7 +13,7 @@ import java.sql.SQLException;
  * @author nirka
  */
 public class DbConnection {
-    private static final String URL = "jdbc:mysql://localhost:3306/testone";
+    private static final String URL = "jdbc:mysql://localhost:3306/SKYdrop";
     private static final String USER = "newuser";
     private static final String PASSWORD = "Newpassword123&";
     

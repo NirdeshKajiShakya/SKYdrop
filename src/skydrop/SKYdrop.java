@@ -5,6 +5,7 @@
 package skydrop;
 
 import skydrop.userDAO.UserDao;
+import skydrop.view.LoginView;
 
 /**
  *
@@ -17,8 +18,10 @@ public class SKYdrop {
      */
     public static void main(String[] args) {
         UserDao userDao = new UserDao();
-        userDao.addUser("ram", 15);
+        userDao.addUser("ram", "ram123@gmail.com","Kathmandu");
         userDao.listUsers();
+//        LoginView loginView = new LoginView();
+//        loginView.setVisible(true);
         
     }
     

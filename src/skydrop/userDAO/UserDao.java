@@ -15,13 +15,14 @@ import skydrop.database.DbConnection;
  * @author nirka
  */
 public class UserDao {
-    public void addUser(String something_name, int age){
-        String query = "INSERT INTO something (something_name, age) VALUES (?, ?)";
+    public void addUser(String name, String email, String address){
+        String query = "INSERT INTO users (user_name, email, address) VALUES (?, ?, ?)";
         try (Connection conn = DbConnection.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(query)) {
 
-            pstmt.setString(1, something_name);
-            pstmt.setInt(2, age);
+            pstmt.setString(1, name);
+            pstmt.setString(2, email);
+            pstmt.setString(3,address);
             pstmt.executeUpdate();
             System.out.println("User added successfully!");
 
@@ -31,16 +32,18 @@ public class UserDao {
     }
     
     public void listUsers() {
-        String query = "SELECT * FROM something";
+        String query = "SELECT * FROM users";
 
         try (Connection conn = DbConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(query);
              ResultSet rs = pstmt.executeQuery()) {
 
             while (rs.next()) {
-                System.out.println("ID: " + rs.getInt("id") +
-                                   ", Name: " + rs.getString("something_name") +
-                                   ", Age: " + rs.getInt("age"));
+                System.out.println("ID: " + rs.getInt("id") +   
+                                   ", Name: " + rs.getString("user_name") +
+                                   ", Email: " + rs.getString("email") +
+                                   ", Address: " + rs.getString("address") 
+                                   );
             }
 
         } catch (SQLException e) {
