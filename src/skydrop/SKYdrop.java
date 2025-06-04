@@ -4,6 +4,9 @@
  */
 package skydrop;
 
+import skydrop.view.HomePage;
+import skydrop.view.RegisterForm;
+
 /**
  *
  * @author nirka
@@ -14,7 +17,10 @@ public class SKYdrop {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+//        RegisterForm registerForm = new RegisterForm();
+//        registerForm.setVisible(true);
+    HomePage dashboard = new HomePage();
+    dashboard.setVisible(true);
     }
     
 }
