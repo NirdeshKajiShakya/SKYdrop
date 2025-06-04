@@ -20,8 +20,8 @@ public class SKYdrop {
         UserDao userDao = new UserDao();
         userDao.addUser("ram", "ram123@gmail.com","Kathmandu");
         userDao.listUsers();
-//        LoginView loginView = new LoginView();
-//        loginView.setVisible(true);
+        LoginView loginView = new LoginView();
+        loginView.setVisible(true);
         
     }
     
