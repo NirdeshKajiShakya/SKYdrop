@@ -8,8 +8,9 @@ package controllers;
  *
  * @author Suresh
  */
-import views.*;
-import models.User;
+import skydrop.view.LoginView;
+import skydrop.view.SignupView;
+import skydrop.model.User;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.prefs.Preferences;

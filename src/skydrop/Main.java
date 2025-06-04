@@ -19,8 +19,8 @@ package skydrop;
 //    
 //}
 
-import views.LoginView;
-import views.SignupView;
+import skydrop.view.LoginView;
+import skydrop.view.SignupView;
 import controllers.AuthController;
 import javax.swing.SwingUtilities;
 
