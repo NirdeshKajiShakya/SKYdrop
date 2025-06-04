@@ -8,13 +8,32 @@ package skydrop;
  *
  * @author nirka
  */
-public class SKYdrop {
+//public class Main {
+//
+//    /**
+//     * @param args the command line arguments
+//     */
+//    public static void main(String[] args) {
+//        // TODO code application logic here
+//    }
+//    
+//}
 
-    /**
-     * @param args the command line arguments
-     */
+import views.LoginView;
+import views.SignupView;
+import controllers.AuthController;
+import javax.swing.SwingUtilities;
+
+public class Main {
     public static void main(String[] args) {
-        // TODO code application logic here
+        SwingUtilities.invokeLater(() -> {
+            LoginView loginView = new LoginView();
+            SignupView signupView = new SignupView();
+            AuthController controller = new AuthController(loginView, signupView);
+            
+            // Show the login screen first
+            loginView.setVisible(true);
+        });
     }
-    
 }
+
