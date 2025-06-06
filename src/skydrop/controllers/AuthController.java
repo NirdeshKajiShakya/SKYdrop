@@ -10,7 +10,7 @@ package skydrop.controllers;
  */
 import skydrop.view.LoginView;
 import skydrop.view.SignupView;
-import models.User;
+import skydrop.model.User;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.prefs.Preferences;
@@ -28,6 +28,11 @@ public class AuthController {
         initLoginListeners();
         initSignupListeners();
         loadRememberedEmail();
+    }
+    
+    public boolean isValidEmail(String email) {
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        return email.matches(emailRegex);
     }
     
     private void initLoginListeners() {
@@ -93,7 +98,12 @@ public class AuthController {
                 "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
+        if(!isValidEmail(email)){
+            JOptionPane.showMessageDialog(loginView, 
+            "Please enter a valid email address", 
+            "Invalid Email", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         User newUser = new User(email, password);
         JOptionPane.showMessageDialog(signupView, 
             "Account created successfully!");

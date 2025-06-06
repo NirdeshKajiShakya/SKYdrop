@@ -17,11 +17,15 @@ public class SKYdrop {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        UserDao userDao = new UserDao();
-        userDao.addUser("ram", "ram123@gmail.com","Kathmandu");
-        userDao.listUsers();
+        // insert into database
+//        UserDao userDao = new UserDao();
+//        userDao.addUser("ram", "ram123@gmail.com","Kathmandu");
+//        userDao.listUsers();
+        // login view and signup view
         LoginView loginView = new LoginView();
-        loginView.setVisible(true);
+        SignupView registerView = new RegisterView();
+        AuthController authController = new AuthController(loginView);
+        authController.open();
         
     }
     
