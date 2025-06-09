@@ -8,7 +8,7 @@ package skydrop;
  *
  * @author nirka
  */
-//public class Main {
+//public class SKYdrop {
 //
 //    /**
 //     * @param args the command line arguments
@@ -24,7 +24,7 @@ import skydrop.view.SignupView;
 import controllers.AuthController;
 import javax.swing.SwingUtilities;
 
-public class Main {
+public class SKYdrop {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             LoginView loginView = new LoginView();
