@@ -25,9 +25,9 @@ public class SKYdrop {
 //        userDao.listUsers();
         // login view and signup view
         LoginView loginView = new LoginView();
-        SignupView registerView = new SignupView();
-        AuthController authController = new AuthController(loginView);
-        authController.open();
+        SignupView signupView = new SignupView();
+        AuthController authController = new AuthController(loginView, signupView);
+        loginView.setVisible(true);
         
     }
     
