@@ -4,6 +4,9 @@
  */
 package skydrop;
 
+import skydrop.view.HomePage;
+import skydrop.view.RegisterForm;
+
 /**
  *
  * @author nirka
