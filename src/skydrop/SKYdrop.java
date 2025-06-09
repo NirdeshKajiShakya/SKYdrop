@@ -4,8 +4,7 @@
  */
 package skydrop;
 
-import skydrop.view.HomePage;
-import skydrop.view.RegisterForm;
+
 
 /**
  *
@@ -26,6 +25,8 @@ import skydrop.view.LoginView;
 import skydrop.view.SignupView;
 import controllers.AuthController;
 import javax.swing.SwingUtilities;
+//import skydrop.view.HomePage;
+//import skydrop.view.RegisterForm;
 
 public class SKYdrop {
     public static void main(String[] args) {
