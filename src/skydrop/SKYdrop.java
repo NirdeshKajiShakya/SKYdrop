@@ -10,34 +10,36 @@ package skydrop;
  *
  * @author nirka
  */
-//public class SKYdrop {
+//import skydrop.view.LoginView;
+//import skydrop.view.SignupView;
+//import controllers.AuthController;
+//import javax.swing.SwingUtilities;
 //
-//    /**
-//     * @param args the command line arguments
-//     */
+//
+//public class SKYdrop {
 //    public static void main(String[] args) {
-//        // TODO code application logic here
+//        SwingUtilities.invokeLater(() -> {
+//            LoginView loginView = new LoginView();
+//            SignupView signupView = new SignupView();
+//            AuthController controller = new AuthController(loginView, signupView);
+//            
+//            // Show the login screen first
+//            loginView.setVisible(true);
+//        });
 //    }
-//    
 //}
 
-import skydrop.view.LoginView;
-import skydrop.view.SignupView;
-import controllers.AuthController;
 import javax.swing.SwingUtilities;
-//import skydrop.view.HomePage;
-//import skydrop.view.RegisterForm;
+import controllers.NavigationController;
 
 public class SKYdrop {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            LoginView loginView = new LoginView();
-            SignupView signupView = new SignupView();
-            AuthController controller = new AuthController(loginView, signupView);
-            
-            // Show the login screen first
-            loginView.setVisible(true);
+            NavigationController.getInstance().navigateToHome(); // Launches HomePage via controller
         });
     }
 }
+
+
+
 

@@ -11,6 +11,38 @@ import javax.swing.ImageIcon;
  *
  * @author User
  */
+
+//public class ContactUs extends javax.swing.JFrame {
+//    private JButton submitButton;
+//    private JTextField nameField;
+//    private JTextField emailField;
+//    private JTextArea messageArea;
+//    
+//    public ContactUs() {
+//        initComponents();
+//        
+//        submitButton.addActionListener(e -> handleSubmit());
+//    }
+//    
+//    private void handleSubmit() {
+//        String name = nameField.getText();
+//        String email = emailField.getText();
+//        String message = messageArea.getText();
+//        
+//        // Here you would typically send this data to a server
+//        // For now, just show a confirmation and close
+//        JOptionPane.showMessageDialog(this, "Thank you for your message!");
+//        this.dispose();
+//        
+//        // Return to home page
+//        HomePage homePage = new HomePage();
+//        homePage.setVisible(true);
+//    }
+//    
+//    private void initComponents() {
+//        // Your auto-generated component initialization code
+//    }
+
 public class ContactUs extends javax.swing.JFrame {
 
     /**
@@ -55,7 +87,7 @@ public class ContactUs extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        Submitbtn = new javax.swing.JButton();
         jTextField4 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -197,10 +229,10 @@ public class ContactUs extends javax.swing.JFrame {
         jTextArea1.setCaretColor(new java.awt.Color(204, 255, 204));
         jScrollPane1.setViewportView(jTextArea1);
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 153));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Submit");
+        Submitbtn.setBackground(new java.awt.Color(0, 153, 153));
+        Submitbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Submitbtn.setForeground(new java.awt.Color(255, 255, 255));
+        Submitbtn.setText("Submit");
 
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -240,7 +272,7 @@ public class ContactUs extends javax.swing.JFrame {
                             .addComponent(jTextField1)
                             .addComponent(jTextField4)
                             .addComponent(jScrollPane1)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(Submitbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGap(0, 37, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,7 +300,7 @@ public class ContactUs extends javax.swing.JFrame {
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(Submitbtn)
                 .addContainerGap(66, Short.MAX_VALUE))
         );
 
@@ -358,7 +390,7 @@ public class ContactUs extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton Submitbtn;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

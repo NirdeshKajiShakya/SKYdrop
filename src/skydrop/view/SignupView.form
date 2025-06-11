@@ -135,45 +135,45 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="txtFullName" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblFullName" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                                  <Component id="jTextField1" min="-2" pref="197" max="-2" attributes="0"/>
+                                  <Component id="nametxtfield" min="-2" pref="197" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="txtPhone" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblPhone" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jTextField2" min="-2" pref="197" max="-2" attributes="0"/>
+                                      <Component id="numbertextfield" min="-2" pref="197" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="jLabel6" min="-2" pref="73" max="-2" attributes="0"/>
+                                      <Component id="lblemail" min="-2" pref="73" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="emailField" min="-2" pref="197" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="jLabel5" min="-2" pref="73" max="-2" attributes="0"/>
+                                      <Component id="lblpassword" min="-2" pref="73" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="passwordField" min="-2" pref="197" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblconformpassword" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="confirmPasswordField" min="-2" pref="197" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="txtAddress" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtDOB" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblAddress" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblgender" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblDOB" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="38" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="jPanel3" max="32767" attributes="0"/>
                                           <Group type="102" alignment="1" attributes="0">
                                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                              <Component id="jTextField3" max="32767" attributes="0"/>
+                                              <Component id="addressfield" max="32767" attributes="0"/>
                                           </Group>
-                                          <Component id="jTextField4" alignment="1" min="-2" pref="197" max="-2" attributes="0"/>
+                                          <Component id="bodfiled" alignment="1" min="-2" pref="197" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -189,43 +189,43 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtFullName" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="jTextField1" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="lblFullName" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="nametxtfield" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField2" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="txtPhone" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="numbertextfield" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="lblPhone" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel6" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="lblemail" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="emailField" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="passwordField" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="jLabel5" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="lblpassword" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel4" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="lblconformpassword" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="confirmPasswordField" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtAddress" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="jTextField3" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="lblAddress" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="addressfield" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabel2" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="lblgender" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtDOB" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="jTextField4" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="lblDOB" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="bodfiled" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="chkTerms" min="-2" max="-2" attributes="0"/>
@@ -235,17 +235,17 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel6">
+            <Component class="javax.swing.JLabel" name="lblemail">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Email"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel5">
+            <Component class="javax.swing.JLabel" name="lblpassword">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Password"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel4">
+            <Component class="javax.swing.JLabel" name="lblconformpassword">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Conform Password"/>
               </Properties>
@@ -276,40 +276,40 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="txtFullName">
+            <Component class="javax.swing.JLabel" name="lblFullName">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Full Name"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField1">
+            <Component class="javax.swing.JTextField" name="nametxtfield">
               <AccessibilityProperties>
                 <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
               </AccessibilityProperties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nametxtfieldActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField2">
+            <Component class="javax.swing.JTextField" name="numbertextfield">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numbertextfieldActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="txtPhone">
+            <Component class="javax.swing.JLabel" name="lblPhone">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Phone Number"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="txtAddress">
+            <Component class="javax.swing.JLabel" name="lblAddress">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Address"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField3">
+            <Component class="javax.swing.JTextField" name="addressfield">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addressfieldActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel2">
+            <Component class="javax.swing.JLabel" name="lblgender">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Gender:"/>
               </Properties>
@@ -396,14 +396,14 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="txtDOB">
+            <Component class="javax.swing.JLabel" name="lblDOB">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Date of Birth"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField4">
+            <Component class="javax.swing.JTextField" name="bodfiled">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField4ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bodfiledActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JCheckBox" name="chkTerms">
