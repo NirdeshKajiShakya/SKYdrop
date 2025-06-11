@@ -4,8 +4,10 @@
  */
 package skydrop;
 
+import skydrop.controllers.AuthController;
 import skydrop.userDAO.UserDao;
 import skydrop.view.LoginView;
+import skydrop.view.SignupView;
 
 /**
  *
@@ -23,9 +25,9 @@ public class SKYdrop {
 //        userDao.listUsers();
         // login view and signup view
         LoginView loginView = new LoginView();
-        SignupView registerView = new RegisterView();
-        AuthController authController = new AuthController(loginView);
-        authController.open();
+        SignupView signupView = new SignupView();
+        AuthController authController = new AuthController(loginView, signupView);
+        loginView.setVisible(true);
         
     }
     

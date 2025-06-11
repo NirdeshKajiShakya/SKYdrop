@@ -14,6 +14,7 @@ import skydrop.model.User;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.prefs.Preferences;
+import skydrop.userDAO.UserDao;
 
 public class AuthController {
     private LoginView loginView;
@@ -90,6 +91,13 @@ public class AuthController {
     private void handleSignup() {
         String email = signupView.getEmail();
         String password = signupView.getPassword();
+        String contact = signupView.getPhone();
+        String name = signupView.getName();
+        String address = signupView.getAddress();
+        String gender = signupView.getGender();
+        String DOB = signupView.getDOB();
+        
+        
         String confirmPassword = signupView.getConfirmPassword();
         
         if (!password.equals(confirmPassword)) {
@@ -104,6 +112,10 @@ public class AuthController {
             "Invalid Email", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        UserDao userDao = new UserDao();
+        userDao.addUser(name,contact,email,password,address,gender,DOB);
+        
+        
         User newUser = new User(email, password);
         JOptionPane.showMessageDialog(signupView, 
             "Account created successfully!");

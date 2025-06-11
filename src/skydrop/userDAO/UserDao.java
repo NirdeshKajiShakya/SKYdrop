@@ -15,14 +15,18 @@ import skydrop.database.DbConnection;
  * @author nirka
  */
 public class UserDao {
-    public void addUser(String name, String email, String address){
-        String query = "INSERT INTO users (user_name, email, address) VALUES (?, ?, ?)";
+    public void addUser(String name, String contact, String email, String password, String address, String gender, String DOB){
+        String query = "INSERT INTO users (user_name, email, address, contact, current_password, gender, D_O_B) VALUES (?,?,?,?,?,?,?)";
         try (Connection conn = DbConnection.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(query)) {
 
             pstmt.setString(1, name);
             pstmt.setString(2, email);
-            pstmt.setString(3,address);
+            pstmt.setString(3, address);
+            pstmt.setString(4, contact);
+            pstmt.setString(5, password);
+            pstmt.setString(6, gender);
+            pstmt.setString(7, DOB);
             pstmt.executeUpdate();
             System.out.println("User added successfully!");
 
@@ -30,6 +34,7 @@ public class UserDao {
             e.printStackTrace();
         }
     }
+    
     
     public void listUsers() {
         String query = "SELECT * FROM users";
