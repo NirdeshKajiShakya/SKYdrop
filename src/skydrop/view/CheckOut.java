@@ -8,13 +8,36 @@ package skydrop.view;
  *
  * @author User
  */
-public class CheckOut extends javax.swing.JFrame {
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 
+
+public class CheckOut extends javax.swing.JFrame {
+    
+    private JRadioButton DeliveryButton;
+    private JRadioButton PickupButton;
+    private JTextField FirstNameField;
+    private JTextField EmailField;
+    private JTextField PhoneField;
+    private JComboBox<String> CountryField;
+    private JTextField CityField;
+    private JCheckBox TermscheckBox;
+    private JButton PaynowButton;
+   
+   
     /**
      * Creates new form CheckOut
      */
     public CheckOut() {
+    
+
+
+
         initComponents();
+        
+        PickupButton.setSelected(true);
+
     }
 
     /**
@@ -36,19 +59,19 @@ public class CheckOut extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jLabel4 = new javax.swing.JLabel();
+        DeliveryButton = new javax.swing.JRadioButton();
+        PickupButton = new javax.swing.JRadioButton();
+        FirstNameField = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
+        EmailField = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        PhoneField = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        CountryField = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel17 = new javax.swing.JLabel();
+        CityField = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        TermscheckBox = new javax.swing.JCheckBox();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -56,7 +79,7 @@ public class CheckOut extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        PaynowButton = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Checkout");
@@ -81,6 +104,7 @@ public class CheckOut extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 153, 153));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Checkout");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -106,15 +130,15 @@ public class CheckOut extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("Shipping Information");
 
-        jRadioButton1.setText("Delivery");
+        DeliveryButton.setText("Delivery");
 
-        jRadioButton2.setText("Pick up");
+        PickupButton.setText("Pick up");
 
-        jLabel4.setText("First Name");
+        FirstNameField.setText("First Name");
 
-        jLabel5.setText("Email Address");
+        EmailField.setText("Email Address");
 
-        jLabel6.setText("Phone Number");
+        PhoneField.setText("Phone Number");
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,7 +146,7 @@ public class CheckOut extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setText("Country");
+        CountryField.setText("Country");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose country", "Nepal", "India", "Australia", "China" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -131,13 +155,13 @@ public class CheckOut extends javax.swing.JFrame {
             }
         });
 
-        jLabel17.setText("City");
+        CityField.setText("City");
 
-        jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
-        jCheckBox1.setText(" I have read and agree to the terms and condition");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        TermscheckBox.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        TermscheckBox.setText(" I have read and agree to the terms and condition");
+        TermscheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                TermscheckBoxActionPerformed(evt);
             }
         });
 
@@ -149,25 +173,25 @@ public class CheckOut extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(DeliveryButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(PickupButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)
+                            .addComponent(CityField, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FirstNameField)
                             .addComponent(jTextField1)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EmailField, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField2)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PhoneField, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField3)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CountryField, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox1, 0, 141, Short.MAX_VALUE)
                             .addComponent(jTextField6)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jCheckBox1))
+                        .addComponent(TermscheckBox))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -180,30 +204,30 @@ public class CheckOut extends javax.swing.JFrame {
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(DeliveryButton)
+                    .addComponent(PickupButton))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4)
+                .addComponent(FirstNameField)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
+                .addComponent(EmailField)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
+                .addComponent(PhoneField)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
+                .addComponent(CountryField)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel17)
+                .addComponent(CityField)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(jCheckBox1))
+                .addComponent(TermscheckBox))
         );
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -221,13 +245,13 @@ public class CheckOut extends javax.swing.JFrame {
 
         jLabel16.setText("Discount");
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 153));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Pay Now");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        PaynowButton.setBackground(new java.awt.Color(0, 153, 153));
+        PaynowButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        PaynowButton.setForeground(new java.awt.Color(255, 255, 255));
+        PaynowButton.setText("Pay Now");
+        PaynowButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                PaynowButtonActionPerformed(evt);
             }
         });
 
@@ -243,7 +267,7 @@ public class CheckOut extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PaynowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -277,7 +301,7 @@ public class CheckOut extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel16)
                         .addGap(24, 24, 24)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(PaynowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -308,13 +332,13 @@ public class CheckOut extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void PaynowButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PaynowButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_PaynowButtonActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void TermscheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TermscheckBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_TermscheckBoxActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
@@ -356,8 +380,15 @@ public class CheckOut extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JLabel CityField;
+    private javax.swing.JLabel CountryField;
+    private javax.swing.JRadioButton DeliveryButton;
+    private javax.swing.JLabel EmailField;
+    private javax.swing.JLabel FirstNameField;
+    private javax.swing.JButton PaynowButton;
+    private javax.swing.JLabel PhoneField;
+    private javax.swing.JRadioButton PickupButton;
+    private javax.swing.JCheckBox TermscheckBox;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -367,20 +398,13 @@ public class CheckOut extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
