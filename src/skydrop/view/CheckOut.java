@@ -8,37 +8,20 @@ package skydrop.view;
  *
  * @author User
  */
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import javax.swing.ButtonGroup;
 
 
 public class CheckOut extends javax.swing.JFrame {
-    
-    private JRadioButton DeliveryButton;
-    private JRadioButton PickupButton;
-    private JTextField FirstNameField;
-    private JTextField EmailField;
-    private JTextField PhoneField;
-    private JComboBox<String> CountryField;
-    private JTextField CityField;
-    private JCheckBox TermscheckBox;
-    private JButton PaynowButton;
-   
-   
-    /**
-     * Creates new form CheckOut
-     */
+      
     public CheckOut() {
-    
-
-
-
         initComponents();
         
-        PickupButton.setSelected(true);
-
-    }
+        var group = new ButtonGroup();
+        group.add (DeliveryButton);
+        group.add(PickupButton);
+        
+        DeliveryButton.setSelected(true);            
+ }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -131,8 +114,18 @@ public class CheckOut extends javax.swing.JFrame {
         jLabel3.setText("Shipping Information");
 
         DeliveryButton.setText("Delivery");
+        DeliveryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeliveryButtonActionPerformed(evt);
+            }
+        });
 
         PickupButton.setText("Pick up");
+        PickupButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PickupButtonActionPerformed(evt);
+            }
+        });
 
         FirstNameField.setText("First Name");
 
@@ -344,6 +337,18 @@ public class CheckOut extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
+    private void DeliveryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeliveryButtonActionPerformed
+        if (DeliveryButton.isSelected()){
+            System.out.println("Delivery Selected");
+        }
+    }//GEN-LAST:event_DeliveryButtonActionPerformed
+
+    private void PickupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PickupButtonActionPerformed
+        if (PickupButton.isSelected()) {
+            System.out.println("Pickup selected");
+        }
+    }//GEN-LAST:event_PickupButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -372,10 +377,8 @@ public class CheckOut extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CheckOut().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new CheckOut().setVisible(true);
         });
     }
 
