@@ -63,4 +63,69 @@ public class UserDao {
             return null;
         }
     }
+    
+    public String getUserNameDB(int user_id){
+        String query = "SELECT user_name FROM users where user_id = ?";
+
+        try (Connection conn = DbConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+               
+            pstmt.setInt(1, user_id);
+            ResultSet rs = pstmt.executeQuery();
+            
+            if (rs.next()){
+                return rs.getString("user_name");
+            }else{
+                return null;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
+    public int getUser_idDB(String email) {
+        String query = "SELECT user_id FROM users where email = ?";
+
+        try (Connection conn = DbConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+               
+            pstmt.setString(1, email);
+            ResultSet rs = pstmt.executeQuery();
+            
+            if (rs.next()){
+                System.out.print(rs.getInt("user_id"));
+                return rs.getInt("user_id");
+                
+            }else{
+                return 0;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+    
+    public String getEmailDB(int user_id){
+        String query = "SELECT email FROM users where user_id = ?";
+
+        try (Connection conn = DbConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+               
+            pstmt.setInt(1, user_id);
+            ResultSet rs = pstmt.executeQuery();
+            
+            if (rs.next()){
+                return rs.getString("email");
+            }else{
+                return null;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

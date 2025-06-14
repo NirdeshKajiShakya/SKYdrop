@@ -16,6 +16,7 @@ import java.awt.event.*;
 import java.util.prefs.Preferences;
 import org.mindrot.jbcrypt.BCrypt;
 import skydrop.userDAO.UserDao;
+import skydrop.view.TempUserView;
 
 public class AuthController {
     private LoginView loginView;
@@ -31,6 +32,8 @@ public class AuthController {
         initSignupListeners();
         loadRememberedEmail();
     }
+    
+    
     public static boolean checkPassword(String password, String hashedPassword) {
         return BCrypt.checkpw(password, hashedPassword);
     }
@@ -93,8 +96,14 @@ public class AuthController {
         String actual_password = userDao.getPasswordDB(email);
         
         boolean match = checkPassword(password, actual_password);
-        if(match){JOptionPane.showMessageDialog(loginView, "Login successful!");
-            JOptionPane.showMessageDialog(loginView, "Login successful!");  
+        if(match){
+            int id = userDao.getUser_idDB(email);
+            
+            TempUserView userView = new TempUserView();
+            userView.setId(id);
+            
+            userView.setVisible(true);
+            loginView.dispose();
         } else {
             JOptionPane.showMessageDialog(loginView, "Password incorrect!");
         }
@@ -129,8 +138,6 @@ public class AuthController {
         UserDao userDao = new UserDao();
         userDao.addUser(name,contact,email,password,address,gender,DOB);
         
-        
-        User newUser = new User(email, password);
         JOptionPane.showMessageDialog(signupView, 
             "Account created successfully!");
     }
