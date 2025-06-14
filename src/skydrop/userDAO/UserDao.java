@@ -6,10 +6,7 @@ package skydrop.userDAO;
 
 
 import org.mindrot.jbcrypt.BCrypt;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import skydrop.database.DbConnection;
 
 /**
@@ -46,23 +43,24 @@ public class UserDao {
     }
     
     
-    public void listUsers() {
-        String query = "SELECT * FROM users";
+    public String getPasswordDB(String email) {
+        String query = "SELECT current_password FROM users where email = ?";
 
         try (Connection conn = DbConnection.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(query);
-             ResultSet rs = pstmt.executeQuery()) {
-
-            while (rs.next()) {
-                System.out.println("ID: " + rs.getInt("id") +   
-                                   ", Name: " + rs.getString("user_name") +
-                                   ", Email: " + rs.getString("email") +
-                                   ", Address: " + rs.getString("address") 
-                                   );
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+               
+            pstmt.setString(1, email);
+            ResultSet rs = pstmt.executeQuery();
+            
+            if (rs.next()){
+                return rs.getString("current_password");
+            }else{
+                return null;
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
+            return null;
         }
     }
 }

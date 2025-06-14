@@ -14,6 +14,7 @@ import skydrop.model.User;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.prefs.Preferences;
+import org.mindrot.jbcrypt.BCrypt;
 import skydrop.userDAO.UserDao;
 
 public class AuthController {
@@ -29,6 +30,9 @@ public class AuthController {
         initLoginListeners();
         initSignupListeners();
         loadRememberedEmail();
+    }
+    public static boolean checkPassword(String password, String hashedPassword) {
+        return BCrypt.checkpw(password, hashedPassword);
     }
     
     public boolean isValidEmail(String email) {
@@ -85,7 +89,17 @@ public class AuthController {
             prefs.remove("email");
         }
         
-        JOptionPane.showMessageDialog(loginView, "Login successful!");
+        UserDao userDao = new UserDao();
+        String actual_password = userDao.getPasswordDB(email);
+        
+        boolean match = checkPassword(password, actual_password);
+        if(match){JOptionPane.showMessageDialog(loginView, "Login successful!");
+            JOptionPane.showMessageDialog(loginView, "Login successful!");  
+        } else {
+            JOptionPane.showMessageDialog(loginView, "Password incorrect!");
+        }
+        
+        
     }
     
     private void handleSignup() {
