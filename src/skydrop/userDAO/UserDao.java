@@ -4,6 +4,8 @@
  */
 package skydrop.userDAO;
 
+
+import org.mindrot.jbcrypt.BCrypt;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,6 +17,14 @@ import skydrop.database.DbConnection;
  * @author nirka
  */
 public class UserDao {
+    public String hashedPassword(String password){
+        return BCrypt.hashpw(password, BCrypt.gensalt(12));
+    }
+    
+    public static boolean checkPassword(String password, String hashedPassword) {
+        return BCrypt.checkpw(password, hashedPassword);
+    }
+    
     public void addUser(String name, String contact, String email, String password, String address, String gender, String DOB){
         String query = "INSERT INTO users (user_name, email, address, contact, current_password, gender, D_O_B) VALUES (?,?,?,?,?,?,?)";
         try (Connection conn = DbConnection.getConnection();
@@ -24,7 +34,7 @@ public class UserDao {
             pstmt.setString(2, email);
             pstmt.setString(3, address);
             pstmt.setString(4, contact);
-            pstmt.setString(5, password);
+            pstmt.setString(5, hashedPassword(password));
             pstmt.setString(6, gender);
             pstmt.setString(7, DOB);
             pstmt.executeUpdate();
