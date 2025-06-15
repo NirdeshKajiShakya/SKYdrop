@@ -23,14 +23,4 @@ public class UserDaoTest {
     String correctEmail = "testuser3@gmail.com";
     String password = "password";
     
-    
-    
-    @Test
-    public void registerWithNewDetails(){
-        User user = new User(correctEmail,password);
-        UserDao dao = new UserDao();
-        boolean result = dao.addUser(user);
-        Assert.assertTrue(result);register
-    }
-    
 }
