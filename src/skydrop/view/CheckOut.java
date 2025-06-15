@@ -8,38 +8,43 @@ package skydrop.view;
  *
  * @author User
  */
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-
+import javax.swing.ButtonGroup;
+import com.stripe.Stripe;
+import com.stripe.model.PaymentIntent;
+import com.stripe.param.PaymentIntentCreateParams;
 
 public class CheckOut extends javax.swing.JFrame {
-    
-    private JRadioButton DeliveryButton;
-    private JRadioButton PickupButton;
-    private JTextField FirstNameField;
-    private JTextField EmailField;
-    private JTextField PhoneField;
-    private JComboBox<String> CountryField;
-    private JTextField CityField;
-    private JCheckBox TermscheckBox;
-    private JButton PaynowButton;
-   
-   
-    /**
-     * Creates new form CheckOut
-     */
+      
     public CheckOut() {
-    
-
-
-
         initComponents();
         
-        PickupButton.setSelected(true);
-
+        var group = new ButtonGroup();
+        group.add (DeliveryButton);
+        group.add(PickupButton);
+        
+        DeliveryButton.setSelected(true);            
+ }
+    public void createStripePayment(double amountInRupees){
+        try{
+            Stripe.apiKey = "sk_test_51RYLJsRMgi1PJwGoTGpDyxsCgaVqKYWV51bkDVKGgxDgrQQwlsRNctFst2w0OHdbC5jWCviGtJoCs1usJWjT0VOv009H56U8CS";
+            
+            long amountInPaise = (long) (amountInRupees * 100);
+            
+            PaymentIntentCreateParams params = PaymentIntentCreateParams.builder()
+                    .setAmount(amountInPaise)
+                    .setCurrency("inr")
+                    .build();
+            PaymentIntent intent = PaymentIntent.create(params);
+            
+            javax.swing.JOptionPane.showMessageDialog(null,
+                    "PaymentIntent created Successfully!\nID: " + intent.getId());
+        }catch (Exception e) {
+            e.printStackTrace();
+            javax.swing.JOptionPane.showMessageDialog(null,
+                    "Payment creation failed:\n" +e.getMessage());
+                    
+        }
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -54,6 +59,7 @@ public class CheckOut extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -73,13 +79,18 @@ public class CheckOut extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         TermscheckBox = new javax.swing.JCheckBox();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         PaynowButton = new javax.swing.JButton();
+        PaynowButton1 = new javax.swing.JButton();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
+        jTextField11 = new javax.swing.JTextField();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Checkout");
@@ -96,6 +107,8 @@ public class CheckOut extends javax.swing.JFrame {
         jLabel9.setText("Province");
 
         jLabel8.setText("City");
+
+        jLabel11.setText("Image");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -233,8 +246,6 @@ public class CheckOut extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel10.setText("Review your cart");
 
-        jLabel11.setText("Image");
-
         jLabel12.setText("Product Name");
 
         jLabel13.setText("Price");
@@ -246,12 +257,22 @@ public class CheckOut extends javax.swing.JFrame {
         jLabel16.setText("Discount");
 
         PaynowButton.setBackground(new java.awt.Color(0, 153, 153));
-        PaynowButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        PaynowButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         PaynowButton.setForeground(new java.awt.Color(255, 255, 255));
-        PaynowButton.setText("Pay Now");
+        PaynowButton.setText("upload image");
         PaynowButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PaynowButtonActionPerformed(evt);
+            }
+        });
+
+        PaynowButton1.setBackground(new java.awt.Color(0, 153, 153));
+        PaynowButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        PaynowButton1.setForeground(new java.awt.Color(255, 255, 255));
+        PaynowButton1.setText("Pay Now");
+        PaynowButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PaynowButton1ActionPerformed(evt);
             }
         });
 
@@ -267,17 +288,34 @@ public class CheckOut extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(PaynowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextField7))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(PaynowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(49, 49, 49)
+                                .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(22, 22, 22)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField9, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                                    .addComponent(jTextField10, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                                    .addComponent(jTextField11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE))))
+                        .addGap(46, 46, 46))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(100, Short.MAX_VALUE))
+                        .addGap(65, 65, 65)
+                        .addComponent(PaynowButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -288,20 +326,30 @@ public class CheckOut extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(9, 9, 9)
                         .addComponent(jLabel10)
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel11)
+                        .addGap(25, 25, 25)
+                        .addComponent(PaynowButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel12)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14)
+                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel13)
-                        .addGap(35, 35, 35)
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel15)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel16)
-                        .addGap(24, 24, 24)
-                        .addComponent(PaynowButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15))
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16))
+                        .addGap(31, 31, 31)
+                        .addComponent(PaynowButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -344,6 +392,22 @@ public class CheckOut extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
+    private void DeliveryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeliveryButtonActionPerformed
+        if (DeliveryButton.isSelected()){
+            System.out.println("Delivery Selected");
+        }
+    }//GEN-LAST:event_DeliveryButtonActionPerformed
+
+    private void PickupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PickupButtonActionPerformed
+        if (PickupButton.isSelected()) {
+            System.out.println("Pickup selected");
+        }
+    }//GEN-LAST:event_PickupButtonActionPerformed
+
+    private void PaynowButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PaynowButton1ActionPerformed
+        createStripePayment(499.00);
+    }//GEN-LAST:event_PaynowButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -372,10 +436,8 @@ public class CheckOut extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CheckOut().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new CheckOut().setVisible(true);
         });
     }
 
@@ -386,6 +448,7 @@ public class CheckOut extends javax.swing.JFrame {
     private javax.swing.JLabel EmailField;
     private javax.swing.JLabel FirstNameField;
     private javax.swing.JButton PaynowButton;
+    private javax.swing.JButton PaynowButton1;
     private javax.swing.JLabel PhoneField;
     private javax.swing.JRadioButton PickupButton;
     private javax.swing.JCheckBox TermscheckBox;
@@ -406,10 +469,15 @@ public class CheckOut extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
