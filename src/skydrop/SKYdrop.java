@@ -8,8 +8,6 @@ import skydrop.controllers.AuthController;
 import skydrop.userDAO.UserDao;
 import skydrop.view.LoginView;
 import skydrop.view.SignupView;
-import skydrop.view.TempUserView;
-
 /**
  *
 
