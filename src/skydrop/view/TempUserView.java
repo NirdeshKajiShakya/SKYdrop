@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package skydrop.view;
+package Update;
 
 import javax.swing.JOptionPane;
 import skydrop.controllers.AuthController;
@@ -11,6 +11,7 @@ import skydrop.userDAO.UserDao;
 
 /**
  *
+<<<<<<<< HEAD:src/skydrop/view/TempUserView.java
  * @author zenusha
  */
 public class TempUserView extends javax.swing.JFrame {
@@ -22,6 +23,16 @@ public class TempUserView extends javax.swing.JFrame {
      * Creates new form TempUserView
      */
     public TempUserView() {
+========
+ * @author ADMIN
+ */
+public class java extends javax.swing.JFrame {
+
+    /**
+     * Creates new form java
+     */
+    public java() {
+>>>>>>>> sujal:src/Update/java.java
         initComponents();
         
     }
@@ -48,12 +59,16 @@ public class TempUserView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<<< HEAD:src/skydrop/view/TempUserView.java
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(UserName, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(155, Short.MAX_VALUE))
+========
+            .addGap(0, 484, Short.MAX_VALUE)
+>>>>>>>> sujal:src/Update/java.java
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,13 +99,32 @@ public class TempUserView extends javax.swing.JFrame {
                     break;
                 }
             }
+<<<<<<<< HEAD:src/skydrop/view/TempUserView.java
         } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
+========
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(java.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(java.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(java.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(java.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+>>>>>>>> sujal:src/Update/java.java
         }
         //</editor-fold>
 
         /* Create and display the form */
+<<<<<<<< HEAD:src/skydrop/view/TempUserView.java
         java.awt.EventQueue.invokeLater(() -> new TempUserView().setVisible(true));
+========
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new java().setVisible(true);
+            }
+        });
+>>>>>>>> sujal:src/Update/java.java
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

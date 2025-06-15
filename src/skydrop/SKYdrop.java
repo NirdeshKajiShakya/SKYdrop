@@ -12,7 +12,7 @@ import skydrop.view.TempUserView;
 
 /**
  *
- * @author nirka
+
  */
 public class SKYdrop {
 
