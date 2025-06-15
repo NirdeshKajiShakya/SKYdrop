@@ -14,6 +14,7 @@ import skydrop.controller.StripeController;
 
 public class CheckOut extends javax.swing.JFrame {
       
+      
     public CheckOut() {
         initComponents();
         
@@ -123,8 +124,18 @@ public class CheckOut extends javax.swing.JFrame {
         jLabel3.setText("Shipping Information");
 
         DeliveryButton.setText("Delivery");
+        DeliveryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeliveryButtonActionPerformed(evt);
+            }
+        });
 
         PickupButton.setText("Pick up");
+        PickupButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PickupButtonActionPerformed(evt);
+            }
+        });
 
         FirstNameField.setText("First Name");
 
@@ -417,6 +428,8 @@ public class CheckOut extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> {
+            new CheckOut().setVisible(true);
         java.awt.EventQueue.invokeLater(() -> {
             new CheckOut().setVisible(true);
         });
