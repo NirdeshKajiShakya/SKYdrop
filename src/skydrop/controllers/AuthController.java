@@ -16,7 +16,8 @@ import java.awt.event.*;
 import java.util.prefs.Preferences;
 import org.mindrot.jbcrypt.BCrypt;
 import skydrop.userDAO.UserDao;
-import skydrop.view.TempUserView;
+import skydrop.view.UserView;
+
 
 public class AuthController {
     private LoginView loginView;
@@ -99,7 +100,7 @@ public class AuthController {
         if(match){
             int id = userDao.getUser_idDB(email);
             
-            TempUserView userView = new TempUserView();
+            UserView userView = new UserView();
             userView.setId(id);
             
             userView.setVisible(true);
