@@ -9,9 +9,8 @@ package skydrop.view;
  * @author User
  */
 import javax.swing.ButtonGroup;
-import com.stripe.Stripe;
-import com.stripe.model.PaymentIntent;
-import com.stripe.param.PaymentIntentCreateParams;
+import skydrop.controller.StripeController;
+
 
 public class CheckOut extends javax.swing.JFrame {
       
@@ -24,27 +23,7 @@ public class CheckOut extends javax.swing.JFrame {
         
         DeliveryButton.setSelected(true);            
  }
-    public void createStripePayment(double amountInRupees){
-        try{
-            Stripe.apiKey = "sk_test_51RYLJsRMgi1PJwGoTGpDyxsCgaVqKYWV51bkDVKGgxDgrQQwlsRNctFst2w0OHdbC5jWCviGtJoCs1usJWjT0VOv009H56U8CS";
-            
-            long amountInPaise = (long) (amountInRupees * 100);
-            
-            PaymentIntentCreateParams params = PaymentIntentCreateParams.builder()
-                    .setAmount(amountInPaise)
-                    .setCurrency("inr")
-                    .build();
-            PaymentIntent intent = PaymentIntent.create(params);
-            
-            javax.swing.JOptionPane.showMessageDialog(null,
-                    "PaymentIntent created Successfully!\nID: " + intent.getId());
-        }catch (Exception e) {
-            e.printStackTrace();
-            javax.swing.JOptionPane.showMessageDialog(null,
-                    "Payment creation failed:\n" +e.getMessage());
-                    
-        }
-    }
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -405,7 +384,9 @@ public class CheckOut extends javax.swing.JFrame {
     }//GEN-LAST:event_PickupButtonActionPerformed
 
     private void PaynowButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PaynowButton1ActionPerformed
-        createStripePayment(499.00);
+        StripeController stripe = new StripeController();
+        
+        stripe.createStripePayment(499.00);
     }//GEN-LAST:event_PaynowButton1ActionPerformed
 
     /**
