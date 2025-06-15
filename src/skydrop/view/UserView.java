@@ -35,13 +35,14 @@ public class UserView extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        btnAccountInformation = new javax.swing.JButton();
+        btnChangeEmail = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtName = new javax.swing.JButton();
-        btnChangeEmail = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
@@ -51,12 +52,12 @@ public class UserView extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         btnEditAddress = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        btnAccountInformation = new javax.swing.JButton();
         btnOrderList = new javax.swing.JButton();
         btnMyAccount = new javax.swing.JButton();
         btnHelp = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -85,6 +86,26 @@ public class UserView extends javax.swing.JFrame {
 
         jLabel5.setText("Name@gmail.com");
 
+        btnAccountInformation.setBackground(new java.awt.Color(0, 158, 158));
+        btnAccountInformation.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnAccountInformation.setForeground(new java.awt.Color(255, 255, 255));
+        btnAccountInformation.setText("Account information");
+        btnAccountInformation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAccountInformationActionPerformed(evt);
+            }
+        });
+
+        btnChangeEmail.setBackground(new java.awt.Color(0, 158, 158));
+        btnChangeEmail.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnChangeEmail.setForeground(new java.awt.Color(255, 255, 255));
+        btnChangeEmail.setText(" Change Email");
+        btnChangeEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChangeEmailActionPerformed(evt);
+            }
+        });
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel4.setBackground(new java.awt.Color(158, 255, 229));
@@ -106,16 +127,6 @@ public class UserView extends javax.swing.JFrame {
         txtName.setForeground(new java.awt.Color(255, 255, 255));
         txtName.setText("Edit");
 
-        btnChangeEmail.setBackground(new java.awt.Color(0, 158, 158));
-        btnChangeEmail.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnChangeEmail.setForeground(new java.awt.Color(255, 255, 255));
-        btnChangeEmail.setText(" Change Email");
-        btnChangeEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnChangeEmailActionPerformed(evt);
-            }
-        });
-
         jLabel14.setText("Email");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -127,20 +138,18 @@ public class UserView extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(txtName)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                        .addComponent(btnChangeEmail))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTextField1))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField2)))
+                        .addComponent(jTextField2))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(txtName))
+                        .addGap(0, 53, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -158,11 +167,8 @@ public class UserView extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtName)
-                    .addComponent(btnChangeEmail))
-                .addContainerGap())
+                .addGap(24, 24, 24)
+                .addComponent(txtName))
         );
 
         jPanel3.setBackground(new java.awt.Color(158, 255, 229));
@@ -216,16 +222,6 @@ public class UserView extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(198, 255, 229));
 
-        btnAccountInformation.setBackground(new java.awt.Color(0, 158, 158));
-        btnAccountInformation.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnAccountInformation.setForeground(new java.awt.Color(255, 255, 255));
-        btnAccountInformation.setText("Account information");
-        btnAccountInformation.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAccountInformationActionPerformed(evt);
-            }
-        });
-
         btnOrderList.setBackground(new java.awt.Color(0, 158, 158));
         btnOrderList.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnOrderList.setForeground(new java.awt.Color(255, 255, 255));
@@ -258,7 +254,6 @@ public class UserView extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnAccountInformation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnOrderList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnMyAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnHelp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -271,11 +266,9 @@ public class UserView extends javax.swing.JFrame {
                 .addComponent(btnMyAccount)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnOrderList)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnAccountInformation)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btnHelp)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         jPanel5.setBackground(new java.awt.Color(0, 153, 153));
@@ -284,6 +277,13 @@ public class UserView extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Call Us: +977 980000000 ");
 
+        jButton1.setText("Update Profile");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -291,6 +291,8 @@ public class UserView extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(191, 191, 191)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -299,6 +301,10 @@ public class UserView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel9)
                 .addContainerGap(15, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
         );
 
         jPanel6.setBackground(new java.awt.Color(0, 153, 153));
@@ -336,7 +342,7 @@ public class UserView extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 143, Short.MAX_VALUE))
+                .addGap(0, 180, Short.MAX_VALUE))
             .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
@@ -376,8 +382,8 @@ public class UserView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnOrderListActionPerformed
 
     private void btnAccountInformationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccountInformationActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(UserView.this , "Name\nEmail\nPhone Number\nAddress");
+       // TODO add your handling code here:
+      
     }//GEN-LAST:event_btnAccountInformationActionPerformed
 
     private void btnMyAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMyAccountActionPerformed
@@ -391,6 +397,10 @@ public class UserView extends javax.swing.JFrame {
     private void btnEditAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditAddressActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEditAddressActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -434,6 +444,7 @@ public class UserView extends javax.swing.JFrame {
     private javax.swing.JButton btnHelp;
     private javax.swing.JButton btnMyAccount;
     private javax.swing.JButton btnOrderList;
+    private javax.swing.JButton jButton1;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

@@ -4,9 +4,11 @@
  */
 package skydrop;
 
+import skydrop.view.UserView;
+
 /**
  *
- * @author nirka
+
  */
 public class SKYdrop {
 
@@ -14,7 +16,8 @@ public class SKYdrop {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        UserView userView = new UserView();
+        userView.setVisible(true);
     }
     
 }
