@@ -4,42 +4,32 @@
  */
 package skydrop;
 
-
+import skydrop.controllers.AuthController;
+import skydrop.userDAO.UserDao;
+import skydrop.view.LoginView;
+import skydrop.view.SignupView;
+import skydrop.view.TempUserView;
 
 /**
  *
  * @author nirka
  */
-//import skydrop.view.LoginView;
-//import skydrop.view.SignupView;
-//import controllers.AuthController;
-//import javax.swing.SwingUtilities;
-//
-//
-//public class SKYdrop {
-//    public static void main(String[] args) {
-//        SwingUtilities.invokeLater(() -> {
-//            LoginView loginView = new LoginView();
-//            SignupView signupView = new SignupView();
-//            AuthController controller = new AuthController(loginView, signupView);
-//            
-//            // Show the login screen first
-//            loginView.setVisible(true);
-//        });
-//    }
-//}
-
-import javax.swing.SwingUtilities;
-import controllers.NavigationController;
-
 public class SKYdrop {
+
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            NavigationController.getInstance().navigateToHome(); // Launches HomePage via controller
-        });
+        // insert into database
+//        UserDao userDao = new UserDao();
+//        userDao.addUser("ram", "ram123@gmail.com","Kathmandu");
+//        userDao.listUsers();
+        // login view and signup view
+        LoginView loginView = new LoginView();
+        SignupView signupView = new SignupView();
+        AuthController authController = new AuthController(loginView, signupView);
+        loginView.setVisible(true);
+        
     }
+    
 }
-
-
-
-
