@@ -96,6 +96,13 @@ public class AuthController {
         UserDao userDao = new UserDao();
         String actual_password = userDao.getPasswordDB(email);
         
+        if (actual_password == null) {
+        JOptionPane.showMessageDialog(loginView,
+            "No account found with this email!",
+            "Login Failed", JOptionPane.ERROR_MESSAGE);
+        return;
+        }
+        
         boolean match = checkPassword(password, actual_password);
         if(match){
             int id = userDao.getUser_idDB(email);
