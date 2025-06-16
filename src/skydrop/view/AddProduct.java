@@ -4,6 +4,9 @@
  */
 package skydrop.view;
 
+import javax.swing.JOptionPane;
+
+
 /**
  *
  * @author robonile
@@ -264,84 +267,7 @@ public class AddProduct extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addproductbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addproductbtnMouseClicked
-        // TODO add your handling code here:
-        dbcon c=new dbcon();
-        String product_id=productidtxt.getText();
-        String product_name=productnametxt.getText();
-        String product_category=productcategorytxt.getText();
-        String product_quantity=productquantitytxt.getText();
-        String product_shortdesc=productshorttxt.getText();
-        String product_price=productpricetxt.getText();
-        //               String product_img=productimgtxt.getText();
-        //               String product_img1=img1txt.getText();
-        //               String product_img2=img2txt.getText();
-        //               String product_img3=img3txt.getText();
-        //               String product_status=product_statustxt.getText();
 
-        if (product_id.equals("")) {
-
-            JOptionPane.showMessageDialog(null, "Enter product ID");
-            return;
-        }
-        if (product_name.equals("")) {
-
-            JOptionPane.showMessageDialog(null, "Enter product Name");
-            return;
-        }
-        if (product_category.equals("")) {
-
-            JOptionPane.showMessageDialog(null, "Enter product Category");
-            return;
-        }
-        if (product_quantity.equals("")) {
-
-            JOptionPane.showMessageDialog(null, "Enter product Quantity");
-            return;
-        }
-        if (product_shortdesc.equals("")) {
-
-            JOptionPane.showMessageDialog(null, "Enter product Short Description");
-            return;
-        }
-        if (product_price.equals("")) {
-
-            JOptionPane.showMessageDialog(null, "Enter product Price");
-            return;
-        }
-        //               if (product_img.equals("")) {
-            //
-            //            JOptionPane.showMessageDialog(null, "Enter product Image");
-            //            return;
-            //        }
-        //                if (product_img1.equals("")) {
-            //
-            //            JOptionPane.showMessageDialog(null, "Enter product Image 1");
-            //            return;
-            //        }
-        //                 if (product_img2.equals("")) {
-            //
-            //            JOptionPane.showMessageDialog(null, "Enter product Image2");
-            //            return;
-            //        }
-        //                  if (product_img3.equals("")) {
-            //
-            //            JOptionPane.showMessageDialog(null, "Enter product Image3");
-            //            return;
-            //        }
-        //                  if (product_status.equals("")) {
-            //
-            //            JOptionPane.showMessageDialog(null, "Enter product status");
-            //            return;
-            //        }
-
-        String addQuery="INSERT INTO `product` (`id`, `product_name`, `price`, `quantity`, `status`, `category`, `picture`, `shortinfo`, `bigpic1`, `bigpic2`, `bigpic3`) VALUES ('"+product_id+"', '"+product_name+"', '"+product_price+"', '"+product_quantity+"','"+product_status+"', '"+product_category+"', '"+product_img+"', '"+product_shortdesc+"','"+product_img1+"','"+product_img2+"','"+product_img3+"');";
-        try {
-            c.s.executeUpdate(addQuery);
-            JOptionPane.showMessageDialog(null, "Prodcut Added Successfully");
-
-        } catch (SQLException ex) {
-            Logger.getLogger(signup.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }//GEN-LAST:event_addproductbtnMouseClicked
 
     private void addproductbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addproductbtnActionPerformed
