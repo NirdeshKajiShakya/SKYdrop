@@ -8,10 +8,9 @@ import skydrop.controllers.AuthController;
 import skydrop.userDAO.UserDao;
 import skydrop.view.LoginView;
 import skydrop.view.SignupView;
-
 /**
  *
- * @author nirka
+
  */
 public class SKYdrop {
 

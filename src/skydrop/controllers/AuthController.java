@@ -14,6 +14,10 @@ import skydrop.model.User;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.prefs.Preferences;
+import org.mindrot.jbcrypt.BCrypt;
+import skydrop.userDAO.UserDao;
+import skydrop.view.UserView;
+
 
 public class AuthController {
     private LoginView loginView;
@@ -28,6 +32,11 @@ public class AuthController {
         initLoginListeners();
         initSignupListeners();
         loadRememberedEmail();
+    }
+    
+    
+    public static boolean checkPassword(String password, String hashedPassword) {
+        return BCrypt.checkpw(password, hashedPassword);
     }
     
     public boolean isValidEmail(String email) {
@@ -84,12 +93,35 @@ public class AuthController {
             prefs.remove("email");
         }
         
-        JOptionPane.showMessageDialog(loginView, "Login successful!");
+        UserDao userDao = new UserDao();
+        String actual_password = userDao.getPasswordDB(email);
+        
+        boolean match = checkPassword(password, actual_password);
+        if(match){
+            int id = userDao.getUser_idDB(email);
+            
+            UserView userView = new UserView();
+            userView.setId(id);
+            
+            userView.setVisible(true);
+            loginView.dispose();
+        } else {
+            JOptionPane.showMessageDialog(loginView, "Password incorrect!");
+        }
+        
+        
     }
     
     private void handleSignup() {
         String email = signupView.getEmail();
         String password = signupView.getPassword();
+        String contact = signupView.getPhone();
+        String name = signupView.getName();
+        String address = signupView.getAddress();
+        String gender = signupView.getGender();
+        String DOB = signupView.getDOB();
+        
+        
         String confirmPassword = signupView.getConfirmPassword();
         
         if (!password.equals(confirmPassword)) {
@@ -104,7 +136,9 @@ public class AuthController {
             "Invalid Email", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        User newUser = new User(email, password);
+        UserDao userDao = new UserDao();
+        userDao.addUser(name,contact,email,password,address,gender,DOB);
+        
         JOptionPane.showMessageDialog(signupView, 
             "Account created successfully!");
     }
