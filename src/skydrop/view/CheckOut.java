@@ -9,7 +9,7 @@ package skydrop.view;
  * @author User
  */
 import javax.swing.ButtonGroup;
-import skydrop.controller.StripeController;
+import skydrop.controllers.StripeController;
 
 
 public class CheckOut extends javax.swing.JFrame {
@@ -413,11 +413,11 @@ public class CheckOut extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new CheckOut().setVisible(true);
-        java.awt.EventQueue.invokeLater(() -> {
-            new CheckOut().setVisible(true);
-        });
+        java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run(){
+                    new CheckOut().setVisible(true);
+                }
+            });
         }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
