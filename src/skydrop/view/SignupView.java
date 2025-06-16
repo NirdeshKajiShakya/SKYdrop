@@ -601,7 +601,7 @@ public class SignupView extends javax.swing.JFrame {
     }
 
     public boolean getAdminCheckbox(){
-        return AdminCheckbox;
+        return AdminCheckbox.isSelected();
     }
     
     public JButton getCreateAccountButton() {
