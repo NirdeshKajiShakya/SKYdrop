@@ -13,15 +13,6 @@ import javax.swing.*;
 //import java.net.URI;
 
 public class LoginView extends javax.swing.JFrame {
-    // Variables declaration - do not modify
-//    private javax.swing.JButton loginButton;
-//    private javax.swing.JButton appleLoginButton;
-//    private javax.swing.JTextField emailField;
-//    private javax.swing.JPasswordField passwordField;
-//    private javax.swing.JCheckBox rememberCheckbox;
-//    private javax.swing.JLabel signupLink;
-    // End of variables declaration
-
     public LoginView() {
         initComponents();
         

@@ -587,4 +587,3 @@ public class SignupView extends javax.swing.JFrame {
     }
     
 }
-
