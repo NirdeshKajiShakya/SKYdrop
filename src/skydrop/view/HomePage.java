@@ -4,9 +4,10 @@
  */
 package skydrop.view;
 
-
+import controllers.NavigationController;
 import javax.swing.*;
 import java.awt.*;
+
 
 
 
@@ -19,7 +20,6 @@ import java.awt.*;
  *
  * @author User
  */
-
 public class HomePage extends javax.swing.JFrame{
     public HomePage(){
         initComponents();
@@ -47,7 +47,7 @@ public class HomePage extends javax.swing.JFrame{
         jLabel3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        Logintobuy = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -120,15 +120,15 @@ public class HomePage extends javax.swing.JFrame{
 
         jPanel5.setBackground(new java.awt.Color(198, 255, 229));
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 153));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Login to Buy");
-        jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Logintobuy.setBackground(new java.awt.Color(0, 153, 153));
+        Logintobuy.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Logintobuy.setForeground(new java.awt.Color(255, 255, 255));
+        Logintobuy.setText("Login to Buy");
+        Logintobuy.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Logintobuy.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Logintobuy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                LogintobuyActionPerformed(evt);
             }
         });
 
@@ -215,7 +215,7 @@ public class HomePage extends javax.swing.JFrame{
                         .addComponent(ContactUsButton)
                         .addGap(32, 32, 32))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Logintobuy, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40))))
         );
         jPanel5Layout.setVerticalGroup(
@@ -240,7 +240,7 @@ public class HomePage extends javax.swing.JFrame{
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel7)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)))
+                        .addComponent(Logintobuy)))
                 .addContainerGap(111, Short.MAX_VALUE))
         );
 
@@ -283,20 +283,27 @@ public class HomePage extends javax.swing.JFrame{
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel3MouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void LogintobuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogintobuyActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        this.dispose(); // Close current window
+        controllers.NavigationController.getInstance().navigateToLogin();
+      
+    }//GEN-LAST:event_LogintobuyActionPerformed
 
     private void HomeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeButtonActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        controllers.NavigationController.getInstance().navigateToHome();
     }//GEN-LAST:event_HomeButtonActionPerformed
 
     private void ServiceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ServiceButtonActionPerformed
-       
+        this.dispose();
+        controllers.NavigationController.getInstance().navigateToServices();
     }//GEN-LAST:event_ServiceButtonActionPerformed
 
     private void ContactUsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactUsButtonActionPerformed
-        
+        this.dispose();
+        controllers.NavigationController.getInstance().navigateToContactUs();
     }//GEN-LAST:event_ContactUsButtonActionPerformed
 public static void main(String []args){
         
@@ -337,9 +344,9 @@ public static void main(String []args){
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ContactUsButton;
     private javax.swing.JButton HomeButton;
+    private javax.swing.JButton Logintobuy;
     private javax.swing.JButton ServiceButton;
     private javax.swing.JLabel homelink;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
