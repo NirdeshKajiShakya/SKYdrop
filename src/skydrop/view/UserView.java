@@ -314,6 +314,7 @@ public class UserView extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(0, 153, 153));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("My Account");
         jLabel1.setMaximumSize(new java.awt.Dimension(70, 20));
 
