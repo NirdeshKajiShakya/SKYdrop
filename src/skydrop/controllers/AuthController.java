@@ -15,6 +15,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.util.prefs.Preferences;
 import org.mindrot.jbcrypt.BCrypt;
+import skydrop.userDAO.AdminDao;
 import skydrop.userDAO.UserDao;
 import skydrop.view.UserView;
 
@@ -144,7 +145,12 @@ public class AuthController {
             return;
         }
         UserDao userDao = new UserDao();
-        userDao.addUser(name,contact,email,password,address,gender,DOB);
+        AdminDao adminDao = new AdminDao();        
+        if(!signupView.getAdminCheckbox()){
+            userDao.addUser(name,contact,email,password,address,gender,DOB);
+        }else{
+            adminDao.addAdmin(name,contact,email,password,address,gender,DOB);
+        }
         
         JOptionPane.showMessageDialog(signupView, 
             "Account created successfully!");

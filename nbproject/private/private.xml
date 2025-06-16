@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/controllers/AuthController.java</file>
             <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/view/UserView.java</file>
             <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/view/UpadateUserView.java</file>
@@ -18,6 +19,15 @@
             <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/images/vintage-pink-telephone-composition%20(1).jpg</file>
             <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/images/Screenshot%202025-06-07%20203223.png</file>
             <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/view/ProductPageView.java</file>
+=======
+            <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/ContactUs.java</file>
+            <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/HomePage.java</file>
+            <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/SKYdrop.java</file>
+            <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/SignupView.java</file>
+            <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/controllers/AuthController.java</file>
+            <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/controllers/NavigationController.java</file>
+            <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/userDAO/AdminDao.java</file>
+>>>>>>> 1bf2116eeeedfb62f9e3ab16f12605ee5d4e251b
         </group>
     </open-files>
 </project-private>
