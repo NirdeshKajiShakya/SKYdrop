@@ -3,12 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/userDAO/UserDao.java</file>
             <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/SKYdrop.java</file>
             <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/controllers/AuthController.java</file>
-            <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/TempUserView.java</file>
-            <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/userDAO/UserDao.java</file>
+            <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/UserView.java</file>
             <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/SignupView.java</file>
-            <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/model/User.java</file>
+            <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/UpadateUserView.java</file>
         </group>
     </open-files>
 </project-private>
