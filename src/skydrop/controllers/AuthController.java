@@ -15,8 +15,10 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.util.prefs.Preferences;
 import org.mindrot.jbcrypt.BCrypt;
+import skydrop.userDAO.AdminDao;
 import skydrop.userDAO.UserDao;
-import skydrop.view.TempUserView;
+import skydrop.view.UserView;
+
 
 public class AuthController {
     private LoginView loginView;
@@ -95,11 +97,18 @@ public class AuthController {
         UserDao userDao = new UserDao();
         String actual_password = userDao.getPasswordDB(email);
         
+        if (actual_password == null) {
+        JOptionPane.showMessageDialog(loginView,
+            "No account found with this email!",
+            "Login Failed", JOptionPane.ERROR_MESSAGE);
+        return;
+        }
+        
         boolean match = checkPassword(password, actual_password);
         if(match){
             int id = userDao.getUser_idDB(email);
             
-            TempUserView userView = new TempUserView();
+            UserView userView = new UserView();
             userView.setId(id);
             
             userView.setVisible(true);
@@ -136,7 +145,12 @@ public class AuthController {
             return;
         }
         UserDao userDao = new UserDao();
-        userDao.addUser(name,contact,email,password,address,gender,DOB);
+        AdminDao adminDao = new AdminDao();        
+        if(!signupView.getAdminCheckbox()){
+            userDao.addUser(name,contact,email,password,address,gender,DOB);
+        }else{
+            adminDao.addAdmin(name,contact,email,password,address,gender,DOB);
+        }
         
         JOptionPane.showMessageDialog(signupView, 
             "Account created successfully!");

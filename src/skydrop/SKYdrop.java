@@ -5,9 +5,14 @@
 package skydrop;
 
 import skydrop.controllers.AuthController;
+//import skydrop.controllers.NavigationController;
 import skydrop.userDAO.UserDao;
+import skydrop.view.HomePage;
 import skydrop.view.LoginView;
 import skydrop.view.SignupView;
+//import skydrop.view.HomePage;
+//import skydrop.view.ServicePage;
+//import skydrop.view.ContactUs;
 /**
  *
 
@@ -23,10 +28,12 @@ public class SKYdrop {
 //        userDao.addUser("ram", "ram123@gmail.com","Kathmandu");
 //        userDao.listUsers();
         // login view and signup view
-        LoginView loginView = new LoginView();
-        SignupView signupView = new SignupView();
-        AuthController authController = new AuthController(loginView, signupView);
-        loginView.setVisible(true);
+//        LoginView loginView = new LoginView();
+//        SignupView signupView = new SignupView();
+//        AuthController authController = new AuthController(loginView, signupView);
+//        loginView.setVisible(true);
+        HomePage homePage = new HomePage();
+        homePage.setVisible(true);
         
     }
     

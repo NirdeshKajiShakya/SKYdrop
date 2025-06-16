@@ -4,7 +4,7 @@
  */
 package skydrop.view;
 
-import controllers.NavigationController;
+import skydrop.controllers.NavigationController;
 import javax.swing.*;
 import java.awt.*;
 
@@ -194,7 +194,7 @@ public class HomePage extends javax.swing.JFrame{
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -241,7 +241,7 @@ public class HomePage extends javax.swing.JFrame{
                         .addComponent(jLabel7)
                         .addGap(18, 18, 18)
                         .addComponent(Logintobuy)))
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -265,11 +265,11 @@ public class HomePage extends javax.swing.JFrame{
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 690, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
         );
 
         pack();
@@ -286,24 +286,24 @@ public class HomePage extends javax.swing.JFrame{
     private void LogintobuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogintobuyActionPerformed
         // TODO add your handling code here:
         this.dispose(); // Close current window
-        controllers.NavigationController.getInstance().navigateToLogin();
+        skydrop.controllers.NavigationController.getInstance().navigateToLogin();
       
     }//GEN-LAST:event_LogintobuyActionPerformed
 
     private void HomeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeButtonActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        controllers.NavigationController.getInstance().navigateToHome();
+        skydrop.controllers.NavigationController.getInstance().navigateToHome();
     }//GEN-LAST:event_HomeButtonActionPerformed
 
     private void ServiceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ServiceButtonActionPerformed
         this.dispose();
-        controllers.NavigationController.getInstance().navigateToServices();
+        skydrop.controllers.NavigationController.getInstance().navigateToServices();
     }//GEN-LAST:event_ServiceButtonActionPerformed
 
     private void ContactUsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactUsButtonActionPerformed
         this.dispose();
-        controllers.NavigationController.getInstance().navigateToContactUs();
+        skydrop.controllers.NavigationController.getInstance().navigateToContactUs();
     }//GEN-LAST:event_ContactUsButtonActionPerformed
 public static void main(String []args){
         

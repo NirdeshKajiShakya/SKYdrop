@@ -2,13 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package controllers;
+package skydrop.controllers;
 
 /**
  *
  * @author Suresh
  */
 
+import skydrop.controllers.AuthController;
 import skydrop.view.*;
 
 public class NavigationController {
@@ -29,7 +30,10 @@ public class NavigationController {
     }
 
     public void navigateToLogin() {
-        new LoginView().setVisible(true);  // You must have this class
+        SignupView signupView = new SignupView();
+        LoginView loginView = new LoginView();
+        AuthController authController = new AuthController(loginView,signupView);
+        loginView.setVisible(true);
     }
 
     public void navigateToContactUs() {
