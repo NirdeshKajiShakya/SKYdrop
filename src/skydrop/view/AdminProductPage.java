@@ -113,6 +113,7 @@ public class AdminProductPage extends javax.swing.JFrame {
         jLabel36 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
@@ -779,16 +780,23 @@ public class AdminProductPage extends javax.swing.JFrame {
         jButton13.setForeground(new java.awt.Color(255, 255, 255));
         jButton13.setText("Back");
 
+        jButton14.setBackground(new java.awt.Color(0, 153, 153));
+        jButton14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton14.setForeground(new java.awt.Color(255, 255, 255));
+        jButton14.setText("Add product");
+
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(108, 108, 108)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton13)
+                .addGap(37, 37, 37)
+                .addComponent(jButton14)
+                .addGap(37, 37, 37)
                 .addComponent(jButton8)
                 .addContainerGap())
         );
@@ -799,7 +807,8 @@ public class AdminProductPage extends javax.swing.JFrame {
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton8)
                     .addComponent(jLabel36)
-                    .addComponent(jButton13))
+                    .addComponent(jButton13)
+                    .addComponent(jButton14))
                 .addContainerGap())
         );
 
@@ -1093,6 +1102,7 @@ public class AdminProductPage extends javax.swing.JFrame {
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
