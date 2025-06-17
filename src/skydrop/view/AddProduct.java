@@ -35,6 +35,7 @@ public class AddProduct extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel15 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         addproductbtn = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -54,6 +55,8 @@ public class AddProduct extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel15.setText("Product Short Description");
+
+        jLabel2.setText("Save");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -266,6 +269,7 @@ public class AddProduct extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
