@@ -6,52 +6,53 @@ package skydrop.view;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author User
  */
 
-//public class ContactUs extends javax.swing.JFrame {
-//    private JButton submitButton;
-//    private JTextField nameField;
-//    private JTextField emailField;
-//    private JTextArea messageArea;
-//    
-//    public ContactUs() {
-//        initComponents();
-//        
-//        submitButton.addActionListener(e -> handleSubmit());
-//    }
-//    
-//    private void handleSubmit() {
-//        String name = nameField.getText();
-//        String email = emailField.getText();
-//        String message = messageArea.getText();
-//        
-//        // Here you would typically send this data to a server
-//        // For now, just show a confirmation and close
-//        JOptionPane.showMessageDialog(this, "Thank you for your message!");
-//        this.dispose();
-//        
-//        // Return to home page
-//        HomePage homePage = new HomePage();
-//        homePage.setVisible(true);
-//    }
-//    
-//    private void initComponents() {
-//        // Your auto-generated component initialization code
-//    }
-
 public class ContactUs extends javax.swing.JFrame {
-
-    /**
-     * Creates new form ContactUs
-     */
+    private JButton submitButton;
+    private JTextField nameField;
+    private JTextField emailField;
+    private JTextArea messageArea;
+    
     public ContactUs() {
         initComponents();
         
+        submitButton.addActionListener(e -> handleSubmit());
     }
+    
+    private void handleSubmit() {
+        String name = nameField.getText();
+        String email = emailField.getText();
+        String message = messageArea.getText();
+        
+        // Here you would typically send this data to a server
+        // For now, just show a confirmation and close
+        JOptionPane.showMessageDialog(this, "Thank you for your message!");
+        this.dispose();
+        
+        // Return to home page
+        HomePage homePage = new HomePage();
+        homePage.setVisible(true);
+    }
+    
+    private void initComponents() {
+        // Your auto-generated component initialization code
+    }
+
+//public class ContactUs extends javax.swing.JFrame {
+//
+//    /**
+//     * Creates new form ContactUs
+//     */
+//    public ContactUs() {
+//        initComponents();
+//        
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
