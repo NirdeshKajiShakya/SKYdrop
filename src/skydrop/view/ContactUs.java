@@ -372,7 +372,7 @@ public class ContactUs extends javax.swing.JFrame {
     private void HomeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeButtonActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        controllers.NavigationController.getInstance().navigateToHome();
+        skydrop.controllers.NavigationController.getInstance().navigateToHome();
     }//GEN-LAST:event_HomeButtonActionPerformed
 
     /**
