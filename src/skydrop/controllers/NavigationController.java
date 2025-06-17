@@ -37,7 +37,7 @@ public class NavigationController {
     }
 
     public void navigateToContactUs() {
-        new ContactUs().setVisible(true);  // You must have this class
+        new ContactUsView().setVisible(true);  // You must have this class
     }
 
     public void navigateToServices() {
