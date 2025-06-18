@@ -4,7 +4,7 @@
  */
 package skydrop.view;
 
-import controllers.NavigationController;
+import skydrop.controllers.NavigationController;
 import javax.swing.*;
 import java.awt.*;
 
@@ -286,24 +286,24 @@ public class HomePage extends javax.swing.JFrame{
     private void LogintobuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogintobuyActionPerformed
         // TODO add your handling code here:
         this.dispose(); // Close current window
-        controllers.NavigationController.getInstance().navigateToLogin();
+        skydrop.controllers.NavigationController.getInstance().navigateToLogin();
       
     }//GEN-LAST:event_LogintobuyActionPerformed
 
     private void HomeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeButtonActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        controllers.NavigationController.getInstance().navigateToHome();
+        skydrop.controllers.NavigationController.getInstance().navigateToHome();
     }//GEN-LAST:event_HomeButtonActionPerformed
 
     private void ServiceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ServiceButtonActionPerformed
         this.dispose();
-        controllers.NavigationController.getInstance().navigateToServices();
+        skydrop.controllers.NavigationController.getInstance().navigateToServices();
     }//GEN-LAST:event_ServiceButtonActionPerformed
 
     private void ContactUsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactUsButtonActionPerformed
         this.dispose();
-        controllers.NavigationController.getInstance().navigateToContactUs();
+        skydrop.controllers.NavigationController.getInstance().navigateToContactUs();
     }//GEN-LAST:event_ContactUsButtonActionPerformed
 public static void main(String []args){
         
