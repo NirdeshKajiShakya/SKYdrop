@@ -59,6 +59,7 @@ public class ProductPageView extends javax.swing.JFrame {
         cboxl = new javax.swing.JCheckBox();
         cboxxl = new javax.swing.JCheckBox();
         ProductScrollPane = new javax.swing.JScrollPane();
+        productGridPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -285,6 +286,9 @@ public class ProductPageView extends javax.swing.JFrame {
 
         ProductScrollPane.setViewportView(null);
 
+        productGridPanel.setLayout(new java.awt.GridLayout(0, 3, 20, 20));
+        ProductScrollPane.setViewportView(productGridPanel);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -415,6 +419,7 @@ public class ProductPageView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JRadioButton newbtn;
+    private javax.swing.JPanel productGridPanel;
     private javax.swing.JRadioButton sellerbtn;
     // End of variables declaration//GEN-END:variables
 }
