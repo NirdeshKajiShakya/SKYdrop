@@ -73,9 +73,9 @@ public class ProductPageView extends javax.swing.JFrame {
         productGridPanel = new javax.swing.JPanel();
         male1 = new javax.swing.JPanel();
         btnBuyNow1M = new javax.swing.JButton();
-        lblImage1 = new javax.swing.JLabel();
-        lblName1M = new javax.swing.JLabel();
-        lblprice1 = new javax.swing.JLabel();
+        image1 = new javax.swing.JLabel();
+        name1 = new javax.swing.JLabel();
+        price1 = new javax.swing.JLabel();
         female1 = new javax.swing.JPanel();
         btnBuyNow2W = new javax.swing.JButton();
         lblImage2 = new javax.swing.JLabel();
@@ -151,12 +151,8 @@ public class ProductPageView extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel1))
                 .addGap(321, 321, 321)
                 .addComponent(txtSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -274,15 +270,13 @@ public class ProductPageView extends javax.swing.JFrame {
             }
         });
         male1.add(btnBuyNow1M, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male1.add(image1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        lblImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
-        male1.add(lblImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
+        name1.setText("name");
+        male1.add(name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
 
-        lblName1M.setText("Men");
-        male1.add(lblName1M, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
-
-        lblprice1.setText("$50");
-        male1.add(lblprice1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
+        price1.setText("price");
+        male1.add(price1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
 
         productGridPanel.add(male1);
 
@@ -622,6 +616,7 @@ public class ProductPageView extends javax.swing.JFrame {
     private javax.swing.JPanel female2;
     private javax.swing.JPanel female3;
     private javax.swing.JComboBox<String> highlowbox;
+    private javax.swing.JLabel image1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
@@ -633,7 +628,6 @@ public class ProductPageView extends javax.swing.JFrame {
     private javax.swing.JPanel kids1;
     private javax.swing.JPanel kids2;
     private javax.swing.JPanel kids3;
-    private javax.swing.JLabel lblImage1;
     private javax.swing.JLabel lblImage2;
     private javax.swing.JLabel lblImage3;
     private javax.swing.JLabel lblImage4;
@@ -643,7 +637,6 @@ public class ProductPageView extends javax.swing.JFrame {
     private javax.swing.JLabel lblImage8;
     private javax.swing.JLabel lblImage9;
     private javax.swing.JLabel lblName1K;
-    private javax.swing.JLabel lblName1M;
     private javax.swing.JLabel lblName1W;
     private javax.swing.JLabel lblName2K;
     private javax.swing.JLabel lblName2M;
@@ -651,7 +644,6 @@ public class ProductPageView extends javax.swing.JFrame {
     private javax.swing.JLabel lblName3K;
     private javax.swing.JLabel lblName3M;
     private javax.swing.JLabel lblName3W;
-    private javax.swing.JLabel lblprice1;
     private javax.swing.JLabel lblprice2;
     private javax.swing.JLabel lblprice3;
     private javax.swing.JLabel lblprice4;
@@ -663,6 +655,8 @@ public class ProductPageView extends javax.swing.JFrame {
     private javax.swing.JPanel male1;
     private javax.swing.JPanel male2;
     private javax.swing.JPanel male3;
+    private javax.swing.JLabel name1;
+    private javax.swing.JLabel price1;
     private javax.swing.JPanel productGridPanel;
     private javax.swing.JButton txtSearch;
     private javax.swing.JTextField txtSearchField;
