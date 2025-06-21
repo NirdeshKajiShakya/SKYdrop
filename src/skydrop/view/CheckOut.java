@@ -8,8 +8,12 @@ package skydrop.view;
  *
  * @author User
  */
+import skydrop.controllers.StripeController;
+
 import javax.swing.ButtonGroup;
 import skydrop.controllers.StripeController;
+
+
 
 
 public class CheckOut extends javax.swing.JFrame {
@@ -24,6 +28,7 @@ public class CheckOut extends javax.swing.JFrame {
         
         DeliveryButton.setSelected(true);            
  }
+        
    
     /**
      * This method is called from within the constructor to initialize the form.
@@ -382,9 +387,9 @@ public class CheckOut extends javax.swing.JFrame {
     }//GEN-LAST:event_PickupButtonActionPerformed
 
     private void PaynowButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PaynowButton1ActionPerformed
-        StripeController stripe = new StripeController();
-        
-        stripe.createStripePayment(499.00);
+            double price = 499.00;
+            StripeController stripe = new StripeController();
+            stripe.createStripePayment(price);
     }//GEN-LAST:event_PaynowButton1ActionPerformed
 
     /**
