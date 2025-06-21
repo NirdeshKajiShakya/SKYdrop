@@ -30,6 +30,20 @@ public class ProductPageView extends javax.swing.JFrame {
         kids1.setName("kids");
         kids2.setName("kids");
         kids3.setName("kids");
+        
+
+
+    txtSearchField.getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {
+        public void insertUpdate(javax.swing.event.DocumentEvent e) {
+            filterProducts();
+        }
+        public void removeUpdate(javax.swing.event.DocumentEvent e) {
+            filterProducts();
+        }
+        public void changedUpdate(javax.swing.event.DocumentEvent e) {
+            filterProducts();
+        }
+    });
     }
 
     /**
@@ -46,6 +60,7 @@ public class ProductPageView extends javax.swing.JFrame {
         txtSearch = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        txtSearchField = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -123,6 +138,12 @@ public class ProductPageView extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel3.setText(" Your Smart Shopping Partner");
 
+        txtSearchField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSearchFieldActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -130,9 +151,15 @@ public class ProductPageView extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(321, 321, 321)
+                .addComponent(txtSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -149,7 +176,8 @@ public class ProductPageView extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16))
         );
 
@@ -534,6 +562,10 @@ public class ProductPageView extends javax.swing.JFrame {
         filterProducts();
     }//GEN-LAST:event_KcheckboxActionPerformed
 
+    private void txtSearchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSearchFieldActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -633,13 +665,14 @@ public class ProductPageView extends javax.swing.JFrame {
     private javax.swing.JPanel male3;
     private javax.swing.JPanel productGridPanel;
     private javax.swing.JButton txtSearch;
+    private javax.swing.JTextField txtSearchField;
     // End of variables declaration//GEN-END:variables
     private void filterProducts() {
         boolean showMale = Mcheckbox.isSelected();
         boolean showFemale = Fcheckbox.isSelected();
         boolean showKids = Kcheckbox.isSelected();
 
-        String searchText = txtSearch.getText().toLowerCase();
+        String searchText = txtSearchField.getText().trim().toLowerCase(); // Correct JTextField
 
         JPanel[] allProducts = {
             male1, male2, male3,
@@ -647,14 +680,15 @@ public class ProductPageView extends javax.swing.JFrame {
             kids1, kids2, kids3
         };
 
-        for (JPanel panel : allProducts) {
-            String category = panel.getName(); // e.g., "male", "female", "kids"
+        boolean anyCategorySelected = showMale || showFemale || showKids;
 
-            // Adjust this index if needed depending on where product name label is
-            JLabel label = (JLabel) panel.getComponent(1); 
+        for (JPanel panel : allProducts) {
+            String category = panel.getName();
+
+            JLabel label = (JLabel) panel.getComponent(2); // Adjust index if needed
             String productName = label.getText().toLowerCase();
 
-            boolean matchesCategory =
+            boolean matchesCategory = !anyCategorySelected ||
                 (showMale && category.equals("male")) ||
                 (showFemale && category.equals("female")) ||
                 (showKids && category.equals("kids"));
@@ -666,7 +700,9 @@ public class ProductPageView extends javax.swing.JFrame {
 
         revalidate();
         repaint();
-    }
+    }   
+
+
 
 
 
