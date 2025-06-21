@@ -6,9 +6,11 @@ package skydrop.view;
 
 import java.awt.Image;
 import java.io.File;
+import java.io.FileNotFoundException;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import skydrop.userDAO.PostDao;
 
 
 /**
@@ -260,7 +262,11 @@ public class AddProduct extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void addproductbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addproductbtnActionPerformed
-        storeData();
+        try {
+            storeData();
+        } catch (FileNotFoundException ex) {
+            System.getLogger(AddProduct.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
     }//GEN-LAST:event_addproductbtnActionPerformed
 
     private void addproductbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addproductbtnMouseClicked
@@ -330,6 +336,10 @@ public class AddProduct extends javax.swing.JFrame {
         this.selectedFile = selectedFile;
     }
     
+    public File getFile(){
+        return selectedFile;
+    }
+    
     private void uploadImage(){
         JFileChooser fileChooser = new JFileChooser();
         int result = fileChooser.showOpenDialog(this);
@@ -344,11 +354,20 @@ public class AddProduct extends javax.swing.JFrame {
         }
     }
     
-    private void storeData(){
+    private void storeData() throws FileNotFoundException{
         String ProductName = productName.getText();
         String Category = (String) categoryBox.getSelectedItem();
-        String Qant = quantity.getText();
-        String Price = price.getText();
         
+        String Quant = quantity.getText();
+        int Quant_int = Integer.parseInt(Quant);
+        String Price = price.getText();
+        int Price_int = Integer.parseInt(Price);
+        String Description = description.getText();
+        File Picture = getFile();
+        
+        int admin_id = 1;
+        
+        PostDao postDao = new PostDao();
+        postDao.addPost(ProductName,Price_int,Description,Picture,admin_id,Category);
     }
 }

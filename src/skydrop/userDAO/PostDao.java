@@ -18,19 +18,18 @@ import skydrop.database.DbConnection;
  * @author nirka
  */
 public class PostDao {
-    public void addPost(String name, float price, String detail, String variety, File picture, String admin_id, String category_id) throws FileNotFoundException{
-        String query = "INSERT INTO products (product_name, price, detail, varity, picture, admin_id, category_id) VALUES (?,?,?,?,?,?,?)";
+    public void addPost(String name, int price, String detail, File picture, int admin_id, String category) throws FileNotFoundException{
+        String query = "INSERT INTO products (product_name, price, detail, picture, admin_id, category) VALUES (?,?,?,?,?,?)";
         try (Connection conn = DbConnection.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(query)) {
 
             pstmt.setString(1, name);
-            pstmt.setFloat(2, price);
+            pstmt.setInt(2, price);
             pstmt.setString(3, detail);
-            pstmt.setString(4, variety);
             FileInputStream fis = new FileInputStream(picture);
-            pstmt.setBinaryStream(5, fis, (int) picture.length());
-            pstmt.setString(6, admin_id);
-            pstmt.setString(7, category_id);
+            pstmt.setBinaryStream(4, fis, (int) picture.length());
+            pstmt.setInt(5, admin_id);
+            pstmt.setString(6, category);
             pstmt.executeUpdate();
             System.out.println("Product added successfully!");
 
