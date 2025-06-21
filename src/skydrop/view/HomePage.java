@@ -5,6 +5,7 @@
 package skydrop.view;
 
 import skydrop.controllers.NavigationController;
+import skydrop.controllers.NavigationController;
 import javax.swing.*;
 import java.awt.*;
 
@@ -287,6 +288,7 @@ public class HomePage extends javax.swing.JFrame{
         // TODO add your handling code here:
         this.dispose(); // Close current window
         skydrop.controllers.NavigationController.getInstance().navigateToLogin();
+        skydrop.controllers.NavigationController.getInstance().navigateToLogin();
       
     }//GEN-LAST:event_LogintobuyActionPerformed
 
@@ -294,15 +296,18 @@ public class HomePage extends javax.swing.JFrame{
         // TODO add your handling code here:
         this.dispose();
         skydrop.controllers.NavigationController.getInstance().navigateToHome();
+        skydrop.controllers.NavigationController.getInstance().navigateToHome();
     }//GEN-LAST:event_HomeButtonActionPerformed
 
     private void ServiceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ServiceButtonActionPerformed
         this.dispose();
         skydrop.controllers.NavigationController.getInstance().navigateToServices();
+        skydrop.controllers.NavigationController.getInstance().navigateToServices();
     }//GEN-LAST:event_ServiceButtonActionPerformed
 
     private void ContactUsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactUsButtonActionPerformed
         this.dispose();
+        skydrop.controllers.NavigationController.getInstance().navigateToContactUs();
         skydrop.controllers.NavigationController.getInstance().navigateToContactUs();
     }//GEN-LAST:event_ContactUsButtonActionPerformed
 public static void main(String []args){

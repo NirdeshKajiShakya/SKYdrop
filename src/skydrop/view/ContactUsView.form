@@ -159,6 +159,8 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="HomeButton" min="-2" pref="87" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
+                          <Component id="HomeButton" min="-2" pref="87" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -169,6 +171,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="22" max="32767" attributes="0"/>
                   <EmptySpace pref="22" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
@@ -329,11 +332,18 @@
                                   <Component id="txtEmail" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                                   <Component id="Submitbtn" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtName" max="32767" attributes="0"/>
+                                  <Component id="txtEmail" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Submitbtn" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="0" pref="37" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="37" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel11" min="-2" pref="278" max="-2" attributes="0"/>
+                                  <Component id="jLabel10" min="-2" pref="289" max="-2" attributes="0"/>
                                   <Component id="jLabel11" min="-2" pref="278" max="-2" attributes="0"/>
                                   <Component id="jLabel10" min="-2" pref="289" max="-2" attributes="0"/>
                               </Group>
@@ -458,9 +468,14 @@
           </SubComponents>
         </Container>
         <Component class="javax.swing.JButton" name="HomeButton">
+        <Component class="javax.swing.JButton" name="HomeButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Home"/>
+            <Property name="text" type="java.lang.String" value="Home"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HomeButtonActionPerformed"/>
+          </Events>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HomeButtonActionPerformed"/>
           </Events>
