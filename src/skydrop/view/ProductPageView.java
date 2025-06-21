@@ -272,7 +272,7 @@ public class ProductPageView extends javax.swing.JFrame {
         male1.add(btnBuyNow1M, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
         male1.add(image1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        name1.setText("name");
+        name1.setText("men");
         male1.add(name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
 
         price1.setText("price");
