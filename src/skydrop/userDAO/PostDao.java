@@ -4,6 +4,9 @@
  */
 package skydrop.userDAO;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,7 +18,7 @@ import skydrop.database.DbConnection;
  * @author nirka
  */
 public class PostDao {
-    public void addPost(String name, float price, String detail, String variety, String picture, String admin_id, String category_id){
+    public void addPost(String name, float price, String detail, String variety, File picture, String admin_id, String category_id) throws FileNotFoundException{
         String query = "INSERT INTO products (product_name, price, detail, varity, picture, admin_id, category_id) VALUES (?,?,?,?,?,?,?)";
         try (Connection conn = DbConnection.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(query)) {
@@ -24,7 +27,8 @@ public class PostDao {
             pstmt.setFloat(2, price);
             pstmt.setString(3, detail);
             pstmt.setString(4, variety);
-            pstmt.setString(5, picture);
+            FileInputStream fis = new FileInputStream(picture);
+            pstmt.setBinaryStream(5, fis, (int) picture.length());
             pstmt.setString(6, admin_id);
             pstmt.setString(7, category_id);
             pstmt.executeUpdate();
