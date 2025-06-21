@@ -5,11 +5,16 @@
         <group>
             <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/RatingAndReview.java</file>
             <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/ProductPageView.java</file>
+<<<<<<< HEAD
             <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/controllers/StripeController.java</file>
             <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/SignupView.java</file>
             <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/AddProduct.java</file>
             <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/CheckOut.java</file>
             <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/ForgotPassword.java</file>
+=======
+            <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/SignupView.java</file>
+            <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/AddProduct.java</file>
+>>>>>>> pranab
         </group>
     </open-files>
 </project-private>

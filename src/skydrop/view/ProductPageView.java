@@ -3,13 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package skydrop.view;
-//import javax.swing.JPanel;
-//import javax.swing.JLabel;
-//import javax.swing.ImageIcon;
-//import javax.swing.BorderFactory;
-//import java.awt.Image;
-//import java.awt.Color;
-//import javax.swing.BoxLayout;
+import javax.swing.*;
+
 
 /**
  *
@@ -22,6 +17,33 @@ public class ProductPageView extends javax.swing.JFrame {
      */
     public ProductPageView() {
         initComponents();
+        
+        male1.setName("male");
+        male2.setName("male");
+        male3.setName("male");
+
+        female1.setName("female");
+        female2.setName("female");
+        female3.setName("female");
+
+    
+        kids1.setName("kids");
+        kids2.setName("kids");
+        kids3.setName("kids");
+        
+
+
+    txtSearchField.getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {
+        public void insertUpdate(javax.swing.event.DocumentEvent e) {
+            filterProducts();
+        }
+        public void removeUpdate(javax.swing.event.DocumentEvent e) {
+            filterProducts();
+        }
+        public void changedUpdate(javax.swing.event.DocumentEvent e) {
+            filterProducts();
+        }
+    });
     }
 
     /**
@@ -35,15 +57,11 @@ public class ProductPageView extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        txtSearch = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        txtSearchField = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        allbtn = new javax.swing.JRadioButton();
-        sellerbtn = new javax.swing.JRadioButton();
-        newbtn = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         Mcheckbox = new javax.swing.JCheckBox();
@@ -51,70 +69,67 @@ public class ProductPageView extends javax.swing.JFrame {
         Kcheckbox = new javax.swing.JCheckBox();
         jLabel5 = new javax.swing.JLabel();
         highlowbox = new javax.swing.JComboBox<>();
-        jLabel6 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        cboxs = new javax.swing.JCheckBox();
-        cboxm = new javax.swing.JCheckBox();
-        cboxl = new javax.swing.JCheckBox();
-        cboxxl = new javax.swing.JCheckBox();
         ProductScrollPane = new javax.swing.JScrollPane();
         productGridPanel = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        jButton6 = new javax.swing.JButton();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        jButton7 = new javax.swing.JButton();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
-        jButton8 = new javax.swing.JButton();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jPanel11 = new javax.swing.JPanel();
-        jButton9 = new javax.swing.JButton();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jPanel12 = new javax.swing.JPanel();
-        jButton10 = new javax.swing.JButton();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jPanel13 = new javax.swing.JPanel();
-        jButton11 = new javax.swing.JButton();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jPanel14 = new javax.swing.JPanel();
-        jButton12 = new javax.swing.JButton();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
+        male1 = new javax.swing.JPanel();
+        btnBuyNow1M = new javax.swing.JButton();
+        lblImage1 = new javax.swing.JLabel();
+        lblName1M = new javax.swing.JLabel();
+        lblprice1 = new javax.swing.JLabel();
+        female1 = new javax.swing.JPanel();
+        btnBuyNow2W = new javax.swing.JButton();
+        lblImage2 = new javax.swing.JLabel();
+        lblName1W = new javax.swing.JLabel();
+        lblprice2 = new javax.swing.JLabel();
+        kids1 = new javax.swing.JPanel();
+        btnBuyNow3K = new javax.swing.JButton();
+        lblImage3 = new javax.swing.JLabel();
+        lblName1K = new javax.swing.JLabel();
+        lblprice3 = new javax.swing.JLabel();
+        male2 = new javax.swing.JPanel();
+        btnBuyNow4M = new javax.swing.JButton();
+        lblImage4 = new javax.swing.JLabel();
+        lblName2M = new javax.swing.JLabel();
+        lblprice4 = new javax.swing.JLabel();
+        kids2 = new javax.swing.JPanel();
+        btnBuyNow5K = new javax.swing.JButton();
+        lblImage5 = new javax.swing.JLabel();
+        lblName2K = new javax.swing.JLabel();
+        lblprice5 = new javax.swing.JLabel();
+        female2 = new javax.swing.JPanel();
+        btnBuyNow6W = new javax.swing.JButton();
+        lblImage6 = new javax.swing.JLabel();
+        lblName2W = new javax.swing.JLabel();
+        lblprice6 = new javax.swing.JLabel();
+        male3 = new javax.swing.JPanel();
+        btnBuyNow7M = new javax.swing.JButton();
+        lblImage7 = new javax.swing.JLabel();
+        lblName3M = new javax.swing.JLabel();
+        lblprice7 = new javax.swing.JLabel();
+        female3 = new javax.swing.JPanel();
+        btnBuyNow8W = new javax.swing.JButton();
+        lblImage8 = new javax.swing.JLabel();
+        lblName3W = new javax.swing.JLabel();
+        lblprice8 = new javax.swing.JLabel();
+        kids3 = new javax.swing.JPanel();
+        btnBuyNow9K = new javax.swing.JButton();
+        lblImage9 = new javax.swing.JLabel();
+        lblName3K = new javax.swing.JLabel();
+        lblprice9 = new javax.swing.JLabel();
+        btnback = new javax.swing.JButton();
+        btnNext = new javax.swing.JButton();
+        btnprevious = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("SkyDrop");
 
-        jButton1.setText("🔍");
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        txtSearch.setText("🔍");
+        txtSearch.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        txtSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                txtSearchActionPerformed(evt);
             }
         });
 
@@ -123,6 +138,12 @@ public class ProductPageView extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel3.setText(" Your Smart Shopping Partner");
 
+        txtSearchField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSearchFieldActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -130,10 +151,16 @@ public class ProductPageView extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(321, 321, 321)
+                .addComponent(txtSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
@@ -148,48 +175,10 @@ public class ProductPageView extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16))
-        );
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setText("Collections");
-
-        allbtn.setText("All");
-        allbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                allbtnActionPerformed(evt);
-            }
-        });
-
-        sellerbtn.setText("Best Sellers");
-
-        newbtn.setText("New Arrivals");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(allbtn)
-                        .addGap(18, 18, 18)
-                        .addComponent(sellerbtn))
-                    .addComponent(newbtn))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(allbtn)
-                    .addComponent(sellerbtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(newbtn)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -203,8 +192,18 @@ public class ProductPageView extends javax.swing.JFrame {
         });
 
         Fcheckbox.setText("Female");
+        Fcheckbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FcheckboxActionPerformed(evt);
+            }
+        });
 
         Kcheckbox.setText("Kids");
+        Kcheckbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KcheckboxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -233,49 +232,6 @@ public class ProductPageView extends javax.swing.JFrame {
 
         highlowbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Higher to Lower", "Lower to Higher", " " }));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel6.setText("Size");
-
-        cboxs.setText("S");
-
-        cboxm.setText("M");
-
-        cboxl.setText("L");
-        cboxl.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cboxlActionPerformed(evt);
-            }
-        });
-
-        cboxxl.setText("XL");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(cboxl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cboxs, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cboxm, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cboxxl, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
-                .addContainerGap(37, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(cboxs)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cboxm)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cboxl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cboxxl)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -283,26 +239,18 @@ public class ProductPageView extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(highlowbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel5)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel2)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                    .addComponent(jLabel4))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(10, 10, 10)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -310,217 +258,231 @@ public class ProductPageView extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(highlowbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(250, Short.MAX_VALUE))
         );
 
         ProductScrollPane.setViewportView(null);
 
         productGridPanel.setLayout(new java.awt.GridLayout(0, 3, 20, 20));
 
-        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        male1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton4.setText("Buy now");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnBuyNow1M.setText("Buy now");
+        btnBuyNow1M.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnBuyNow1MActionPerformed(evt);
             }
         });
-        jPanel6.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male1.add(btnBuyNow1M, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
-        jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
+        lblImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
+        male1.add(lblImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        jLabel8.setText("Men's T-Shirt");
-        jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
+        lblName1M.setText("Men");
+        male1.add(lblName1M, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
 
-        jLabel9.setText("$50");
-        jPanel6.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
+        lblprice1.setText("$50");
+        male1.add(lblprice1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
 
-        productGridPanel.add(jPanel6);
+        productGridPanel.add(male1);
 
-        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        female1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton5.setText("Buy now");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnBuyNow2W.setText("Buy now");
+        btnBuyNow2W.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnBuyNow2WActionPerformed(evt);
             }
         });
-        jPanel7.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        female1.add(btnBuyNow2W, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
-        jPanel7.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
+        lblImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
+        female1.add(lblImage2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        jLabel11.setText("Men's T-Shirt");
-        jPanel7.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
+        lblName1W.setText("Women");
+        female1.add(lblName1W, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
 
-        jLabel12.setText("$50");
-        jPanel7.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
+        lblprice2.setText("$50");
+        female1.add(lblprice2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
 
-        productGridPanel.add(jPanel7);
+        productGridPanel.add(female1);
 
-        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        kids1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton6.setText("Buy now");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnBuyNow3K.setText("Buy now");
+        btnBuyNow3K.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnBuyNow3KActionPerformed(evt);
             }
         });
-        jPanel8.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        kids1.add(btnBuyNow3K, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
-        jPanel8.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
+        lblImage3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
+        kids1.add(lblImage3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        jLabel14.setText("Men's T-Shirt");
-        jPanel8.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
+        lblName1K.setText("kids");
+        kids1.add(lblName1K, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
 
-        jLabel15.setText("$50");
-        jPanel8.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
+        lblprice3.setText("$50");
+        kids1.add(lblprice3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
 
-        productGridPanel.add(jPanel8);
+        productGridPanel.add(kids1);
 
-        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        male2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton7.setText("Buy now");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btnBuyNow4M.setText("Buy now");
+        btnBuyNow4M.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnBuyNow4MActionPerformed(evt);
             }
         });
-        jPanel9.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male2.add(btnBuyNow4M, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
 
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
-        jPanel9.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
+        lblImage4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
+        male2.add(lblImage4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        jLabel17.setText("Men's T-Shirt");
-        jPanel9.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
+        lblName2M.setText("Men");
+        male2.add(lblName2M, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
 
-        jLabel18.setText("$50");
-        jPanel9.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
+        lblprice4.setText("$50");
+        male2.add(lblprice4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
 
-        productGridPanel.add(jPanel9);
+        productGridPanel.add(male2);
 
-        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        kids2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton8.setText("Buy now");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        btnBuyNow5K.setText("Buy now");
+        btnBuyNow5K.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                btnBuyNow5KActionPerformed(evt);
             }
         });
-        jPanel10.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        kids2.add(btnBuyNow5K, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
-        jPanel10.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
+        lblImage5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
+        kids2.add(lblImage5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        jLabel20.setText("Men's T-Shirt");
-        jPanel10.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
+        lblName2K.setText("Kids");
+        kids2.add(lblName2K, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
 
-        jLabel21.setText("$50");
-        jPanel10.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
+        lblprice5.setText("$50");
+        kids2.add(lblprice5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
 
-        productGridPanel.add(jPanel10);
+        productGridPanel.add(kids2);
 
-        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        female2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton9.setText("Buy now");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        btnBuyNow6W.setText("Buy now");
+        btnBuyNow6W.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                btnBuyNow6WActionPerformed(evt);
             }
         });
-        jPanel11.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        female2.add(btnBuyNow6W, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
 
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
-        jPanel11.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
+        lblImage6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
+        female2.add(lblImage6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        jLabel23.setText("Men's T-Shirt");
-        jPanel11.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
+        lblName2W.setText("Women");
+        female2.add(lblName2W, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
 
-        jLabel24.setText("$50");
-        jPanel11.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
+        lblprice6.setText("$50");
+        female2.add(lblprice6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
 
-        productGridPanel.add(jPanel11);
+        productGridPanel.add(female2);
 
-        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        male3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton10.setText("Buy now");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        btnBuyNow7M.setText("Buy now");
+        btnBuyNow7M.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                btnBuyNow7MActionPerformed(evt);
             }
         });
-        jPanel12.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male3.add(btnBuyNow7M, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
 
-        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
-        jPanel12.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
+        lblImage7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
+        male3.add(lblImage7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        jLabel26.setText("Men's T-Shirt");
-        jPanel12.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
+        lblName3M.setText("Men");
+        male3.add(lblName3M, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
 
-        jLabel27.setText("$50");
-        jPanel12.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
+        lblprice7.setText("$50");
+        male3.add(lblprice7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
 
-        productGridPanel.add(jPanel12);
+        productGridPanel.add(male3);
 
-        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        female3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton11.setText("Buy now");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
+        btnBuyNow8W.setText("Buy now");
+        btnBuyNow8W.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                btnBuyNow8WActionPerformed(evt);
             }
         });
-        jPanel13.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        female3.add(btnBuyNow8W, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
 
-        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
-        jPanel13.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
+        lblImage8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
+        female3.add(lblImage8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        jLabel29.setText("Men's T-Shirt");
-        jPanel13.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
+        lblName3W.setText("Women");
+        female3.add(lblName3W, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
 
-        jLabel30.setText("$50");
-        jPanel13.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
+        lblprice8.setText("$50");
+        female3.add(lblprice8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
 
-        productGridPanel.add(jPanel13);
+        productGridPanel.add(female3);
 
-        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        kids3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton12.setText("Buy now");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
+        btnBuyNow9K.setText("Buy now");
+        btnBuyNow9K.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                btnBuyNow9KActionPerformed(evt);
             }
         });
-        jPanel14.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        kids3.add(btnBuyNow9K, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
 
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
-        jPanel14.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
+        lblImage9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
+        kids3.add(lblImage9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        jLabel32.setText("Men's T-Shirt");
-        jPanel14.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
+        lblName3K.setText("Kids");
+        kids3.add(lblName3K, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
 
-        jLabel33.setText("$50");
-        jPanel14.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
+        lblprice9.setText("$50");
+        kids3.add(lblprice9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
 
-        productGridPanel.add(jPanel14);
+        productGridPanel.add(kids3);
 
         ProductScrollPane.setViewportView(productGridPanel);
+
+        btnback.setText("Back");
+        btnback.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnbackActionPerformed(evt);
+            }
+        });
+
+        btnNext.setText("Next");
+
+        btnprevious.setText("previous");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnback))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ProductScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 578, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnprevious)
+                        .addGap(431, 431, 431)
+                        .addComponent(btnNext))
+                    .addComponent(ProductScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 578, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -529,87 +491,80 @@ public class ProductPageView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ProductScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                    .addComponent(ProductScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnback)
+                    .addComponent(btnNext)
+                    .addComponent(btnprevious))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void allbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allbtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_allbtnActionPerformed
+    }//GEN-LAST:event_txtSearchActionPerformed
 
     private void McheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_McheckboxActionPerformed
         // TODO add your handling code here:
+        filterProducts();
     }//GEN-LAST:event_McheckboxActionPerformed
 
-    private void cboxlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxlActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cboxlActionPerformed
+    private void btnBuyNow1MActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow1MActionPerformed
+         // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuyNow1MActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnBuyNow2WActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow2WActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnBuyNow2WActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnBuyNow3KActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow3KActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnBuyNow3KActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btnBuyNow4MActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow4MActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_btnBuyNow4MActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btnBuyNow5KActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow5KActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_btnBuyNow5KActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void btnBuyNow6WActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow6WActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_btnBuyNow6WActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void btnBuyNow7MActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow7MActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_btnBuyNow7MActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void btnBuyNow8WActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow8WActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_btnBuyNow8WActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void btnBuyNow9KActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow9KActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton11ActionPerformed
+    }//GEN-LAST:event_btnBuyNow9KActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+    private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton12ActionPerformed
-//    public void addProduct(String imagePath, String name, double price) {
-//        JPanel singleProductPanel = new JPanel();
-//        singleProductPanel.setLayout(new BoxLayout(singleProductPanel, BoxLayout.Y_AXIS));
-//        singleProductPanel.setBorder(BorderFactory.createLineBorder(Color.GRAY));
-//    
-//        // Product Image
-//        ImageIcon imageIcon = new ImageIcon(imagePath);
-//        Image image = imageIcon.getImage().getScaledInstance(120, 120, Image.SCALE_SMOOTH);
-//        JLabel imageLabel = new JLabel(new ImageIcon(image));
-//
-//        // Name and Price
-//        JLabel nameLabel = new JLabel(name);
-//        JLabel priceLabel = new JLabel("Rs. " + price);
-//
-//        // Add to product panel
-//        singleProductPanel.add(imageLabel);
-//        singleProductPanel.add(nameLabel);
-//        singleProductPanel.add(priceLabel);
-//
-//        // Add to main product panel
-//        productPanel.add(singleProductPanel);
-//        productPanel.revalidate();
-//        productPanel.repaint();
-//    }
+    }//GEN-LAST:event_btnbackActionPerformed
+
+    private void FcheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FcheckboxActionPerformed
+        // TODO add your handling code here:
+        filterProducts();
+    }//GEN-LAST:event_FcheckboxActionPerformed
+
+    private void KcheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KcheckboxActionPerformed
+        // TODO add your handling code here:
+        filterProducts();
+    }//GEN-LAST:event_KcheckboxActionPerformed
+
+    private void txtSearchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSearchFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -651,72 +606,104 @@ public class ProductPageView extends javax.swing.JFrame {
     private javax.swing.JCheckBox Kcheckbox;
     private javax.swing.JCheckBox Mcheckbox;
     private javax.swing.JScrollPane ProductScrollPane;
-    private javax.swing.JRadioButton allbtn;
-    private javax.swing.JCheckBox cboxl;
-    private javax.swing.JCheckBox cboxm;
-    private javax.swing.JCheckBox cboxs;
-    private javax.swing.JCheckBox cboxxl;
+    private javax.swing.JButton btnBuyNow1M;
+    private javax.swing.JButton btnBuyNow2W;
+    private javax.swing.JButton btnBuyNow3K;
+    private javax.swing.JButton btnBuyNow4M;
+    private javax.swing.JButton btnBuyNow5K;
+    private javax.swing.JButton btnBuyNow6W;
+    private javax.swing.JButton btnBuyNow7M;
+    private javax.swing.JButton btnBuyNow8W;
+    private javax.swing.JButton btnBuyNow9K;
+    private javax.swing.JButton btnNext;
+    private javax.swing.JButton btnback;
+    private javax.swing.JButton btnprevious;
+    private javax.swing.JPanel female1;
+    private javax.swing.JPanel female2;
+    private javax.swing.JPanel female3;
     private javax.swing.JComboBox<String> highlowbox;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
-    private javax.swing.JRadioButton newbtn;
+    private javax.swing.JPanel kids1;
+    private javax.swing.JPanel kids2;
+    private javax.swing.JPanel kids3;
+    private javax.swing.JLabel lblImage1;
+    private javax.swing.JLabel lblImage2;
+    private javax.swing.JLabel lblImage3;
+    private javax.swing.JLabel lblImage4;
+    private javax.swing.JLabel lblImage5;
+    private javax.swing.JLabel lblImage6;
+    private javax.swing.JLabel lblImage7;
+    private javax.swing.JLabel lblImage8;
+    private javax.swing.JLabel lblImage9;
+    private javax.swing.JLabel lblName1K;
+    private javax.swing.JLabel lblName1M;
+    private javax.swing.JLabel lblName1W;
+    private javax.swing.JLabel lblName2K;
+    private javax.swing.JLabel lblName2M;
+    private javax.swing.JLabel lblName2W;
+    private javax.swing.JLabel lblName3K;
+    private javax.swing.JLabel lblName3M;
+    private javax.swing.JLabel lblName3W;
+    private javax.swing.JLabel lblprice1;
+    private javax.swing.JLabel lblprice2;
+    private javax.swing.JLabel lblprice3;
+    private javax.swing.JLabel lblprice4;
+    private javax.swing.JLabel lblprice5;
+    private javax.swing.JLabel lblprice6;
+    private javax.swing.JLabel lblprice7;
+    private javax.swing.JLabel lblprice8;
+    private javax.swing.JLabel lblprice9;
+    private javax.swing.JPanel male1;
+    private javax.swing.JPanel male2;
+    private javax.swing.JPanel male3;
     private javax.swing.JPanel productGridPanel;
-    private javax.swing.JRadioButton sellerbtn;
+    private javax.swing.JButton txtSearch;
+    private javax.swing.JTextField txtSearchField;
     // End of variables declaration//GEN-END:variables
+    private void filterProducts() {
+        boolean showMale = Mcheckbox.isSelected();
+        boolean showFemale = Fcheckbox.isSelected();
+        boolean showKids = Kcheckbox.isSelected();
+
+        String searchText = txtSearchField.getText().trim().toLowerCase(); // Correct JTextField
+
+        JPanel[] allProducts = {
+            male1, male2, male3,
+            female1, female2, female3,
+            kids1, kids2, kids3
+        };
+
+        boolean anyCategorySelected = showMale || showFemale || showKids;
+
+        for (JPanel panel : allProducts) {
+            String category = panel.getName();
+
+            JLabel label = (JLabel) panel.getComponent(2); // Adjust index if needed
+            String productName = label.getText().toLowerCase();
+
+            boolean matchesCategory = !anyCategorySelected ||
+                (showMale && category.equals("male")) ||
+                (showFemale && category.equals("female")) ||
+                (showKids && category.equals("kids"));
+
+            boolean matchesSearch = productName.contains(searchText);
+
+            panel.setVisible(matchesCategory && matchesSearch);
+        }
+
+        revalidate();
+        repaint();
+    }   
+
+
+
+
+
 }
