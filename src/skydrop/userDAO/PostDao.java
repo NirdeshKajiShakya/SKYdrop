@@ -28,7 +28,7 @@ public class PostDao {
             pstmt.setString(6, admin_id);
             pstmt.setString(7, category_id);
             pstmt.executeUpdate();
-            System.out.println("User added successfully!");
+            System.out.println("Product added successfully!");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -36,23 +36,24 @@ public class PostDao {
     }
     
     
-    public void listPosts() {
-        String query = "SELECT * FROM users";
+    public String getProductNameDB(int product_id) {
+        String query = "SELECT product_name FROM users where product_id = ?";
 
         try (Connection conn = DbConnection.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(query);
-             ResultSet rs = pstmt.executeQuery()) {
-
-            while (rs.next()) {
-                System.out.println("ID: " + rs.getInt("id") +   
-                                   ", Name: " + rs.getString("user_name") +
-                                   ", Email: " + rs.getString("email") +
-                                   ", Address: " + rs.getString("address") 
-                                   );
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+               
+            pstmt.setInt(1, product_id);
+            ResultSet rs = pstmt.executeQuery();
+            
+            if (rs.next()){
+                return rs.getString("product_name");
+            }else{
+                return null;
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
+            return null;
         }
     }
 }
