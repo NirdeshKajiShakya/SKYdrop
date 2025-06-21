@@ -6,43 +6,12 @@ package skydrop.view;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author User
  */
-
-//public class ContactUs extends javax.swing.JFrame {
-//    private JButton submitButton;
-//    private JTextField nameField;
-//    private JTextField emailField;
-//    private JTextArea messageArea;
-//    
-//    public ContactUs() {
-//        initComponents();
-//        
-//        submitButton.addActionListener(e -> handleSubmit());
-//    }
-//    
-//    private void handleSubmit() {
-//        String name = nameField.getText();
-//        String email = emailField.getText();
-//        String message = messageArea.getText();
-//        
-//        // Here you would typically send this data to a server
-//        // For now, just show a confirmation and close
-//        JOptionPane.showMessageDialog(this, "Thank you for your message!");
-//        this.dispose();
-//        
-//        // Return to home page
-//        HomePage homePage = new HomePage();
-//        homePage.setVisible(true);
-//    }
-//    
-//    private void initComponents() {
-//        // Your auto-generated component initialization code
-//    }
-
 public class ContactUs extends javax.swing.JFrame {
 
     /**
@@ -50,7 +19,10 @@ public class ContactUs extends javax.swing.JFrame {
      */
     public ContactUs() {
         initComponents();
-        
+        ImageIcon icon = new ImageIcon(getClass().getResource("/images/Contact_Us.png"));
+        Image image = icon.getImage().getScaledInstance(150,170,Image.SCALE_SMOOTH);
+        JLabel1.setIcon(new ImageIcon(image));
+
     }
 
     /**
@@ -62,19 +34,6 @@ public class ContactUs extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -83,7 +42,7 @@ public class ContactUs extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
-        JLabel10 = new javax.swing.JLabel();
+        JLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         txtName = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -96,55 +55,6 @@ public class ContactUs extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         HomeButton = new javax.swing.JButton();
-
-        jLabel2.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("SKYdrop is here to help you anytime");
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
-        jLabel1.setText("Let's Talk!");
-
-        jButton2.setBackground(new java.awt.Color(0, 153, 153));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Back");
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel8.setText("Message");
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel9.setText("Email");
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setText("Name");
-
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel14.setText("Subject");
-
-        jLabel16.setText("jLabel16");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 210, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 166, Short.MAX_VALUE)
-        );
-
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/vintage-pink-telephone-composition (1).jpg"))); // NOI18N
-        jLabel18.setText("jLabel18");
-
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/vintage-pink-telephone-composition (1).jpg"))); // NOI18N
-        jLabel17.setText("jLabel17");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -175,12 +85,12 @@ public class ContactUs extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(55, Short.MAX_VALUE))
-            .addComponent(JLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(JLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel19)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -234,6 +144,11 @@ public class ContactUs extends javax.swing.JFrame {
         Submitbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Submitbtn.setForeground(new java.awt.Color(255, 255, 255));
         Submitbtn.setText("Submit");
+        Submitbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubmitbtnActionPerformed(evt);
+            }
+        });
 
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -365,10 +280,6 @@ public class ContactUs extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
@@ -382,6 +293,28 @@ public class ContactUs extends javax.swing.JFrame {
         this.dispose();
         skydrop.controllers.NavigationController.getInstance().navigateToHome();
     }//GEN-LAST:event_HomeButtonActionPerformed
+
+    private void SubmitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitbtnActionPerformed
+        String name = txtName.getText().trim();
+        String email = txtEmail.getText().trim();
+        String message = txtmessage.getText().trim();
+        
+        if(name.isEmpty() || email.isEmpty() || message.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+        if(!email.contains("@") || !email.contains(".")) {  // simple email validation
+        JOptionPane.showMessageDialog(this, "Please enter a valid email address.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+        JOptionPane.showMessageDialog(this, "Thank you, " + name + "! Your message has been received.", "Success", JOptionPane.INFORMATION_MESSAGE);
+
+    // Optional: clear fields
+    txtName.setText("");
+    txtEmail.setText("");
+    txtmessage.setText("");
+
+    }//GEN-LAST:event_SubmitbtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -409,7 +342,6 @@ public class ContactUs extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(ContactUs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -421,36 +353,23 @@ public class ContactUs extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton HomeButton;
-    private javax.swing.JLabel JLabel10;
+    private javax.swing.JLabel JLabel1;
     private javax.swing.JButton Submitbtn;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextArea txtmessage;

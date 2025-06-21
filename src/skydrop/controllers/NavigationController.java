@@ -41,7 +41,7 @@ public class NavigationController {
     }
 
     public void navigateToServices() {
-        new ServicePage().setVisible(true);  // You must have this class
+        new ContactUs().setVisible(true);  // You must have this class
     }
 }
 

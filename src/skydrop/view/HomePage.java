@@ -309,9 +309,11 @@ public class HomePage extends javax.swing.JFrame{
     }//GEN-LAST:event_HomeButtonActionPerformed
 
     private void ServiceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ServiceButtonActionPerformed
-        this.dispose();
-        skydrop.controllers.NavigationController.getInstance().navigateToServices();
-        skydrop.controllers.NavigationController.getInstance().navigateToServices();
+        ServiceButton.addActionListener(e -> {
+    this.dispose(); // closes the HomePage
+    new ServicePage().setVisible(true); 
+});
+
     }//GEN-LAST:event_ServiceButtonActionPerformed
 
     private void ContactUsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactUsButtonActionPerformed
