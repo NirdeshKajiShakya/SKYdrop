@@ -62,7 +62,7 @@ public class ProductPageView extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
         lblImage1 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        lblName1M = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
@@ -77,7 +77,7 @@ public class ProductPageView extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         jButton7 = new javax.swing.JButton();
         lblImage4 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        lblName2M = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jButton8 = new javax.swing.JButton();
@@ -92,7 +92,7 @@ public class ProductPageView extends javax.swing.JFrame {
         jPanel12 = new javax.swing.JPanel();
         jButton10 = new javax.swing.JButton();
         lblImage7 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
+        lblName3M = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jButton11 = new javax.swing.JButton();
@@ -334,8 +334,8 @@ public class ProductPageView extends javax.swing.JFrame {
         lblImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
         jPanel6.add(lblImage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        jLabel8.setText("Men's T-Shirt");
-        jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
+        lblName1M.setText("Men");
+        jPanel6.add(lblName1M, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
 
         jLabel9.setText("$50");
         jPanel6.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
@@ -397,8 +397,8 @@ public class ProductPageView extends javax.swing.JFrame {
         lblImage4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
         jPanel9.add(lblImage4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        jLabel17.setText("Men's T-Shirt");
-        jPanel9.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
+        lblName2M.setText("Men");
+        jPanel9.add(lblName2M, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
 
         jLabel18.setText("$50");
         jPanel9.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
@@ -460,8 +460,8 @@ public class ProductPageView extends javax.swing.JFrame {
         lblImage7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
         jPanel12.add(lblImage7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        jLabel26.setText("Men's T-Shirt");
-        jPanel12.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
+        lblName3M.setText("Men");
+        jPanel12.add(lblName3M, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
 
         jLabel27.setText("$50");
         jPanel12.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
@@ -673,14 +673,12 @@ public class ProductPageView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
@@ -690,7 +688,6 @@ public class ProductPageView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -715,6 +712,9 @@ public class ProductPageView extends javax.swing.JFrame {
     private javax.swing.JLabel lblImage7;
     private javax.swing.JLabel lblImage8;
     private javax.swing.JLabel lblImage9;
+    private javax.swing.JLabel lblName1M;
+    private javax.swing.JLabel lblName2M;
+    private javax.swing.JLabel lblName3M;
     private javax.swing.JRadioButton newbtn;
     private javax.swing.JPanel productGridPanel;
     private javax.swing.JRadioButton sellerbtn;
