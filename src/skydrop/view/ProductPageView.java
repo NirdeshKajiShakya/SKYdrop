@@ -60,6 +60,7 @@ public class ProductPageView extends javax.swing.JFrame {
         cboxxl = new javax.swing.JCheckBox();
         ProductScrollPane = new javax.swing.JScrollPane();
         productGridPanel = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -287,6 +288,11 @@ public class ProductPageView extends javax.swing.JFrame {
         ProductScrollPane.setViewportView(null);
 
         productGridPanel.setLayout(new java.awt.GridLayout(0, 3, 20, 20));
+
+        jPanel7.setPreferredSize(new java.awt.Dimension(172, 200));
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        productGridPanel.add(jPanel7);
+
         ProductScrollPane.setViewportView(productGridPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -418,6 +424,7 @@ public class ProductPageView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JRadioButton newbtn;
     private javax.swing.JPanel productGridPanel;
     private javax.swing.JRadioButton sellerbtn;
