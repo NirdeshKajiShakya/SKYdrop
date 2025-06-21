@@ -3,13 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package skydrop.view;
-//import javax.swing.JPanel;
-//import javax.swing.JLabel;
-//import javax.swing.ImageIcon;
-//import javax.swing.BorderFactory;
-//import java.awt.Image;
-//import java.awt.Color;
-//import javax.swing.BoxLayout;
+import javax.swing.*;
+
 
 /**
  *
@@ -48,15 +43,10 @@ public class ProductPageView extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        txtSearch = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        allbtn = new javax.swing.JRadioButton();
-        sellerbtn = new javax.swing.JRadioButton();
-        newbtn = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         Mcheckbox = new javax.swing.JCheckBox();
@@ -120,11 +110,11 @@ public class ProductPageView extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("SkyDrop");
 
-        jButton1.setText("🔍");
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        txtSearch.setText("🔍");
+        txtSearch.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        txtSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                txtSearchActionPerformed(evt);
             }
         });
 
@@ -143,7 +133,7 @@ public class ProductPageView extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
@@ -158,48 +148,9 @@ public class ProductPageView extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16))
-        );
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setText("Collections");
-
-        allbtn.setText("All");
-        allbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                allbtnActionPerformed(evt);
-            }
-        });
-
-        sellerbtn.setText("Best Sellers");
-
-        newbtn.setText("New Arrivals");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(allbtn)
-                        .addGap(18, 18, 18)
-                        .addComponent(sellerbtn))
-                    .addComponent(newbtn))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(allbtn)
-                    .addComponent(sellerbtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(newbtn)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -265,19 +216,13 @@ public class ProductPageView extends javax.swing.JFrame {
                         .addComponent(highlowbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel5)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel2)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                    .addComponent(jLabel4))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(10, 10, 10)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -285,7 +230,7 @@ public class ProductPageView extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(highlowbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addContainerGap(250, Short.MAX_VALUE))
         );
 
         ProductScrollPane.setViewportView(null);
@@ -530,13 +475,9 @@ public class ProductPageView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void allbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allbtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_allbtnActionPerformed
+    }//GEN-LAST:event_txtSearchActionPerformed
 
     private void McheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_McheckboxActionPerformed
         // TODO add your handling code here:
@@ -633,7 +574,6 @@ public class ProductPageView extends javax.swing.JFrame {
     private javax.swing.JCheckBox Kcheckbox;
     private javax.swing.JCheckBox Mcheckbox;
     private javax.swing.JScrollPane ProductScrollPane;
-    private javax.swing.JRadioButton allbtn;
     private javax.swing.JButton btnBuyNow1M;
     private javax.swing.JButton btnBuyNow2W;
     private javax.swing.JButton btnBuyNow3K;
@@ -650,16 +590,13 @@ public class ProductPageView extends javax.swing.JFrame {
     private javax.swing.JPanel female2;
     private javax.swing.JPanel female3;
     private javax.swing.JComboBox<String> highlowbox;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel kids1;
     private javax.swing.JPanel kids2;
@@ -694,40 +631,43 @@ public class ProductPageView extends javax.swing.JFrame {
     private javax.swing.JPanel male1;
     private javax.swing.JPanel male2;
     private javax.swing.JPanel male3;
-    private javax.swing.JRadioButton newbtn;
     private javax.swing.JPanel productGridPanel;
-    private javax.swing.JRadioButton sellerbtn;
+    private javax.swing.JButton txtSearch;
     // End of variables declaration//GEN-END:variables
     private void filterProducts() {
-        boolean showMale = chkMale.isSelected();
-        boolean showFemale = chkFemale.isSelected();
-        boolean showKids = chkKids.isSelected();
-    
+        boolean showMale = Mcheckbox.isSelected();
+        boolean showFemale = Fcheckbox.isSelected();
+        boolean showKids = Kcheckbox.isSelected();
+
         String searchText = txtSearch.getText().toLowerCase();
 
         JPanel[] allProducts = {
-            productPanel1, productPanel2, productPanel3,
-            productPanel4, productPanel5, productPanel6
+            male1, male2, male3,
+            female1, female2, female3,
+            kids1, kids2, kids3
         };
 
         for (JPanel panel : allProducts) {
-            String category = panel.getName(); // "male", "female", or "kids"
-            JLabel label = (JLabel) panel.getComponent(1); // Adjust if needed
+            String category = panel.getName(); // e.g., "male", "female", "kids"
+
+            // Adjust this index if needed depending on where product name label is
+            JLabel label = (JLabel) panel.getComponent(1); 
             String productName = label.getText().toLowerCase();
 
             boolean matchesCategory =
-            (showMale && category.equals("male")) ||
-            (showFemale && category.equals("female")) ||
-            (showKids && category.equals("kids"));
+                (showMale && category.equals("male")) ||
+                (showFemale && category.equals("female")) ||
+                (showKids && category.equals("kids"));
 
             boolean matchesSearch = productName.contains(searchText);
 
             panel.setVisible(matchesCategory && matchesSearch);
-        }   
+        }
 
-    revalidate();
-    repaint();
+        revalidate();
+        repaint();
     }
+
 
 
 }
