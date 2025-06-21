@@ -209,7 +209,7 @@ public class ForgotPassword extends javax.swing.JFrame {
     }//GEN-LAST:event_EmailFieldActionPerformed
 
     private void ResetPasswordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetPasswordButtonActionPerformed
-        String email = emailField.getText.trim();
+        String email = emailField.getText();
         
         if(email.isEmpty()){
             System.out.println("Please enter your email.");
