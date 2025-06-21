@@ -287,11 +287,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Female"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FcheckboxActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JCheckBox" name="Kcheckbox">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Kids"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="KcheckboxActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -337,7 +343,7 @@
             <Property name="verticalGap" type="int" value="20"/>
           </Layout>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="Men1">
+            <Container class="javax.swing.JPanel" name="male1">
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                 <Property name="useNullLayout" type="boolean" value="false"/>
@@ -390,7 +396,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="Women1">
+            <Container class="javax.swing.JPanel" name="female1">
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                 <Property name="useNullLayout" type="boolean" value="false"/>
@@ -443,7 +449,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="Kids1">
+            <Container class="javax.swing.JPanel" name="kids1">
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                 <Property name="useNullLayout" type="boolean" value="false"/>
@@ -496,7 +502,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="Men2">
+            <Container class="javax.swing.JPanel" name="male2">
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                 <Property name="useNullLayout" type="boolean" value="false"/>
@@ -549,7 +555,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="Kids2">
+            <Container class="javax.swing.JPanel" name="kids2">
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                 <Property name="useNullLayout" type="boolean" value="false"/>
@@ -602,7 +608,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="Women2">
+            <Container class="javax.swing.JPanel" name="female2">
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                 <Property name="useNullLayout" type="boolean" value="false"/>
@@ -655,7 +661,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="Men3">
+            <Container class="javax.swing.JPanel" name="male3">
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                 <Property name="useNullLayout" type="boolean" value="false"/>
@@ -708,7 +714,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="Women3">
+            <Container class="javax.swing.JPanel" name="female3">
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                 <Property name="useNullLayout" type="boolean" value="false"/>
@@ -761,7 +767,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="Kids3">
+            <Container class="javax.swing.JPanel" name="kids3">
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                 <Property name="useNullLayout" type="boolean" value="false"/>
