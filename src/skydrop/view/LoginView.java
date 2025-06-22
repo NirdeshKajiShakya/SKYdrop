@@ -86,7 +86,12 @@ public class LoginView extends javax.swing.JFrame {
 
         jLabel5.setText("Password");
 
-        passwordField.setText("jPasswordField1");
+        passwordField.setText("something");
+        passwordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordFieldActionPerformed(evt);
+            }
+        });
 
         rememberCheckbox.setBackground(new java.awt.Color(236, 248, 227));
         rememberCheckbox.setText("Remember For 30 days");
@@ -215,6 +220,10 @@ public class LoginView extends javax.swing.JFrame {
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordFieldActionPerformed
 
     /**
      * @param args the command line arguments

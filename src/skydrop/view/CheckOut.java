@@ -8,9 +8,11 @@ package skydrop.view;
  *
  * @author User
  */
+import java.awt.Image;
 import skydrop.controllers.StripeController;
 
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import skydrop.controllers.StripeController;
 
 
@@ -19,14 +21,32 @@ import skydrop.controllers.StripeController;
 public class CheckOut extends javax.swing.JFrame {
       
     private double price;
+    private String name;
+    private Image image;
     
-    public void setPrice(int price){
-        this.price=price;
+    public CheckOut(){
+        initComponents();
     }
       
-    public CheckOut() {
-        initComponents();         
- }
+    public CheckOut(String name, double price, Image image) {
+        this.name = name;
+        this.price = price;
+        this.image = image;
+
+        initComponents();
+
+        jTextField8.setText(name);
+        jTextField7.setText(String.valueOf(price));
+
+        if (image != null) {
+            image = image.getScaledInstance(195,183,Image.SCALE_SMOOTH);
+
+            DisplayImage.setIcon(new ImageIcon(image));
+        } else {
+            System.out.println("Image is null.");
+        }
+    }
+
         
    
     /**
@@ -38,22 +58,6 @@ public class CheckOut extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        FirstNameField = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        EmailField = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        PhoneField = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        CountryField = new javax.swing.JLabel();
-        CityField = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        TermscheckBox = new javax.swing.JCheckBox();
-        PaynowButton = new javax.swing.JButton();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -64,107 +68,7 @@ public class CheckOut extends javax.swing.JFrame {
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("Checkout");
-
-        jPanel3.setBackground(new java.awt.Color(198, 255, 229));
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setText("Shipping Information");
-
-        FirstNameField.setText("First Name");
-
-        EmailField.setText("Email Address");
-
-        PhoneField.setText("Phone Number");
-
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
-
-        CountryField.setText("Country");
-
-        CityField.setText("City");
-
-        TermscheckBox.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
-        TermscheckBox.setText(" I have read and agree to the terms and condition");
-        TermscheckBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TermscheckBoxActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(CityField, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FirstNameField)
-                            .addComponent(jTextField1)
-                            .addComponent(EmailField, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2)
-                            .addComponent(PhoneField, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3)
-                            .addComponent(CountryField, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField6)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(TermscheckBox))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(30, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(FirstNameField)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EmailField)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PhoneField)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CountryField)
-                .addGap(34, 34, 34)
-                .addComponent(CityField)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addComponent(TermscheckBox))
-        );
-
-        PaynowButton.setBackground(new java.awt.Color(0, 153, 153));
-        PaynowButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        PaynowButton.setForeground(new java.awt.Color(255, 255, 255));
-        PaynowButton.setText("upload image");
-        PaynowButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PaynowButtonActionPerformed(evt);
-            }
-        });
-
-        jLabel16.setText("Discount");
-
-        jLabel15.setText("Shipping");
+        DisplayImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -222,13 +126,11 @@ public class CheckOut extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+            .addComponent(DisplayImage, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE))
+            .addComponent(DisplayImage, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -301,18 +203,6 @@ public class CheckOut extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void PaynowButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PaynowButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PaynowButtonActionPerformed
-
-    private void TermscheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TermscheckBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TermscheckBoxActionPerformed
-
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
-
     private void DeliveryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeliveryButtonActionPerformed
 
     }//GEN-LAST:event_DeliveryButtonActionPerformed
@@ -367,31 +257,15 @@ public class CheckOut extends javax.swing.JFrame {
         }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel CityField;
-    private javax.swing.JLabel CountryField;
-    private javax.swing.JLabel EmailField;
-    private javax.swing.JLabel FirstNameField;
-    private javax.swing.JButton PaynowButton;
+    private javax.swing.JLabel DisplayImage;
     private javax.swing.JButton PaynowButton1;
-    private javax.swing.JLabel PhoneField;
-    private javax.swing.JCheckBox TermscheckBox;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     // End of variables declaration//GEN-END:variables

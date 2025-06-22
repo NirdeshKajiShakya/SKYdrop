@@ -57,7 +57,7 @@ public class ProductCart extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(cartTable);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 590, 260));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 640, 260));
 
         lblTotal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblTotal.setText("Total: $0.00");
@@ -77,7 +77,7 @@ public class ProductCart extends javax.swing.JFrame {
                 btnCheckoutActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCheckout, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, 80, 30));
+        getContentPane().add(btnCheckout, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, 80, 30));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setText(" CART - SkyDrop");
