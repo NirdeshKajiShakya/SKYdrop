@@ -29,6 +29,8 @@ public class ProductCart extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         cartTable = new javax.swing.JTable();
         lblTotal = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
+        btnCheckout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -51,14 +53,38 @@ public class ProductCart extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(cartTable);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 590, 300));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 310));
 
         lblTotal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblTotal.setText("Total: $0.00");
-        getContentPane().add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 340, 140, 40));
+        getContentPane().add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, 140, 30));
+
+        btnBack.setText("Back  ");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 80, 30));
+
+        btnCheckout.setText("Checkout");
+        btnCheckout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCheckoutActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCheckout, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, 80, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnCheckoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckoutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCheckoutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -97,6 +123,8 @@ public class ProductCart extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnCheckout;
     private javax.swing.JTable cartTable;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTotal;
