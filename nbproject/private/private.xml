@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/LoginView.java</file>
             <file>file:/D:/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/SignupView.java</file>
             <file>file:/D:/work/sem%202%20project/repo/SKYdrop/src/skydrop/controllers/AuthController.java</file>
@@ -14,6 +15,14 @@
             <file>file:/D:/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/ProductCart.java</file>
             <file>file:/D:/work/sem%202%20project/repo/SKYdrop/src/skydrop/userDAO/PostDao.java</file>
             <file>file:/D:/work/sem%202%20project/repo/SKYdrop/src/skydrop/controllers/StripeController.java</file>
+=======
+            <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/view/UserView.java</file>
+            <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/view/UpadateUserView.java</file>
+            <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/view/RatingAndReview.java</file>
+            <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/view/SignupView.java</file>
+            <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/view/ServicePage.java</file>
+            <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/view/HomePage.java</file>
+>>>>>>> 02a558b4ace0c3d7042e684fdeaaa11a4a39cea6
         </group>
     </open-files>
 </project-private>

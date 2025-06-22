@@ -443,7 +443,10 @@ public class UserView extends javax.swing.JFrame {
 
     private void EditButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditButton1ActionPerformed
 
-        EditButton1.setVisible(true);
+        this.dispose(); // close current "My Account" window
+        new UpadateUserView().setVisible(true); // open UpdateUserView
+        
+
     }//GEN-LAST:event_EditButton1ActionPerformed
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed

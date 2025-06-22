@@ -304,10 +304,9 @@ public class HomePage extends javax.swing.JFrame{
     }//GEN-LAST:event_HomeButtonActionPerformed
 
     private void ServiceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ServiceButtonActionPerformed
-        ServiceButton.addActionListener(e -> {
-    this.dispose(); // closes the HomePage
-    new ServicePage().setVisible(true); 
-});
+
+        this.dispose(); // closes the HomePage
+        new ServicePage().setVisible(true); 
 
     }//GEN-LAST:event_ServiceButtonActionPerformed
 
