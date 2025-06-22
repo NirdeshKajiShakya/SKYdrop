@@ -128,4 +128,26 @@ public class UserDao {
             return null;
         }
     }
+    
+    public String getAddressDB(int user_id){
+        String query = "SELECT address FROM users where user_id = ?";
+
+        try (Connection conn = DbConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+               
+            pstmt.setInt(1, user_id);
+            ResultSet rs = pstmt.executeQuery();
+            
+            if (rs.next()){
+                return rs.getString("address");
+            }else{
+                return null;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 }
