@@ -5,20 +5,20 @@
 package skydrop.view;
 
 import javax.swing.JOptionPane;
-import skydrop.userDAO.UserDao;
+import skydrop.userDAO.AdminDao;
 
 /**
  *
  * @author ADMIN
  */
-public class UserView extends javax.swing.JFrame {
-    
-    private int id;
+public class AdminView extends javax.swing.JFrame {
 
+    private int id;
+    
     /**
      * Creates new form UserView
      */
-    public UserView() {
+    public AdminView() {
         initComponents();
     }
 
@@ -210,7 +210,7 @@ public class UserView extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("My Account");
+        jLabel1.setText("Admin Account");
         jLabel1.setMaximumSize(new java.awt.Dimension(70, 20));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -219,7 +219,7 @@ public class UserView extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(233, 233, 233)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -250,7 +250,7 @@ public class UserView extends javax.swing.JFrame {
         MyorderlistButton.setBackground(new java.awt.Color(0, 158, 158));
         MyorderlistButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         MyorderlistButton.setForeground(new java.awt.Color(255, 255, 255));
-        MyorderlistButton.setText("My orders List");
+        MyorderlistButton.setText("Add");
         MyorderlistButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MyorderlistButtonActionPerformed(evt);
@@ -260,7 +260,7 @@ public class UserView extends javax.swing.JFrame {
         productButton.setBackground(new java.awt.Color(0, 158, 158));
         productButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         productButton.setForeground(new java.awt.Color(255, 255, 255));
-        productButton.setText("product");
+        productButton.setText("Add Product");
         productButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 productButtonActionPerformed(evt);
@@ -408,7 +408,7 @@ public class UserView extends javax.swing.JFrame {
 
     private void MyorderlistButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MyorderlistButtonActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(UserView.this , "List of Orders");
+        JOptionPane.showMessageDialog(AdminView.this , "List of Orders");
         
         
     }//GEN-LAST:event_MyorderlistButtonActionPerformed
@@ -435,10 +435,10 @@ public class UserView extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void productButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productButtonActionPerformed
-        this.setVisible(false);
-        ProductPageView productPage = new ProductPageView();
-        productPage.setID(id);
-        productPage.setVisible(true);
+        this.dispose();
+        AddProduct addPage = new AddProduct();
+        addPage.setID(id);
+        addPage.setVisible(true);
     }//GEN-LAST:event_productButtonActionPerformed
 
     private void EditButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditButton1ActionPerformed
@@ -476,20 +476,21 @@ public class UserView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UserView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UserView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UserView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UserView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UserView().setVisible(true);
+                new AdminView().setVisible(true);
             }
         });
     }
@@ -532,11 +533,11 @@ public class UserView extends javax.swing.JFrame {
     private javax.swing.JButton productButton;
     // End of variables declaration//GEN-END:variables
     public void setId(int id){
-        UserDao userDao = new UserDao();
-        this.id = id;
-        NameField.setText(userDao.getUserNameDB(id));
-        EmailField.setText(userDao.getEmailDB(id));
-        AddressField.setText(userDao.getAddressDB(id));
+        AdminDao adminDao = new AdminDao();
+        this.id=id;
+        NameField.setText(adminDao.getUserNameDB(id));
+        EmailField.setText(adminDao.getEmailDB(id));
+        AddressField.setText(adminDao.getAddressDB(id));
     }
 
 }

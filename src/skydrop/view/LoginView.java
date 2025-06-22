@@ -48,7 +48,7 @@ public class LoginView extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         signupLink = new javax.swing.JLabel();
         signupLink1 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        AdminCheckbox = new javax.swing.JCheckBox();
         jPanel5 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -174,15 +174,15 @@ public class LoginView extends javax.swing.JFrame {
 
         jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 389, -1, -1));
 
-        jCheckBox1.setText("Admin Log in");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        AdminCheckbox.setText("Admin Log in");
+        AdminCheckbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                AdminCheckboxActionPerformed(evt);
             }
         });
-        jPanel4.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 318, 153, -1));
+        jPanel4.add(AdminCheckbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 318, 153, -1));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 560));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 530));
 
         jPanel5.setBackground(new java.awt.Color(236, 248, 227));
 
@@ -217,9 +217,9 @@ public class LoginView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_rememberCheckboxActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void AdminCheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminCheckboxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_AdminCheckboxActionPerformed
 
     private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
         // TODO add your handling code here:
@@ -260,8 +260,8 @@ public class LoginView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox AdminCheckbox;
     private javax.swing.JTextField emailField;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -304,6 +304,10 @@ public class LoginView extends javax.swing.JFrame {
     
     public void setRememberMe(boolean selected) {
         rememberCheckbox.setSelected(selected);
+    }
+    
+    public boolean getAdminCheckbox(){
+        return AdminCheckbox.isSelected();
     }
 
     // Main method (optional - for testing)

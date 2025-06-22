@@ -14,6 +14,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import skydrop.database.DbConnection;
@@ -148,4 +150,20 @@ public class PostDao {
         }
         return 0;
     }
+    
+    public List<Integer> getAllProductIDs() {
+    List<Integer> ids = new ArrayList<>();
+    String query = "SELECT product_id FROM products ORDER BY product_id";
+    try (Connection conn = DbConnection.getConnection();
+         PreparedStatement pstmt = conn.prepareStatement(query);
+         ResultSet rs = pstmt.executeQuery()) {
+        
+        while (rs.next()) {
+            ids.add(rs.getInt("product_id"));
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return ids;
+}
 }

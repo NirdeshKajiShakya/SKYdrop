@@ -15,13 +15,7 @@ import java.util.List;
  *
  * @author Suresh
  */
-public class ProductPageView extends javax.swing.JFrame {
-    
-    private int id;
-    
-    public void setID(int id){
-        this.id = id;
-    }
+public class AdminsViewPage extends javax.swing.JFrame {
     
     private int placeHolder = 1;
 
@@ -29,7 +23,7 @@ public class ProductPageView extends javax.swing.JFrame {
     /**
      * Creates new form ProductPageView
      */
-    public ProductPageView() {
+    public AdminsViewPage() {
         initComponents();
         displayAllProducts();
     }
@@ -525,10 +519,7 @@ public class ProductPageView extends javax.swing.JFrame {
     }//GEN-LAST:event_buyNow1ActionPerformed
 
     private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed
-        this.dispose();
-        UserView userView = new UserView();
-                userView.setId(id);
-                userView.setVisible(true);
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnbackActionPerformed
 
     private void FcheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FcheckboxActionPerformed
@@ -602,20 +593,21 @@ public class ProductPageView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ProductPageView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminsViewPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ProductPageView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminsViewPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ProductPageView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminsViewPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ProductPageView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminsViewPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ProductPageView().setVisible(true);
+                new AdminsViewPage().setVisible(true);
             }
         });
     }

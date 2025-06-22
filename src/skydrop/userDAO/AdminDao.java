@@ -44,7 +44,7 @@ public class AdminDao {
     
     
     public String getPasswordDB(String email) {
-        String query = "SELECT current_password FROM users where email = ?";
+        String query = "SELECT current_password FROM admins where email = ?";
 
         try (Connection conn = DbConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
@@ -65,7 +65,7 @@ public class AdminDao {
     }
     
     public String getUserNameDB(int user_id){
-        String query = "SELECT user_name FROM users where user_id = ?";
+        String query = "SELECT admin_name FROM admins where admin_id = ?";
 
         try (Connection conn = DbConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
@@ -74,7 +74,7 @@ public class AdminDao {
             ResultSet rs = pstmt.executeQuery();
             
             if (rs.next()){
-                return rs.getString("user_name");
+                return rs.getString("admin_name");
             }else{
                 return null;
             }
@@ -86,7 +86,7 @@ public class AdminDao {
     }
     
     public int getUser_idDB(String email) {
-        String query = "SELECT user_id FROM users where email = ?";
+        String query = "SELECT admin_id FROM admins where email = ?";
 
         try (Connection conn = DbConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
@@ -95,8 +95,8 @@ public class AdminDao {
             ResultSet rs = pstmt.executeQuery();
             
             if (rs.next()){
-                System.out.print(rs.getInt("user_id"));
-                return rs.getInt("user_id");
+                System.out.print(rs.getInt("admin_id"));
+                return rs.getInt("admin_id");
                 
             }else{
                 return 0;
@@ -109,7 +109,7 @@ public class AdminDao {
     }
     
     public String getEmailDB(int user_id){
-        String query = "SELECT email FROM users where user_id = ?";
+        String query = "SELECT email FROM admins where admin_id = ?";
 
         try (Connection conn = DbConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
@@ -119,6 +119,27 @@ public class AdminDao {
             
             if (rs.next()){
                 return rs.getString("email");
+            }else{
+                return null;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
+    public String getAddressDB(int user_id){
+        String query = "SELECT address FROM admins where admin_id = ?";
+
+        try (Connection conn = DbConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+               
+            pstmt.setInt(1, user_id);
+            ResultSet rs = pstmt.executeQuery();
+            
+            if (rs.next()){
+                return rs.getString("address");
             }else{
                 return null;
             }
