@@ -5,7 +5,9 @@
 package skydrop.view;
 import java.awt.Image;
 import javax.swing.*;
+import skydrop.database.DbConnection;
 import skydrop.userDAO.PostDao;
+import java.sql.*;
 
 
 /**
@@ -51,7 +53,6 @@ public class ProductPageView extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtSearch = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         txtSearchField = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
@@ -135,8 +136,6 @@ public class ProductPageView extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("🛒");
-
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel3.setText(" Your Smart Shopping Partner");
 
@@ -158,10 +157,8 @@ public class ProductPageView extends javax.swing.JFrame {
                 .addGap(321, 321, 321)
                 .addComponent(txtSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,7 +171,6 @@ public class ProductPageView extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16))
         );
@@ -471,14 +467,23 @@ public class ProductPageView extends javax.swing.JFrame {
         });
 
         btnNext.setText("Next");
+        btnNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNextActionPerformed(evt);
+            }
+        });
 
         btnprevious.setText("previous");
+        btnprevious.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnpreviousActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -490,6 +495,10 @@ public class ProductPageView extends javax.swing.JFrame {
                         .addGap(431, 431, 431)
                         .addComponent(btnNext))
                     .addComponent(ProductScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 578, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -577,6 +586,16 @@ public class ProductPageView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuyNow1M8ActionPerformed
 
+    private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
+        this.placeHolder = placeHolder + 1;
+        displayAllProducts();
+    }//GEN-LAST:event_btnNextActionPerformed
+
+    private void btnpreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpreviousActionPerformed
+        this.placeHolder = placeHolder - 1;
+        displayAllProducts();
+    }//GEN-LAST:event_btnpreviousActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -648,7 +667,6 @@ public class ProductPageView extends javax.swing.JFrame {
     private javax.swing.JLabel image7;
     private javax.swing.JLabel image8;
     private javax.swing.JLabel image9;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -723,16 +741,34 @@ public class ProductPageView extends javax.swing.JFrame {
     }   
 
     private void displayAllProducts() {
-        displayProduct(placeHolder, name1, price1, category1, image1);
-        displayProduct(placeHolder+1, name2, price2, category2, image2);
-        displayProduct(placeHolder+2, name3, price3, category3, image3);
-        displayProduct(placeHolder+3, name4, price4, category4, image4);
-        displayProduct(placeHolder+4, name5, price5, category5, image5);
-        displayProduct(placeHolder+5, name6, price6, category6, image6);
-        displayProduct(placeHolder+6, name7, price7, category7, image7);
-        displayProduct(placeHolder+7, name8, price8, category8, image8);
-        displayProduct(placeHolder+8, name9, price9, category9, image9);
+    int totalProducts = postDao.getTotalProductCount();
+    
+    clearProductPanel(male1, name1, price1, category1, image1);
+    clearProductPanel(male4, name2, price2, category2, image2);
+    clearProductPanel(male5, name3, price3, category3, image3);
+    clearProductPanel(male6, name4, price4, category4, image4);
+    clearProductPanel(male7, name5, price5, category5, image5);
+    clearProductPanel(male8, name6, price6, category6, image6);
+    clearProductPanel(male9, name7, price7, category7, image7);
+    clearProductPanel(male10, name8, price8, category8, image8);
+    clearProductPanel(male11, name9, price9, category9, image9);
+      
+    int productIndex = 0;
+    for (int i = placeHolder; i < placeHolder + 9 && i <= totalProducts; i++) {
+        switch (productIndex) {
+            case 0 -> displayProduct(i, name1, price1, category1, image1);
+            case 1 -> displayProduct(i, name2, price2, category2, image2);
+            case 2 -> displayProduct(i, name3, price3, category3, image3);
+            case 3 -> displayProduct(i, name4, price4, category4, image4);
+            case 4 -> displayProduct(i, name5, price5, category5, image5);
+            case 5 -> displayProduct(i, name6, price6, category6, image6);
+            case 6 -> displayProduct(i, name7, price7, category7, image7);
+            case 7 -> displayProduct(i, name8, price8, category8, image8);
+            case 8 -> displayProduct(i, name9, price9, category9, image9);
+        }
+        productIndex++;
     }
+}
 
     private void displayProduct(int i, JLabel nameLabel, JLabel priceLabel, JLabel categoryLabel, JLabel imageLabel) {
         String name = postDao.getProductNameDB(i);
@@ -740,18 +776,37 @@ public class ProductPageView extends javax.swing.JFrame {
         String category = postDao.getProductCategoryDB(i);
         Image image = postDao.displayImageFromDatabase(i);
 
-        nameLabel.setText(name != null ? name : "No Name");
-        priceLabel.setText(price >= 0 ? String.valueOf(price) : "N/A");
-        categoryLabel.setText(category != null ? category : "N/A");
+        if (name != null) {
+            nameLabel.setText(name);
+            priceLabel.setText(String.valueOf(price));
+            categoryLabel.setText(category);
 
-        if (image != null) {
-            imageLabel.setIcon(new ImageIcon(image));
-            imageLabel.setText("");
-        } else {
-            imageLabel.setIcon(null);
+            if (image != null) {
+                imageLabel.setIcon(new ImageIcon(image));
+            } else {
+                imageLabel.setIcon(null);
+            }
+
+            // Make the panel visible
+            if (nameLabel.getParent() instanceof JPanel) {
+                nameLabel.getParent().setVisible(true);
+            }
         }
     }
+    
+    
+    
+    
+    private void clearProductPanel(JPanel panel, JLabel name, JLabel price, JLabel category, JLabel image) {
+        name.setText("");
+        price.setText("");
+        category.setText("");
+        image.setIcon(null);
+        panel.setVisible(false);
+    }
 
-
+    
+    
+    
 
 }
