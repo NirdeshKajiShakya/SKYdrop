@@ -6,6 +6,7 @@ package skydrop.view;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,7 +20,7 @@ public class RatingAndReview extends javax.swing.JFrame {
     public RatingAndReview() {
         initComponents();
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/new image.png"));
-        Image image = icon.getImage().getScaledInstance(300,345,Image.SCALE_SMOOTH);
+        Image image = icon.getImage().getScaledInstance(300,400,Image.SCALE_SMOOTH);
         jLabel1.setIcon(new ImageIcon(image));
     }
 
@@ -61,17 +62,20 @@ public class RatingAndReview extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        Namelabel1 = new javax.swing.JLabel();
+        CommentArea1 = new javax.swing.JLabel();
+        Namelabel4 = new javax.swing.JLabel();
+        CommentArea3 = new javax.swing.JLabel();
+        Namelabel2 = new javax.swing.JLabel();
+        CommentArea2 = new javax.swing.JLabel();
+        Namelabel3 = new javax.swing.JLabel();
+        CommentArea4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton5 = new javax.swing.JButton();
+        TextField = new javax.swing.JTextArea();
+        addComment = new javax.swing.JButton();
+        NameField = new javax.swing.JTextField();
+        Namelabel5 = new javax.swing.JLabel();
+        Namelabel6 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
@@ -334,105 +338,139 @@ public class RatingAndReview extends javax.swing.JFrame {
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Comments");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setText("Alice");
+        Namelabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Namelabel1.setText("Alice");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel5.setText("Great Product! I higly recommend it.");
+        CommentArea1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        CommentArea1.setText("Great Product! I higly recommend it.");
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel7.setText("David");
+        Namelabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Namelabel4.setText("David");
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel8.setText("Decent quality. But could be improved.");
+        CommentArea3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        CommentArea3.setText("Decent quality. But could be improved.");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel9.setText("Bob");
+        Namelabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Namelabel2.setText("Bob");
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel10.setText("Very useful and easy to use.");
+        CommentArea2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        CommentArea2.setText("Very useful and easy to use.");
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel11.setText("Carol");
+        Namelabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Namelabel3.setText("Carol");
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel12.setText("Not what i expected. Disappointing.");
+        CommentArea4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        CommentArea4.setText("Not what i expected. Disappointing.");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        TextField.setColumns(20);
+        TextField.setRows(5);
+        jScrollPane1.setViewportView(TextField);
 
-        jButton5.setBackground(new java.awt.Color(0, 153, 153));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Add Comment");
+        addComment.setBackground(new java.awt.Color(0, 153, 153));
+        addComment.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        addComment.setForeground(new java.awt.Color(255, 255, 255));
+        addComment.setText("Add Comment");
+        addComment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addCommentActionPerformed(evt);
+            }
+        });
+
+        NameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NameFieldActionPerformed(evt);
+            }
+        });
+
+        Namelabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Namelabel5.setText("Name:");
+
+        Namelabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Namelabel6.setText("New Comment here.");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(94, 94, 94))
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1)
-                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CommentArea2, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
+                            .addComponent(addComment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel8Layout.createSequentialGroup()
                                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel8))
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                    .addComponent(Namelabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Namelabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Namelabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Namelabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CommentArea3))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(CommentArea1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CommentArea4, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(Namelabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1))
                         .addGap(26, 26, 26))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(94, 94, 94))))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(Namelabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addGap(7, 7, 7)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel9)
+                .addComponent(Namelabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5)
-                .addGap(24, 24, 24))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(CommentArea1)
+                        .addGap(24, 24, 24)
+                        .addComponent(Namelabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CommentArea2)
+                        .addGap(26, 26, 26)
+                        .addComponent(Namelabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(CommentArea3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Namelabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CommentArea4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addComponent(Namelabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Namelabel5))
+                        .addGap(12, 12, 12)
+                        .addComponent(addComment)
+                        .addGap(24, 24, 24))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -505,10 +543,13 @@ public class RatingAndReview extends javax.swing.JFrame {
     private void star8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_star8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_star8ActionPerformed
+    // TODO add your handling code here:
+    // TODO add your handling code here:
 
     private void star6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_star6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_star6ActionPerformed
+    // TODO add your handling code here:
 
     private void star20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_star20ActionPerformed
         // TODO add your handling code here:
@@ -558,6 +599,35 @@ public class RatingAndReview extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField15ActionPerformed
 
+    private void addCommentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCommentActionPerformed
+        String newName = NameField.getText().trim();
+        String newComment = TextField.getText().trim();
+    
+    if (newComment.isEmpty()){
+        JOptionPane.showMessageDialog(this, "Please enter both name and comment.", "Warning", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    CommentArea1.setText(CommentArea2.getText());
+    Namelabel3.setText(Namelabel2.getText());
+    
+    CommentArea2.setText(CommentArea1.getText());
+    Namelabel2.setText(Namelabel1.getText());
+    
+    CommentArea1.setText(newComment);
+    Namelabel1.setText(newName);
+
+    
+    CommentArea1.setText(newComment);
+    TextField.setText("");
+    NameField.setText("");
+   
+
+    }//GEN-LAST:event_addCommentActionPerformed
+
+    private void NameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NameFieldActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -595,24 +665,28 @@ public class RatingAndReview extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel CommentArea1;
+    private javax.swing.JLabel CommentArea2;
+    private javax.swing.JLabel CommentArea3;
+    private javax.swing.JLabel CommentArea4;
+    private javax.swing.JTextField NameField;
+    private javax.swing.JLabel Namelabel1;
+    private javax.swing.JLabel Namelabel2;
+    private javax.swing.JLabel Namelabel3;
+    private javax.swing.JLabel Namelabel4;
+    private javax.swing.JLabel Namelabel5;
+    private javax.swing.JLabel Namelabel6;
+    private javax.swing.JTextArea TextField;
+    private javax.swing.JButton addComment;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -623,7 +697,6 @@ public class RatingAndReview extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;

@@ -38,6 +38,29 @@
         <Property name="text" type="java.lang.String" value="Image"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.JTextField" name="jTextField11">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField10">
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jComboBox1">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="5">
+            <StringItem index="0" value="Choose country"/>
+            <StringItem index="1" value="Nepal"/>
+            <StringItem index="2" value="India"/>
+            <StringItem index="3" value="Australia"/>
+            <StringItem index="4" value="China"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -109,11 +132,7 @@
                                       <Component id="jLabel16" min="-2" pref="72" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jTextField9" pref="177" max="32767" attributes="0"/>
-                                      <Component id="jTextField10" pref="177" max="32767" attributes="0"/>
-                                      <Component id="jTextField11" alignment="1" pref="177" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="jTextField9" pref="177" max="32767" attributes="0"/>
                               </Group>
                               <Component id="PaynowButton" max="32767" attributes="0"/>
                               <Component id="PaynowButton1" max="32767" attributes="0"/>
@@ -155,18 +174,12 @@
                               <Component id="jTextField9" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField10" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField11" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                          <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="PaynowButton1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="31" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="37" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
@@ -255,7 +268,6 @@
                                   <Component id="PhoneField" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
                                   <Component id="jTextField3" alignment="0" max="32767" attributes="0"/>
                                   <Component id="CountryField" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
-                                  <Component id="jComboBox1" alignment="0" pref="141" max="32767" attributes="0"/>
                                   <Component id="jTextField6" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -296,9 +308,7 @@
                       <Component id="jTextField3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="CountryField" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Component id="CityField" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jTextField6" min="-2" max="-2" attributes="0"/>
@@ -355,25 +365,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Country"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox1">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="5">
-                    <StringItem index="0" value="Choose country"/>
-                    <StringItem index="1" value="Nepal"/>
-                    <StringItem index="2" value="India"/>
-                    <StringItem index="3" value="Australia"/>
-                    <StringItem index="4" value="China"/>
-                  </StringArray>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
-              </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="CityField">
               <Properties>
@@ -467,10 +458,6 @@
         <Component class="javax.swing.JTextField" name="jTextField8">
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField9">
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField10">
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField11">
         </Component>
       </SubComponents>
     </Container>
