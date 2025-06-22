@@ -614,7 +614,7 @@ public class RatingAndReview extends javax.swing.JFrame {
     Namelabel2.setText(Namelabel1.getText());
     
     CommentArea1.setText(newComment);
-    Namelabel1.setText(newName);
+    .setText(newName);
 
     
     CommentArea1.setText(newComment);
