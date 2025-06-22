@@ -63,7 +63,7 @@ public class ProductPageView extends javax.swing.JFrame {
         ProductScrollPane = new javax.swing.JScrollPane();
         productGridPanel = new javax.swing.JPanel();
         male1 = new javax.swing.JPanel();
-        btnBuyNow1M = new javax.swing.JButton();
+        buyNow1 = new javax.swing.JButton();
         image1 = new javax.swing.JLabel();
         category1 = new javax.swing.JLabel();
         price1 = new javax.swing.JLabel();
@@ -263,13 +263,13 @@ public class ProductPageView extends javax.swing.JFrame {
 
         male1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnBuyNow1M.setText("Buy now");
-        btnBuyNow1M.addActionListener(new java.awt.event.ActionListener() {
+        buyNow1.setText("Buy now");
+        buyNow1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuyNow1MActionPerformed(evt);
+                buyNow1ActionPerformed(evt);
             }
         });
-        male1.add(btnBuyNow1M, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male1.add(buyNow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
         male1.add(image1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
         category1.setText("men");
@@ -517,9 +517,13 @@ public class ProductPageView extends javax.swing.JFrame {
         filterProducts();
     }//GEN-LAST:event_McheckboxActionPerformed
 
-    private void btnBuyNow1MActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow1MActionPerformed
-         // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuyNow1MActionPerformed
+    private void buyNow1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyNow1ActionPerformed
+        this.dispose();
+        CheckOut checkOut = new CheckOut();
+        checkOut.setVisible(true);
+        checkOut.setPrice(Integer.parseInt(price1.getText()));
+         
+    }//GEN-LAST:event_buyNow1ActionPerformed
 
     private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed
         // TODO add your handling code here:
@@ -611,7 +615,6 @@ public class ProductPageView extends javax.swing.JFrame {
     private javax.swing.JCheckBox Kcheckbox;
     private javax.swing.JCheckBox Mcheckbox;
     private javax.swing.JScrollPane ProductScrollPane;
-    private javax.swing.JButton btnBuyNow1M;
     private javax.swing.JButton btnBuyNow1M1;
     private javax.swing.JButton btnBuyNow1M2;
     private javax.swing.JButton btnBuyNow1M3;
@@ -623,6 +626,7 @@ public class ProductPageView extends javax.swing.JFrame {
     private javax.swing.JButton btnNext;
     private javax.swing.JButton btnback;
     private javax.swing.JButton btnprevious;
+    private javax.swing.JButton buyNow1;
     private javax.swing.JLabel category1;
     private javax.swing.JLabel category2;
     private javax.swing.JLabel category3;

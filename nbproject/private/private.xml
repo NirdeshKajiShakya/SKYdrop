@@ -3,29 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/skydrop/view/RatingAndReview.java</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/skydrop/view/ForgotPassword.java</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/skydrop/view/HomePage.java</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/skydrop/view/AddProduct.java</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/skydrop/view/AdminProductPage.java</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/skydrop/view/ProductPageView.java</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/skydrop/view/UpadateUserView.java</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/skydrop/view/UserView.java</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/images/forgot%20password.png</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/images/Screenshot%202025-06-07%20203223.png</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/images/new%20image.png</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/images/trial%20image.png</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/images/sign%20up%20image.png</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/images/login%20image.png</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/images/trial%20for%20main.png</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/skydrop/view/TestProductPageView.java</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/skydrop/view/ProductCart.java</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/images/Contact_Us.png</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/skydrop/view/CheckoutControl.java</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/skydrop/view/SignupView.java</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/skydrop/view/ContactUs.java</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/skydrop/view/ServicePage.java</file>
-            <file>file:/C:/Users/User/Documents/Softwarica/SKYdrop/ActualSKYdrop/SKYdrop/src/skydrop/controllers/StripeController.java</file>
+            <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/AddProduct.java</file>
+            <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/userDAO/PostDao.java</file>
+            <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/SignupView.java</file>
+            <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/ContactUs.java</file>
+            <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/controllers/NavigationController.java</file>
+            <file>file:/media/zenusha/New%20Volume/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/ProductPageView.java</file>
         </group>
     </open-files>
 </project-private>

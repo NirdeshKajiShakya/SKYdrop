@@ -18,6 +18,11 @@ import skydrop.controllers.StripeController;
 
 public class CheckOut extends javax.swing.JFrame {
       
+    private double price;
+    
+    public void setPrice(int price){
+        this.price=price;
+    }
       
     public CheckOut() {
         initComponents();
@@ -376,7 +381,7 @@ public class CheckOut extends javax.swing.JFrame {
     }//GEN-LAST:event_PickupButtonActionPerformed
 
     private void PaynowButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PaynowButton1ActionPerformed
-            double price = 499.00;
+           
             StripeController stripe = new StripeController();
             stripe.createStripePayment(price);
     }//GEN-LAST:event_PaynowButton1ActionPerformed

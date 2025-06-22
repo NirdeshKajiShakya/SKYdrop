@@ -34,6 +34,7 @@ public class NavigationController {
         LoginView loginView = new LoginView();
         AuthController authController = new AuthController(loginView,signupView);
         loginView.setVisible(true);
+        new HomePage().dispose();
     }
 
     public void navigateToContactUs() {

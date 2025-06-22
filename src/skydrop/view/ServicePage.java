@@ -18,7 +18,7 @@ public class ServicePage extends javax.swing.JFrame {
      */
     public ServicePage() {
         initComponents();
-        ImageIcon icon = new ImageIcon(getClass().getResource("/images/Service_page.png"));
+        ImageIcon icon = new ImageIcon(getClass().getResource("/images/Service_Page.png"));
         Image image = icon.getImage().getScaledInstance(220,300,Image.SCALE_SMOOTH);
         jLabel11.setIcon(new ImageIcon(image));
     }
