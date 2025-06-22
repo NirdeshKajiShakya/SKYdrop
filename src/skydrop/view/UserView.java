@@ -440,7 +440,7 @@ public class UserView extends javax.swing.JFrame {
 
     private void EditButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditButton1ActionPerformed
 
-        saveButton.setVisible(true);
+        EditButton1.setVisible(true);
     }//GEN-LAST:event_EditButton1ActionPerformed
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
