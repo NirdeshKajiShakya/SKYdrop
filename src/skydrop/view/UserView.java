@@ -12,6 +12,7 @@ import skydrop.userDAO.UserDao;
  * @author ADMIN
  */
 public class UserView extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form UserView
@@ -437,9 +438,13 @@ public class UserView extends javax.swing.JFrame {
     }//GEN-LAST:event_productButtonActionPerformed
 
     private void EditButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditButton1ActionPerformed
+       UpadateUserView updateFrame = new UpadateUserView(this);
+        NameField.getText();
+        EmailField.getText();
+        AddressField.getText();
+        updateFrame.setVisible(true);
         
-        
-        saveButton.setVisible(true);
+       
     }//GEN-LAST:event_EditButton1ActionPerformed
 
     /**
