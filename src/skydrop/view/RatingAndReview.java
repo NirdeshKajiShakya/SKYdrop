@@ -58,13 +58,13 @@ public class RatingAndReview extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        Namelabel4 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         Namelabel1 = new javax.swing.JLabel();
         CommentArea1 = new javax.swing.JLabel();
-        Namelabel4 = new javax.swing.JLabel();
         CommentArea3 = new javax.swing.JLabel();
         Namelabel2 = new javax.swing.JLabel();
         CommentArea2 = new javax.swing.JLabel();
@@ -76,6 +76,7 @@ public class RatingAndReview extends javax.swing.JFrame {
         NameField = new javax.swing.JTextField();
         Namelabel5 = new javax.swing.JLabel();
         Namelabel6 = new javax.swing.JLabel();
+        Namelabel7 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
@@ -325,6 +326,9 @@ public class RatingAndReview extends javax.swing.JFrame {
 
         jButton4.setText("jButton4");
 
+        Namelabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Namelabel4.setText("David");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 153));
 
@@ -351,9 +355,6 @@ public class RatingAndReview extends javax.swing.JFrame {
 
         CommentArea1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         CommentArea1.setText("Great Product! I higly recommend it.");
-
-        Namelabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        Namelabel4.setText("David");
 
         CommentArea3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         CommentArea3.setText("Decent quality. But could be improved.");
@@ -396,6 +397,9 @@ public class RatingAndReview extends javax.swing.JFrame {
         Namelabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Namelabel6.setText("New Comment here.");
 
+        Namelabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Namelabel7.setText("Daniel");
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -420,8 +424,7 @@ public class RatingAndReview extends javax.swing.JFrame {
                                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(CommentArea3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(Namelabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Namelabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Namelabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(Namelabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(CommentArea1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(CommentArea4, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
@@ -430,7 +433,8 @@ public class RatingAndReview extends javax.swing.JFrame {
                                 .addComponent(Namelabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(NameField, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1))
+                            .addComponent(jScrollPane1)
+                            .addComponent(Namelabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(26, 26, 26))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(Namelabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -455,11 +459,11 @@ public class RatingAndReview extends javax.swing.JFrame {
                         .addComponent(Namelabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(CommentArea3)
+                        .addGap(37, 37, 37)
+                        .addComponent(Namelabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Namelabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CommentArea4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Namelabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -678,6 +682,7 @@ public class RatingAndReview extends javax.swing.JFrame {
     private javax.swing.JLabel Namelabel4;
     private javax.swing.JLabel Namelabel5;
     private javax.swing.JLabel Namelabel6;
+    private javax.swing.JLabel Namelabel7;
     private javax.swing.JTextArea TextField;
     private javax.swing.JButton addComment;
     private javax.swing.JButton jButton1;
