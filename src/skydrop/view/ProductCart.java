@@ -31,8 +31,11 @@ public class ProductCart extends javax.swing.JFrame {
         lblTotal = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
         btnCheckout = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(64, 69, 16));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cartTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -53,7 +56,7 @@ public class ProductCart extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(cartTable);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 310));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 590, 260));
 
         lblTotal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblTotal.setText("Total: $0.00");
@@ -74,6 +77,12 @@ public class ProductCart extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCheckout, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, 80, 30));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setText(" CART - SkyDrop");
+        jPanel1.add(jLabel1);
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -126,6 +135,8 @@ public class ProductCart extends javax.swing.JFrame {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCheckout;
     private javax.swing.JTable cartTable;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTotal;
     // End of variables declaration//GEN-END:variables
