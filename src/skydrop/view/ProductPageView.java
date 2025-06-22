@@ -13,6 +13,8 @@ import skydrop.userDAO.PostDao;
  * @author Suresh
  */
 public class ProductPageView extends javax.swing.JFrame {
+    
+    private int placeHolder = 1;
 
     PostDao postDao = new PostDao();
     /**
@@ -721,15 +723,15 @@ public class ProductPageView extends javax.swing.JFrame {
     }   
 
     private void displayAllProducts() {
-        displayProduct(1, name1, price1, category1, image1);
-        displayProduct(2, name2, price2, category2, image2);
-        displayProduct(3, name3, price3, category3, image3);
-        displayProduct(4, name4, price4, category4, image4);
-        displayProduct(5, name5, price5, category5, image5);
-        displayProduct(6, name6, price6, category6, image6);
-        displayProduct(7, name7, price7, category7, image7);
-        displayProduct(8, name8, price8, category8, image8);
-        displayProduct(9, name9, price9, category9, image9);
+        displayProduct(placeHolder, name1, price1, category1, image1);
+        displayProduct(placeHolder+1, name2, price2, category2, image2);
+        displayProduct(placeHolder+2, name3, price3, category3, image3);
+        displayProduct(placeHolder+3, name4, price4, category4, image4);
+        displayProduct(placeHolder+4, name5, price5, category5, image5);
+        displayProduct(placeHolder+5, name6, price6, category6, image6);
+        displayProduct(placeHolder+6, name7, price7, category7, image7);
+        displayProduct(placeHolder+7, name8, price8, category8, image8);
+        displayProduct(placeHolder+8, name9, price9, category9, image9);
     }
 
     private void displayProduct(int i, JLabel nameLabel, JLabel priceLabel, JLabel categoryLabel, JLabel imageLabel) {
