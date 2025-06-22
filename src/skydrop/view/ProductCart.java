@@ -15,6 +15,7 @@ public class ProductCart extends javax.swing.JFrame {
      */
     public ProductCart() {
         initComponents();
+        
     }
 
     /**
