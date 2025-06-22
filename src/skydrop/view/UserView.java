@@ -440,19 +440,11 @@ public class UserView extends javax.swing.JFrame {
     }//GEN-LAST:event_productButtonActionPerformed
 
     private void EditButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditButton1ActionPerformed
-<<<<<<< HEAD
-       UpadateUserView updateFrame = new UpadateUserView(this);
-        NameField.getText();
-        EmailField.getText();
-        AddressField.getText();
-        updateFrame.setVisible(true);
-        
-       
-=======
+
         this.dispose(); // close current "My Account" window
         new UpadateUserView().setVisible(true); // open UpdateUserView
         
->>>>>>> f050957be5c9012af796d6f06bff5a329b0d7279
+
     }//GEN-LAST:event_EditButton1ActionPerformed
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
