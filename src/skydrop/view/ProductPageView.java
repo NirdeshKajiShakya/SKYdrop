@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package skydrop.view;
+import java.awt.Image;
 import javax.swing.*;
+import skydrop.userDAO.PostDao;
 
 
 /**
@@ -12,24 +14,13 @@ import javax.swing.*;
  */
 public class ProductPageView extends javax.swing.JFrame {
 
+    PostDao postDao = new PostDao();
     /**
      * Creates new form ProductPageView
      */
     public ProductPageView() {
         initComponents();
-        
-        male1.setName("male");
-        male2.setName("male");
-        male3.setName("male");
-
-        female1.setName("female");
-        female2.setName("female");
-        female3.setName("female");
-
-    
-        kids1.setName("kids");
-        kids2.setName("kids");
-        kids3.setName("kids");
+        displayAllProducts();
         
 
 
@@ -74,48 +65,57 @@ public class ProductPageView extends javax.swing.JFrame {
         male1 = new javax.swing.JPanel();
         btnBuyNow1M = new javax.swing.JButton();
         image1 = new javax.swing.JLabel();
-        name1 = new javax.swing.JLabel();
+        category1 = new javax.swing.JLabel();
         price1 = new javax.swing.JLabel();
-        female1 = new javax.swing.JPanel();
-        btnBuyNow2W = new javax.swing.JButton();
-        lblImage2 = new javax.swing.JLabel();
-        lblName1W = new javax.swing.JLabel();
-        lblprice2 = new javax.swing.JLabel();
-        kids1 = new javax.swing.JPanel();
-        btnBuyNow3K = new javax.swing.JButton();
-        lblImage3 = new javax.swing.JLabel();
-        lblName1K = new javax.swing.JLabel();
-        lblprice3 = new javax.swing.JLabel();
-        male2 = new javax.swing.JPanel();
-        btnBuyNow4M = new javax.swing.JButton();
-        lblImage4 = new javax.swing.JLabel();
-        lblName2M = new javax.swing.JLabel();
-        lblprice4 = new javax.swing.JLabel();
-        kids2 = new javax.swing.JPanel();
-        btnBuyNow5K = new javax.swing.JButton();
-        lblImage5 = new javax.swing.JLabel();
-        lblName2K = new javax.swing.JLabel();
-        lblprice5 = new javax.swing.JLabel();
-        female2 = new javax.swing.JPanel();
-        btnBuyNow6W = new javax.swing.JButton();
-        lblImage6 = new javax.swing.JLabel();
-        lblName2W = new javax.swing.JLabel();
-        lblprice6 = new javax.swing.JLabel();
-        male3 = new javax.swing.JPanel();
-        btnBuyNow7M = new javax.swing.JButton();
-        lblImage7 = new javax.swing.JLabel();
-        lblName3M = new javax.swing.JLabel();
-        lblprice7 = new javax.swing.JLabel();
-        female3 = new javax.swing.JPanel();
-        btnBuyNow8W = new javax.swing.JButton();
-        lblImage8 = new javax.swing.JLabel();
-        lblName3W = new javax.swing.JLabel();
-        lblprice8 = new javax.swing.JLabel();
-        kids3 = new javax.swing.JPanel();
-        btnBuyNow9K = new javax.swing.JButton();
-        lblImage9 = new javax.swing.JLabel();
-        lblName3K = new javax.swing.JLabel();
-        lblprice9 = new javax.swing.JLabel();
+        name1 = new javax.swing.JLabel();
+        male4 = new javax.swing.JPanel();
+        btnBuyNow1M1 = new javax.swing.JButton();
+        image2 = new javax.swing.JLabel();
+        category2 = new javax.swing.JLabel();
+        price2 = new javax.swing.JLabel();
+        name2 = new javax.swing.JLabel();
+        male5 = new javax.swing.JPanel();
+        btnBuyNow1M2 = new javax.swing.JButton();
+        image3 = new javax.swing.JLabel();
+        category3 = new javax.swing.JLabel();
+        price3 = new javax.swing.JLabel();
+        name3 = new javax.swing.JLabel();
+        male6 = new javax.swing.JPanel();
+        btnBuyNow1M3 = new javax.swing.JButton();
+        image4 = new javax.swing.JLabel();
+        category4 = new javax.swing.JLabel();
+        price4 = new javax.swing.JLabel();
+        name4 = new javax.swing.JLabel();
+        male7 = new javax.swing.JPanel();
+        btnBuyNow1M4 = new javax.swing.JButton();
+        image5 = new javax.swing.JLabel();
+        category5 = new javax.swing.JLabel();
+        price5 = new javax.swing.JLabel();
+        name5 = new javax.swing.JLabel();
+        male8 = new javax.swing.JPanel();
+        btnBuyNow1M5 = new javax.swing.JButton();
+        image6 = new javax.swing.JLabel();
+        category6 = new javax.swing.JLabel();
+        price6 = new javax.swing.JLabel();
+        name6 = new javax.swing.JLabel();
+        male9 = new javax.swing.JPanel();
+        btnBuyNow1M6 = new javax.swing.JButton();
+        image7 = new javax.swing.JLabel();
+        category7 = new javax.swing.JLabel();
+        price7 = new javax.swing.JLabel();
+        name7 = new javax.swing.JLabel();
+        male10 = new javax.swing.JPanel();
+        btnBuyNow1M7 = new javax.swing.JButton();
+        image8 = new javax.swing.JLabel();
+        category8 = new javax.swing.JLabel();
+        price8 = new javax.swing.JLabel();
+        name8 = new javax.swing.JLabel();
+        male11 = new javax.swing.JPanel();
+        btnBuyNow1M8 = new javax.swing.JButton();
+        image9 = new javax.swing.JLabel();
+        category9 = new javax.swing.JLabel();
+        price9 = new javax.swing.JLabel();
+        name9 = new javax.swing.JLabel();
         btnback = new javax.swing.JButton();
         btnNext = new javax.swing.JButton();
         btnprevious = new javax.swing.JButton();
@@ -272,181 +272,192 @@ public class ProductPageView extends javax.swing.JFrame {
         male1.add(btnBuyNow1M, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
         male1.add(image1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        name1.setText("men");
-        male1.add(name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
+        category1.setText("men");
+        male1.add(category1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 40, -1));
 
         price1.setText("price");
-        male1.add(price1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
+        male1.add(price1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
+
+        name1.setText("name");
+        male1.add(name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
         productGridPanel.add(male1);
 
-        female1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        male4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnBuyNow2W.setText("Buy now");
-        btnBuyNow2W.addActionListener(new java.awt.event.ActionListener() {
+        btnBuyNow1M1.setText("Buy now");
+        btnBuyNow1M1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuyNow2WActionPerformed(evt);
+                btnBuyNow1M1ActionPerformed(evt);
             }
         });
-        female1.add(btnBuyNow2W, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male4.add(btnBuyNow1M1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male4.add(image2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        lblImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
-        female1.add(lblImage2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
+        category2.setText("men");
+        male4.add(category2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 40, -1));
 
-        lblName1W.setText("Women");
-        female1.add(lblName1W, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
+        price2.setText("price");
+        male4.add(price2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
-        lblprice2.setText("$50");
-        female1.add(lblprice2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
+        name2.setText("name");
+        male4.add(name2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
-        productGridPanel.add(female1);
+        productGridPanel.add(male4);
 
-        kids1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        male5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnBuyNow3K.setText("Buy now");
-        btnBuyNow3K.addActionListener(new java.awt.event.ActionListener() {
+        btnBuyNow1M2.setText("Buy now");
+        btnBuyNow1M2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuyNow3KActionPerformed(evt);
+                btnBuyNow1M2ActionPerformed(evt);
             }
         });
-        kids1.add(btnBuyNow3K, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male5.add(btnBuyNow1M2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male5.add(image3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        lblImage3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
-        kids1.add(lblImage3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
+        category3.setText("men");
+        male5.add(category3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 40, -1));
 
-        lblName1K.setText("kids");
-        kids1.add(lblName1K, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
+        price3.setText("price");
+        male5.add(price3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
-        lblprice3.setText("$50");
-        kids1.add(lblprice3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
+        name3.setText("name");
+        male5.add(name3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
-        productGridPanel.add(kids1);
+        productGridPanel.add(male5);
 
-        male2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        male6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnBuyNow4M.setText("Buy now");
-        btnBuyNow4M.addActionListener(new java.awt.event.ActionListener() {
+        btnBuyNow1M3.setText("Buy now");
+        btnBuyNow1M3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuyNow4MActionPerformed(evt);
+                btnBuyNow1M3ActionPerformed(evt);
             }
         });
-        male2.add(btnBuyNow4M, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male6.add(btnBuyNow1M3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male6.add(image4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        lblImage4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
-        male2.add(lblImage4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
+        category4.setText("men");
+        male6.add(category4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 40, -1));
 
-        lblName2M.setText("Men");
-        male2.add(lblName2M, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
+        price4.setText("price");
+        male6.add(price4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
-        lblprice4.setText("$50");
-        male2.add(lblprice4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
+        name4.setText("name");
+        male6.add(name4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
-        productGridPanel.add(male2);
+        productGridPanel.add(male6);
 
-        kids2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        male7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnBuyNow5K.setText("Buy now");
-        btnBuyNow5K.addActionListener(new java.awt.event.ActionListener() {
+        btnBuyNow1M4.setText("Buy now");
+        btnBuyNow1M4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuyNow5KActionPerformed(evt);
+                btnBuyNow1M4ActionPerformed(evt);
             }
         });
-        kids2.add(btnBuyNow5K, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male7.add(btnBuyNow1M4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male7.add(image5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        lblImage5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
-        kids2.add(lblImage5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
+        category5.setText("men");
+        male7.add(category5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 40, -1));
 
-        lblName2K.setText("Kids");
-        kids2.add(lblName2K, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
+        price5.setText("price");
+        male7.add(price5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
-        lblprice5.setText("$50");
-        kids2.add(lblprice5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
+        name5.setText("name");
+        male7.add(name5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
-        productGridPanel.add(kids2);
+        productGridPanel.add(male7);
 
-        female2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        male8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnBuyNow6W.setText("Buy now");
-        btnBuyNow6W.addActionListener(new java.awt.event.ActionListener() {
+        btnBuyNow1M5.setText("Buy now");
+        btnBuyNow1M5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuyNow6WActionPerformed(evt);
+                btnBuyNow1M5ActionPerformed(evt);
             }
         });
-        female2.add(btnBuyNow6W, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male8.add(btnBuyNow1M5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male8.add(image6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        lblImage6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
-        female2.add(lblImage6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
+        category6.setText("men");
+        male8.add(category6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 40, -1));
 
-        lblName2W.setText("Women");
-        female2.add(lblName2W, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
+        price6.setText("price");
+        male8.add(price6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
-        lblprice6.setText("$50");
-        female2.add(lblprice6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
+        name6.setText("name");
+        male8.add(name6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
-        productGridPanel.add(female2);
+        productGridPanel.add(male8);
 
-        male3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        male9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnBuyNow7M.setText("Buy now");
-        btnBuyNow7M.addActionListener(new java.awt.event.ActionListener() {
+        btnBuyNow1M6.setText("Buy now");
+        btnBuyNow1M6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuyNow7MActionPerformed(evt);
+                btnBuyNow1M6ActionPerformed(evt);
             }
         });
-        male3.add(btnBuyNow7M, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male9.add(btnBuyNow1M6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male9.add(image7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        lblImage7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
-        male3.add(lblImage7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
+        category7.setText("men");
+        male9.add(category7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 40, -1));
 
-        lblName3M.setText("Men");
-        male3.add(lblName3M, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
+        price7.setText("price");
+        male9.add(price7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
-        lblprice7.setText("$50");
-        male3.add(lblprice7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
+        name7.setText("name");
+        male9.add(name7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
-        productGridPanel.add(male3);
+        productGridPanel.add(male9);
 
-        female3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        male10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnBuyNow8W.setText("Buy now");
-        btnBuyNow8W.addActionListener(new java.awt.event.ActionListener() {
+        btnBuyNow1M7.setText("Buy now");
+        btnBuyNow1M7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuyNow8WActionPerformed(evt);
+                btnBuyNow1M7ActionPerformed(evt);
             }
         });
-        female3.add(btnBuyNow8W, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male10.add(btnBuyNow1M7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male10.add(image8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        lblImage8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
-        female3.add(lblImage8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
+        category8.setText("men");
+        male10.add(category8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 40, -1));
 
-        lblName3W.setText("Women");
-        female3.add(lblName3W, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
+        price8.setText("price");
+        male10.add(price8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
-        lblprice8.setText("$50");
-        female3.add(lblprice8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
+        name8.setText("name");
+        male10.add(name8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
-        productGridPanel.add(female3);
+        productGridPanel.add(male10);
 
-        kids3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        male11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnBuyNow9K.setText("Buy now");
-        btnBuyNow9K.addActionListener(new java.awt.event.ActionListener() {
+        btnBuyNow1M8.setText("Buy now");
+        btnBuyNow1M8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuyNow9KActionPerformed(evt);
+                btnBuyNow1M8ActionPerformed(evt);
             }
         });
-        kids3.add(btnBuyNow9K, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male11.add(btnBuyNow1M8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male11.add(image9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
-        lblImage9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trial image.png"))); // NOI18N
-        kids3.add(lblImage9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
+        category9.setText("men");
+        male11.add(category9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 40, -1));
 
-        lblName3K.setText("Kids");
-        kids3.add(lblName3K, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 173, 161, -1));
+        price9.setText("price");
+        male11.add(price9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
-        lblprice9.setText("$50");
-        kids3.add(lblprice9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 207, -1, -1));
+        name9.setText("name");
+        male11.add(name9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
-        productGridPanel.add(kids3);
+        productGridPanel.add(male11);
 
         ProductScrollPane.setViewportView(productGridPanel);
 
@@ -510,38 +521,6 @@ public class ProductPageView extends javax.swing.JFrame {
          // TODO add your handling code here:
     }//GEN-LAST:event_btnBuyNow1MActionPerformed
 
-    private void btnBuyNow2WActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow2WActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuyNow2WActionPerformed
-
-    private void btnBuyNow3KActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow3KActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuyNow3KActionPerformed
-
-    private void btnBuyNow4MActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow4MActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuyNow4MActionPerformed
-
-    private void btnBuyNow5KActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow5KActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuyNow5KActionPerformed
-
-    private void btnBuyNow6WActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow6WActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuyNow6WActionPerformed
-
-    private void btnBuyNow7MActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow7MActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuyNow7MActionPerformed
-
-    private void btnBuyNow8WActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow8WActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuyNow8WActionPerformed
-
-    private void btnBuyNow9KActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow9KActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuyNow9KActionPerformed
-
     private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnbackActionPerformed
@@ -559,6 +538,38 @@ public class ProductPageView extends javax.swing.JFrame {
     private void txtSearchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSearchFieldActionPerformed
+
+    private void btnBuyNow1M1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow1M1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuyNow1M1ActionPerformed
+
+    private void btnBuyNow1M2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow1M2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuyNow1M2ActionPerformed
+
+    private void btnBuyNow1M3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow1M3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuyNow1M3ActionPerformed
+
+    private void btnBuyNow1M4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow1M4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuyNow1M4ActionPerformed
+
+    private void btnBuyNow1M5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow1M5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuyNow1M5ActionPerformed
+
+    private void btnBuyNow1M6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow1M6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuyNow1M6ActionPerformed
+
+    private void btnBuyNow1M7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow1M7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuyNow1M7ActionPerformed
+
+    private void btnBuyNow1M8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyNow1M8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuyNow1M8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -601,22 +612,36 @@ public class ProductPageView extends javax.swing.JFrame {
     private javax.swing.JCheckBox Mcheckbox;
     private javax.swing.JScrollPane ProductScrollPane;
     private javax.swing.JButton btnBuyNow1M;
-    private javax.swing.JButton btnBuyNow2W;
-    private javax.swing.JButton btnBuyNow3K;
-    private javax.swing.JButton btnBuyNow4M;
-    private javax.swing.JButton btnBuyNow5K;
-    private javax.swing.JButton btnBuyNow6W;
-    private javax.swing.JButton btnBuyNow7M;
-    private javax.swing.JButton btnBuyNow8W;
-    private javax.swing.JButton btnBuyNow9K;
+    private javax.swing.JButton btnBuyNow1M1;
+    private javax.swing.JButton btnBuyNow1M2;
+    private javax.swing.JButton btnBuyNow1M3;
+    private javax.swing.JButton btnBuyNow1M4;
+    private javax.swing.JButton btnBuyNow1M5;
+    private javax.swing.JButton btnBuyNow1M6;
+    private javax.swing.JButton btnBuyNow1M7;
+    private javax.swing.JButton btnBuyNow1M8;
     private javax.swing.JButton btnNext;
     private javax.swing.JButton btnback;
     private javax.swing.JButton btnprevious;
-    private javax.swing.JPanel female1;
-    private javax.swing.JPanel female2;
-    private javax.swing.JPanel female3;
+    private javax.swing.JLabel category1;
+    private javax.swing.JLabel category2;
+    private javax.swing.JLabel category3;
+    private javax.swing.JLabel category4;
+    private javax.swing.JLabel category5;
+    private javax.swing.JLabel category6;
+    private javax.swing.JLabel category7;
+    private javax.swing.JLabel category8;
+    private javax.swing.JLabel category9;
     private javax.swing.JComboBox<String> highlowbox;
     private javax.swing.JLabel image1;
+    private javax.swing.JLabel image2;
+    private javax.swing.JLabel image3;
+    private javax.swing.JLabel image4;
+    private javax.swing.JLabel image5;
+    private javax.swing.JLabel image6;
+    private javax.swing.JLabel image7;
+    private javax.swing.JLabel image8;
+    private javax.swing.JLabel image9;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
@@ -625,38 +650,33 @@ public class ProductPageView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel kids1;
-    private javax.swing.JPanel kids2;
-    private javax.swing.JPanel kids3;
-    private javax.swing.JLabel lblImage2;
-    private javax.swing.JLabel lblImage3;
-    private javax.swing.JLabel lblImage4;
-    private javax.swing.JLabel lblImage5;
-    private javax.swing.JLabel lblImage6;
-    private javax.swing.JLabel lblImage7;
-    private javax.swing.JLabel lblImage8;
-    private javax.swing.JLabel lblImage9;
-    private javax.swing.JLabel lblName1K;
-    private javax.swing.JLabel lblName1W;
-    private javax.swing.JLabel lblName2K;
-    private javax.swing.JLabel lblName2M;
-    private javax.swing.JLabel lblName2W;
-    private javax.swing.JLabel lblName3K;
-    private javax.swing.JLabel lblName3M;
-    private javax.swing.JLabel lblName3W;
-    private javax.swing.JLabel lblprice2;
-    private javax.swing.JLabel lblprice3;
-    private javax.swing.JLabel lblprice4;
-    private javax.swing.JLabel lblprice5;
-    private javax.swing.JLabel lblprice6;
-    private javax.swing.JLabel lblprice7;
-    private javax.swing.JLabel lblprice8;
-    private javax.swing.JLabel lblprice9;
     private javax.swing.JPanel male1;
-    private javax.swing.JPanel male2;
-    private javax.swing.JPanel male3;
+    private javax.swing.JPanel male10;
+    private javax.swing.JPanel male11;
+    private javax.swing.JPanel male4;
+    private javax.swing.JPanel male5;
+    private javax.swing.JPanel male6;
+    private javax.swing.JPanel male7;
+    private javax.swing.JPanel male8;
+    private javax.swing.JPanel male9;
     private javax.swing.JLabel name1;
+    private javax.swing.JLabel name2;
+    private javax.swing.JLabel name3;
+    private javax.swing.JLabel name4;
+    private javax.swing.JLabel name5;
+    private javax.swing.JLabel name6;
+    private javax.swing.JLabel name7;
+    private javax.swing.JLabel name8;
+    private javax.swing.JLabel name9;
     private javax.swing.JLabel price1;
+    private javax.swing.JLabel price2;
+    private javax.swing.JLabel price3;
+    private javax.swing.JLabel price4;
+    private javax.swing.JLabel price5;
+    private javax.swing.JLabel price6;
+    private javax.swing.JLabel price7;
+    private javax.swing.JLabel price8;
+    private javax.swing.JLabel price9;
     private javax.swing.JPanel productGridPanel;
     private javax.swing.JButton txtSearch;
     private javax.swing.JTextField txtSearchField;
@@ -668,35 +688,63 @@ public class ProductPageView extends javax.swing.JFrame {
 
         String searchText = txtSearchField.getText().trim().toLowerCase(); // Correct JTextField
 
-        JPanel[] allProducts = {
-            male1, male2, male3,
-            female1, female2, female3,
-            kids1, kids2, kids3
-        };
+//        JPanel[] allProducts = {
+//            male1, male2, male3,
+//            female1, female2, female3,
+//            kids1, kids2, kids3
+//        };
 
         boolean anyCategorySelected = showMale || showFemale || showKids;
 
-        for (JPanel panel : allProducts) {
-            String category = panel.getName();
-
-            JLabel label = (JLabel) panel.getComponent(2); // Adjust index if needed
-            String productName = label.getText().toLowerCase();
-
-            boolean matchesCategory = !anyCategorySelected ||
-                (showMale && category.equals("male")) ||
-                (showFemale && category.equals("female")) ||
-                (showKids && category.equals("kids"));
-
-            boolean matchesSearch = productName.contains(searchText);
-
-            panel.setVisible(matchesCategory && matchesSearch);
-        }
-
-        revalidate();
-        repaint();
+//        for (JPanel panel : allProducts) {
+//            String category = panel.getName();
+//
+//            JLabel label = (JLabel) panel.getComponent(2); // Adjust index if needed
+//            String productName = label.getText().toLowerCase();
+//
+//            boolean matchesCategory = !anyCategorySelected ||
+//                (showMale && category.equals("male")) ||
+//                (showFemale && category.equals("female")) ||
+//                (showKids && category.equals("kids"));
+//
+//            boolean matchesSearch = productName.contains(searchText);
+//
+//            panel.setVisible(matchesCategory && matchesSearch);
+//        }
+//
+//        revalidate();
+//        repaint();
     }   
 
+    private void displayAllProducts() {
+        displayProduct(1, name1, price1, category1, image1);
+        displayProduct(2, name2, price2, category2, image2);
+        displayProduct(3, name3, price3, category3, image3);
+        displayProduct(4, name4, price4, category4, image4);
+        displayProduct(5, name5, price5, category5, image5);
+        displayProduct(6, name6, price6, category6, image6);
+        displayProduct(7, name7, price7, category7, image7);
+        displayProduct(8, name8, price8, category8, image8);
+        displayProduct(9, name9, price9, category9, image9);
+    }
 
+    private void displayProduct(int i, JLabel nameLabel, JLabel priceLabel, JLabel categoryLabel, JLabel imageLabel) {
+        String name = postDao.getProductNameDB(i);
+        int price = postDao.getProductPriceDB(i);
+        String category = postDao.getProductCategoryDB(i);
+        Image image = postDao.displayImageFromDatabase(i);
+
+        nameLabel.setText(name != null ? name : "No Name");
+        priceLabel.setText(price >= 0 ? String.valueOf(price) : "N/A");
+        categoryLabel.setText(category != null ? category : "N/A");
+
+        if (image != null) {
+            imageLabel.setIcon(new ImageIcon(image));
+            imageLabel.setText("");
+        } else {
+            imageLabel.setIcon(null);
+        }
+    }
 
 
 
