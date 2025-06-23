@@ -16,6 +16,7 @@ import java.util.prefs.Preferences;
 import org.mindrot.jbcrypt.BCrypt;
 import skydrop.userDAO.AdminDao;
 import skydrop.userDAO.UserDao;
+import skydrop.view.AdminView;
 import skydrop.view.UserView;
 
 
@@ -92,9 +93,14 @@ public class AuthController {
         } else {
             prefs.remove("email");
         }
-        
+        String actual_password;
         UserDao userDao = new UserDao();
-        String actual_password = userDao.getPasswordDB(email);
+        AdminDao adminDao = new AdminDao();
+        if(!loginView.getAdminCheckbox()){
+                actual_password = userDao.getPasswordDB(email);
+            }else{
+                actual_password = adminDao.getPasswordDB(email);
+            }
         
         if (actual_password == null) {
         JOptionPane.showMessageDialog(loginView,
@@ -105,13 +111,21 @@ public class AuthController {
         
         boolean match = checkPassword(password, actual_password);
         if(match){
-            int id = userDao.getUser_idDB(email);
             
             UserView userView = new UserView();
-            userView.setId(id);
+            AdminView adminView = new AdminView();        
+            if(!loginView.getAdminCheckbox()){
+                int id = userDao.getUser_idDB(email);
+                userView.setId(id);
+                loginView.dispose();
+                userView.setVisible(true);
+            }else{
+                int id = adminDao.getUser_idDB(email);
+                adminView.setId(id);
+                loginView.dispose();
+                adminView.setVisible(true);
+            }
             
-            userView.setVisible(true);
-            loginView.dispose();
         } else {
             JOptionPane.showMessageDialog(loginView, "Password incorrect!");
         }

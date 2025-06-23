@@ -19,6 +19,12 @@ import skydrop.userDAO.PostDao;
  */
 public class AddProduct extends javax.swing.JFrame {
         
+    private int id;
+    
+    public void setID(int id){
+        this.id=id;
+    }
+    
     private File selectedFile;
     /**
      * Creates new form AddProduct
@@ -365,7 +371,7 @@ public class AddProduct extends javax.swing.JFrame {
         String Description = description.getText();
         File Picture = getFile();
         
-        int admin_id = 1;
+        int admin_id = id;
         
         PostDao postDao = new PostDao();
         postDao.addPost(ProductName,Price_int,Description,Picture,admin_id,Category);
