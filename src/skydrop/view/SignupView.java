@@ -25,8 +25,8 @@ public class SignupView extends javax.swing.JFrame {
         jLabel9.setIcon(new ImageIcon(image));
         
         // Make login link clickable
-        loginLink.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        loginLink.setForeground(Color.BLUE);
+        loginLink1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        loginLink1.setForeground(Color.BLUE);
     }
 
     /**
@@ -523,7 +523,7 @@ public class SignupView extends javax.swing.JFrame {
     }
 
     public JLabel getLoginLink() {
-        return loginLink;
+        return loginLink1;
     }
     
 }

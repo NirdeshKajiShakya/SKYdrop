@@ -57,8 +57,6 @@ public class UserView extends javax.swing.JFrame {
         NameField = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         AddressField = new javax.swing.JLabel();
-        myaccountButton = new javax.swing.JButton();
-        MyorderlistButton = new javax.swing.JButton();
         productButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -237,26 +235,6 @@ public class UserView extends javax.swing.JFrame {
 
         AddressField.setText("jLabel17");
 
-        myaccountButton.setBackground(new java.awt.Color(0, 158, 158));
-        myaccountButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        myaccountButton.setForeground(new java.awt.Color(255, 255, 255));
-        myaccountButton.setText("My account");
-        myaccountButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                myaccountButtonActionPerformed(evt);
-            }
-        });
-
-        MyorderlistButton.setBackground(new java.awt.Color(0, 158, 158));
-        MyorderlistButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        MyorderlistButton.setForeground(new java.awt.Color(255, 255, 255));
-        MyorderlistButton.setText("My orders List");
-        MyorderlistButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MyorderlistButtonActionPerformed(evt);
-            }
-        });
-
         productButton.setBackground(new java.awt.Color(0, 158, 158));
         productButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         productButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -306,19 +284,13 @@ public class UserView extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(67, 67, 67)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(myaccountButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(MyorderlistButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(productButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
+                        .addGap(11, 11, 11)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -336,15 +308,16 @@ public class UserView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(productButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(284, 284, 284)
+                                .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addGap(77, 77, 77)
@@ -357,8 +330,6 @@ public class UserView extends javax.swing.JFrame {
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(myaccountButton)
-                    .addComponent(MyorderlistButton)
                     .addComponent(productButton)
                     .addComponent(logoutButton))
                 .addGap(32, 32, 32)
@@ -406,21 +377,10 @@ public class UserView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void MyorderlistButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MyorderlistButtonActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(UserView.this , "List of Orders");
-        
-        
-    }//GEN-LAST:event_MyorderlistButtonActionPerformed
-
     private void btnAccountInformationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccountInformationActionPerformed
        // TODO add your handling code here:
       
     }//GEN-LAST:event_btnAccountInformationActionPerformed
-
-    private void myaccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myaccountButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_myaccountButtonActionPerformed
 
     private void btnChangeEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeEmailActionPerformed
         // TODO add your handling code here:
@@ -443,9 +403,12 @@ public class UserView extends javax.swing.JFrame {
 
     private void EditButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditButton1ActionPerformed
 
-        this.dispose(); // close current "My Account" window
-        new UpadateUserView().setVisible(true); // open UpdateUserView
-        
+        this.dispose(); 
+        System.out.print(id);
+        UpadateUserView updateView = new UpadateUserView();
+        updateView.setID(id);
+        System.out.print(id);
+        updateView.setVisible(true); 
 
     }//GEN-LAST:event_EditButton1ActionPerformed
 
@@ -501,7 +464,6 @@ public class UserView extends javax.swing.JFrame {
     private javax.swing.JLabel AddressField;
     private javax.swing.JButton EditButton1;
     private javax.swing.JLabel EmailField;
-    private javax.swing.JButton MyorderlistButton;
     private javax.swing.JLabel NameField;
     private javax.swing.JLabel NameLabel1;
     private javax.swing.JButton btnAccountInformation;
@@ -531,7 +493,6 @@ public class UserView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JButton logoutButton;
-    private javax.swing.JButton myaccountButton;
     private javax.swing.JButton productButton;
     // End of variables declaration//GEN-END:variables
     public void setId(int id){

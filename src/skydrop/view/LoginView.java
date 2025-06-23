@@ -21,8 +21,8 @@ public class LoginView extends javax.swing.JFrame {
         jLabel3.setIcon(new ImageIcon(image));
         
         // Make signup link clickable
-        signupLink.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        signupLink.setForeground(Color.BLUE);
+        signupLink1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        signupLink1.setForeground(Color.BLUE);
     }
 
     /**
@@ -44,6 +44,7 @@ public class LoginView extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         passwordField = new javax.swing.JPasswordField();
         rememberCheckbox = new javax.swing.JCheckBox();
+        jLabel6 = new javax.swing.JLabel();
         loginButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         signupLink = new javax.swing.JLabel();
@@ -101,6 +102,14 @@ public class LoginView extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setForeground(new java.awt.Color(0, 102, 255));
+        jLabel6.setText("Forgot password?");
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -116,6 +125,10 @@ public class LoginView extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(rememberCheckbox)
                 .addGap(0, 139, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,7 +140,9 @@ public class LoginView extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(rememberCheckbox)
                 .addContainerGap())
         );
@@ -174,6 +189,7 @@ public class LoginView extends javax.swing.JFrame {
 
         jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 389, -1, -1));
 
+        AdminCheckbox.setBackground(new java.awt.Color(236, 248, 227));
         AdminCheckbox.setText("Admin Log in");
         AdminCheckbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -225,6 +241,12 @@ public class LoginView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordFieldActionPerformed
 
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        this.dispose();
+        ForgotPassword forgotPassword = new ForgotPassword();
+        forgotPassword.setVisible(true);
+    }//GEN-LAST:event_jLabel6MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -267,6 +289,7 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -294,10 +317,10 @@ public class LoginView extends javax.swing.JFrame {
         return loginButton;
     }
 
-    public JLabel getSignupLink() {  // Assuming you have a "Don't have account?" JLabel
-        return signupLink;
+    public JLabel getSignupLink() {  
+        return signupLink1;
     } 
-   // Setters
+   
     public void setEmail(String email) {
         emailField.setText(email);
     }

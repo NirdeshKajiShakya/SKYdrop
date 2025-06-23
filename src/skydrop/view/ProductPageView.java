@@ -8,6 +8,7 @@ import javax.swing.*;
 import skydrop.database.DbConnection;
 import skydrop.userDAO.PostDao;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -696,89 +697,111 @@ public class ProductPageView extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
    
 
+
+    
+    
     private void displayAllProducts() {
-        int totalProducts = postDao.getTotalProductCount();
+    int totalProducts = postDao.getTotalProductCount();
+    int productsPerPage = 9;
+    int totalPages = (int) Math.ceil((double) totalProducts / productsPerPage);
 
-        clearProductPanel(male1, name1, price1, category1, image1);
-        clearProductPanel(male4, name2, price2, category2, image2);
-        clearProductPanel(male5, name3, price3, category3, image3);
-        clearProductPanel(male6, name4, price4, category4, image4);
-        clearProductPanel(male7, name5, price5, category5, image5);
-        clearProductPanel(male8, name6, price6, category6, image6);
-        clearProductPanel(male9, name7, price7, category7, image7);
-        clearProductPanel(male10, name8, price8, category8, image8);
-        clearProductPanel(male11, name9, price9, category9, image9);
+    // Ensure placeHolder stays within bounds
+    if (placeHolder < 0) placeHolder = 0;
+    if (placeHolder >= totalPages) placeHolder = totalPages - 1;
 
-        String searchText = Search.getText().trim().toLowerCase();
-        boolean showMale = Mcheckbox.isSelected();
-        boolean showFemale = Fcheckbox.isSelected();
-        boolean showKids = Kcheckbox.isSelected();
-        boolean anyCategorySelected = showMale || showFemale || showKids;
+    clearAllProductPanels();
 
-        int productIndex = 0;
+    String searchText = Search.getText().trim().toLowerCase();
+    boolean showMale = Mcheckbox.isSelected();
+    boolean showFemale = Fcheckbox.isSelected();
+    boolean showKids = Kcheckbox.isSelected();
+    boolean anyCategorySelected = showMale || showFemale || showKids;
 
-        int startIndex = searchText.isEmpty() ? placeHolder : 1;
+    List<Integer> validProductIDs = postDao.getAllProductIDs();
 
-        List<Integer> validProductIDs = postDao.getAllProductIDs();
+    // Apply search and category filter first
+    List<Integer> filteredProductIDs = new ArrayList<>();
+    for (Integer productId : validProductIDs) {
+        String name = postDao.getProductNameDB(productId);
+        String category = postDao.getProductCategoryDB(productId);
 
-        int displayedCount = 0;
+        if (!searchText.isEmpty() && !name.toLowerCase().contains(searchText)) {
+            continue;
+        }
 
-        for (Integer productId : validProductIDs) {
-            if (displayedCount >= 9) break;
-
-            String name = postDao.getProductNameDB(productId);
-            if (!searchText.isEmpty() && !name.toLowerCase().contains(searchText)) {
-                continue;
-            }
-
-            String category = postDao.getProductCategoryDB(productId);
-
-            if (anyCategorySelected) {
-                boolean matchesCategory = 
+        if (anyCategorySelected) {
+            boolean matchesCategory =
                     (showMale && category.equalsIgnoreCase("male")) ||
                     (showFemale && category.equalsIgnoreCase("female")) ||
                     (showKids && category.equalsIgnoreCase("kids"));
 
-                if (!matchesCategory) continue;
-            }
-
-            switch (displayedCount) {
-                case 0 -> displayProduct(productId, name1, price1, category1, image1);
-                case 1 -> displayProduct(productId, name2, price2, category2, image2);
-                case 2 -> displayProduct(productId, name3, price3, category3, image3);
-                case 3 -> displayProduct(productId, name4, price4, category4, image4);
-                case 4 -> displayProduct(productId, name5, price5, category5, image5);
-                case 5 -> displayProduct(productId, name6, price6, category6, image6);
-                case 6 -> displayProduct(productId, name7, price7, category7, image7);
-                case 7 -> displayProduct(productId, name8, price8, category8, image8);
-                case 8 -> displayProduct(productId, name9, price9, category9, image9);
-            }
-
-            displayedCount++;
+            if (!matchesCategory) continue;
         }
 
+        filteredProductIDs.add(productId);
     }
 
-    private void displayProduct(int i, JLabel nameLabel, JLabel priceLabel, JLabel categoryLabel, JLabel imageLabel) {
-        String name = postDao.getProductNameDB(i);
-        int price = postDao.getProductPriceDB(i);
-        String category = postDao.getProductCategoryDB(i);
-        Image image = postDao.displayImageFromDatabase(i);
+    // Determine the start and end indexes based on pagination
+    int startIndex = placeHolder * productsPerPage;
+    int endIndex = Math.min(startIndex + productsPerPage, filteredProductIDs.size());
 
+    int displayedCount = 0;
+    for (int i = startIndex; i < endIndex; i++) {
+        int productId = filteredProductIDs.get(i);
+        displayProduct(displayedCount, productId);
+        displayedCount++;
+    }
+}
+
+// Utility to clear all product panels
+private void clearAllProductPanels() {
+    clearProductPanel(male1, name1, price1, category1, image1);
+    clearProductPanel(male4, name2, price2, category2, image2);
+    clearProductPanel(male5, name3, price3, category3, image3);
+    clearProductPanel(male6, name4, price4, category4, image4);
+    clearProductPanel(male7, name5, price5, category5, image5);
+    clearProductPanel(male8, name6, price6, category6, image6);
+    clearProductPanel(male9, name7, price7, category7, image7);
+    clearProductPanel(male10, name8, price8, category8, image8);
+    clearProductPanel(male11, name9, price9, category9, image9);
+}
+
+// Now this displayProduct accepts index to map labels
+private void displayProduct(int index, int productId) {
+    String name = postDao.getProductNameDB(productId);
+    int price = postDao.getProductPriceDB(productId);
+    String category = postDao.getProductCategoryDB(productId);
+    Image image = postDao.displayImageFromDatabase(productId);
+
+    JLabel nameLabel = null, priceLabel = null, categoryLabel = null, imageLabel = null;
+    JPanel panel = null;
+
+    switch (index) {
+        case 0 -> { nameLabel = name1; priceLabel = price1; categoryLabel = category1; imageLabel = image1; panel = male1; }
+        case 1 -> { nameLabel = name2; priceLabel = price2; categoryLabel = category2; imageLabel = image2; panel = male4; }
+        case 2 -> { nameLabel = name3; priceLabel = price3; categoryLabel = category3; imageLabel = image3; panel = male5; }
+        case 3 -> { nameLabel = name4; priceLabel = price4; categoryLabel = category4; imageLabel = image4; panel = male6; }
+        case 4 -> { nameLabel = name5; priceLabel = price5; categoryLabel = category5; imageLabel = image5; panel = male7; }
+        case 5 -> { nameLabel = name6; priceLabel = price6; categoryLabel = category6; imageLabel = image6; panel = male8; }
+        case 6 -> { nameLabel = name7; priceLabel = price7; categoryLabel = category7; imageLabel = image7; panel = male9; }
+        case 7 -> { nameLabel = name8; priceLabel = price8; categoryLabel = category8; imageLabel = image8; panel = male10; }
+        case 8 -> { nameLabel = name9; priceLabel = price9; categoryLabel = category9; imageLabel = image9; panel = male11; }
+    }
+
+    if (nameLabel != null) {
         nameLabel.setText(name);
         priceLabel.setText(String.valueOf(price));
         categoryLabel.setText(category);
-
         if (image != null) {
-            imageLabel.setIcon(new ImageIcon(image));
+            Image scaledImage = image.getScaledInstance(150, 150, Image.SCALE_SMOOTH);
+            imageLabel.setIcon(new ImageIcon(scaledImage));
         } else {
             imageLabel.setIcon(null);
         }
-
-        if (nameLabel.getParent() instanceof JPanel) {
-            nameLabel.getParent().setVisible(true);
-        }
+        if (panel != null) panel.setVisible(true);
     }
+}
+
     
     
     
