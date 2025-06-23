@@ -762,7 +762,7 @@ public class AdminProductPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel16.setBackground(new java.awt.Color(198, 255, 229));
+        jPanel16.setBackground(new java.awt.Color(236, 248, 227));
 
         jPanel17.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -873,19 +873,19 @@ public class AdminProductPage extends javax.swing.JFrame {
             .addComponent(jLabel72, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
 
-        jButton9.setBackground(new java.awt.Color(198, 255, 229));
+        jButton9.setBackground(new java.awt.Color(0, 153, 153));
         jButton9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(51, 51, 255));
+        jButton9.setForeground(new java.awt.Color(255, 255, 255));
         jButton9.setText("Edit");
 
-        jButton10.setBackground(new java.awt.Color(198, 255, 229));
+        jButton10.setBackground(new java.awt.Color(0, 153, 153));
         jButton10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(51, 51, 255));
+        jButton10.setForeground(new java.awt.Color(255, 255, 255));
         jButton10.setText("Edit");
 
-        jButton11.setBackground(new java.awt.Color(198, 255, 229));
+        jButton11.setBackground(new java.awt.Color(0, 153, 153));
         jButton11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton11.setForeground(new java.awt.Color(51, 51, 255));
+        jButton11.setForeground(new java.awt.Color(255, 255, 255));
         jButton11.setText("Edit");
 
         jPanel21.setPreferredSize(new java.awt.Dimension(150, 150));
