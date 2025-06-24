@@ -12,6 +12,7 @@ import skydrop.view.SignupView;
 import java.sql.*;
 import javax.swing.*;
 import skydrop.database.DbConnection;
+import skydrop.utils.EmailSender;
 
 /**
  *
@@ -22,14 +23,17 @@ public class ForgotPassword extends javax.swing.JFrame {
     /**
      * Creates new form ForgotPassword
      */
+    private String verificationCode;
     public ForgotPassword() {
         initComponents();
+        
         
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/forgot password.png"));
         Image image = icon.getImage().getScaledInstance(304,336,Image.SCALE_SMOOTH);
         jLabel2.setIcon(new ImageIcon(image));
         
     }
+       
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,11 +53,11 @@ public class ForgotPassword extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         emailField = new javax.swing.JLabel();
-        EmailField = new javax.swing.JTextField();
+        emailTextField = new javax.swing.JTextField();
         CodeSendbtn = new javax.swing.JButton();
         backToLogin = new javax.swing.JButton();
         verifypanel = new javax.swing.JPanel();
-        verificationCode = new javax.swing.JTextField();
+        verification = new javax.swing.JTextField();
         code = new javax.swing.JLabel();
         verifybtn = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
@@ -80,10 +84,7 @@ public class ForgotPassword extends javax.swing.JFrame {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -103,12 +104,12 @@ public class ForgotPassword extends javax.swing.JFrame {
         emailField.setText("Email");
         jPanel2.add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 37, 20));
 
-        EmailField.addActionListener(new java.awt.event.ActionListener() {
+        emailTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EmailFieldActionPerformed(evt);
+                emailTextFieldActionPerformed(evt);
             }
         });
-        jPanel2.add(EmailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 200, -1));
+        jPanel2.add(emailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 200, -1));
 
         CodeSendbtn.setBackground(new java.awt.Color(0, 153, 153));
         CodeSendbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -130,9 +131,9 @@ public class ForgotPassword extends javax.swing.JFrame {
         });
         jPanel2.add(backToLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 193, -1));
 
-        verificationCode.addActionListener(new java.awt.event.ActionListener() {
+        verification.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                verificationCodeActionPerformed(evt);
+                verificationActionPerformed(evt);
             }
         });
 
@@ -153,7 +154,7 @@ public class ForgotPassword extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(verifypanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(code)
-                    .addComponent(verificationCode)
+                    .addComponent(verification)
                     .addComponent(verifybtn, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
@@ -163,7 +164,7 @@ public class ForgotPassword extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(code)
                 .addGap(3, 3, 3)
-                .addComponent(verificationCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(verification, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(verifybtn)
                 .addContainerGap())
@@ -218,7 +219,7 @@ public class ForgotPassword extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -236,34 +237,20 @@ public class ForgotPassword extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void EmailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailFieldActionPerformed
+    private void emailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_EmailFieldActionPerformed
+    }//GEN-LAST:event_emailTextFieldActionPerformed
 
     private void CodeSendbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CodeSendbtnActionPerformed
-        String email = emailField.getText();
-        
-        if(email.isEmpty()){
-            System.out.println("Please enter your email.");
-            return;
-        }
-        try{
-            Connection con = DbConnection.getConnection();
-            String query = "Select * From users where Email = ?";
-            PreparedStatement pst = con.prepareStatement(query);
-            pst.setString(1, email);
-            ResultSet rs = pst.executeQuery();
-        
-            if (rs.next()) {
-            JOptionPane.showMessageDialog(null, "Email exists. Proceeding to reset screen.");
-            } else {
-            JOptionPane.showMessageDialog(null, "Email not found.");
-            }
-        
-            con.close();
-        
-        } catch (HeadlessException | SQLException e) {
-        JOptionPane.showMessageDialog(null, "Database error: " + e.getMessage());
+        String email = emailTextField.getText();  // get user email input
+        String code = String.valueOf((int)(Math.random() * 900000) + 100000); // generate 6-digit code
+
+        boolean sent = EmailSender.sendVerificationCode(email, code);
+        if (sent) {
+            JOptionPane.showMessageDialog(this, "Verification code sent to your email.");
+            verificationCode = code; // store code to check later
+        } else {
+            JOptionPane.showMessageDialog(this, "Failed to send code.");
         }
     }//GEN-LAST:event_CodeSendbtnActionPerformed
 
@@ -273,9 +260,9 @@ public class ForgotPassword extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_backToLoginActionPerformed
 
-    private void verificationCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verificationCodeActionPerformed
+    private void verificationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verificationActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_verificationCodeActionPerformed
+    }//GEN-LAST:event_verificationActionPerformed
 
     private void verifybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verifybtnActionPerformed
         // TODO add your handling code here:
@@ -316,11 +303,11 @@ public class ForgotPassword extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CodeSendbtn;
-    private javax.swing.JTextField EmailField;
     private javax.swing.JButton backToLogin;
     private javax.swing.JLabel backToLoginButton;
     private javax.swing.JLabel code;
     private javax.swing.JLabel emailField;
+    private javax.swing.JTextField emailTextField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -332,7 +319,7 @@ public class ForgotPassword extends javax.swing.JFrame {
     private javax.swing.JLabel newpassword;
     private javax.swing.JTextField passtxt;
     private javax.swing.JButton submitbtn;
-    private javax.swing.JTextField verificationCode;
+    private javax.swing.JTextField verification;
     private javax.swing.JButton verifybtn;
     private javax.swing.JPanel verifypanel;
     // End of variables declaration//GEN-END:variables

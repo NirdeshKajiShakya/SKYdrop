@@ -15,9 +15,9 @@ import javax.mail.internet.*;
 public class EmailSender {
 
     public static boolean sendVerificationCode(String to, String code) {
-        String from = "your-email@gmail.com";
+        String from = "skydrop833@gmail.com";
         String host = "smtp.gmail.com";
-        String password = "your-app-password"; // use Gmail App Password
+        String password = "yhzc qaba qwzy varu"; // use Gmail App Password
 
         Properties props = new Properties();
         props.put("mail.smtp.host", host);
