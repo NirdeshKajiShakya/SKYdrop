@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/view/ForgotPassword.java</file>
             <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/utils/EmailSender.java</file>
             <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/view/ProductPageView.java</file>
@@ -11,6 +12,9 @@
             <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/view/TestProductPageView.java</file>
             <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/view/UpadateUserView.java</file>
             <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/view/UserView.java</file>
+=======
+            <file>file:/D:/work/sem%202%20project/repo/SKYdrop/src/skydrop/view/ProductPageView.java</file>
+>>>>>>> e3e04c39feecab2c052e8f686f1f1bc0e5124bf1
         </group>
     </open-files>
 </project-private>

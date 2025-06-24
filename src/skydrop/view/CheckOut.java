@@ -10,7 +10,6 @@ package skydrop.view;
  */
 import java.awt.Image;
 import skydrop.controllers.StripeController;
-
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import skydrop.controllers.StripeController;

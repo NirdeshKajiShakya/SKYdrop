@@ -33,6 +33,11 @@ public class ProductPageView extends javax.swing.JFrame {
     public ProductPageView() {
         initComponents();
         displayAllProducts();
+        highlowbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                displayAllProducts();
+            }
+        });
     }
 
     /**
@@ -219,6 +224,11 @@ public class ProductPageView extends javax.swing.JFrame {
         jLabel5.setText("Price Range");
 
         highlowbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Higher to Lower", "Lower to Higher", " " }));
+        highlowbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                highlowboxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -586,6 +596,10 @@ public class ProductPageView extends javax.swing.JFrame {
         displayAllProducts();
     }//GEN-LAST:event_btnpreviousActionPerformed
 
+    private void highlowboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_highlowboxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_highlowboxActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -700,15 +714,9 @@ public class ProductPageView extends javax.swing.JFrame {
 
     
     
-    private void displayAllProducts() {
-    int totalProducts = postDao.getTotalProductCount();
-    int productsPerPage = 9;
-    int totalPages = (int) Math.ceil((double) totalProducts / productsPerPage);
 
-    // Ensure placeHolder stays within bounds
-    if (placeHolder < 0) placeHolder = 0;
-    if (placeHolder >= totalPages) placeHolder = totalPages - 1;
-
+    
+private void displayAllProducts() {
     clearAllProductPanels();
 
     String searchText = Search.getText().trim().toLowerCase();
@@ -717,11 +725,11 @@ public class ProductPageView extends javax.swing.JFrame {
     boolean showKids = Kcheckbox.isSelected();
     boolean anyCategorySelected = showMale || showFemale || showKids;
 
-    List<Integer> validProductIDs = postDao.getAllProductIDs();
-
-    // Apply search and category filter first
     List<Integer> filteredProductIDs = new ArrayList<>();
-    for (Integer productId : validProductIDs) {
+    List<Integer> allProductIDs = postDao.getAllProductIDs();
+
+    
+    for (Integer productId : postDao.getAllProductIDs()) {
         String name = postDao.getProductNameDB(productId);
         String category = postDao.getProductCategoryDB(productId);
 
@@ -740,8 +748,30 @@ public class ProductPageView extends javax.swing.JFrame {
 
         filteredProductIDs.add(productId);
     }
+    String priceSortOrder = (String) highlowbox.getSelectedItem();
+        if (priceSortOrder != null && !priceSortOrder.trim().isEmpty()) {
+            filteredProductIDs.sort((id1, id2) -> {
+                int price1 = postDao.getProductPriceDB(id1);
+                int price2 = postDao.getProductPriceDB(id2);
 
-    // Determine the start and end indexes based on pagination
+                if (priceSortOrder.equalsIgnoreCase("Higher to Lower")) {
+                    return Integer.compare(price2, price1); 
+                } else if (priceSortOrder.equalsIgnoreCase("Lower to Higher")) {
+                    return Integer.compare(price1, price2); 
+                } else {
+                    return 0; 
+                }
+            });
+        }
+
+
+    int productsPerPage = 9;
+    int totalPages = (int) Math.ceil((double) filteredProductIDs.size() / productsPerPage);
+
+    if (placeHolder < 0) placeHolder = 0;
+    if (totalPages > 0 && placeHolder >= totalPages) placeHolder = totalPages - 1;
+    if (totalPages == 0) placeHolder = 0; 
+
     int startIndex = placeHolder * productsPerPage;
     int endIndex = Math.min(startIndex + productsPerPage, filteredProductIDs.size());
 
@@ -751,9 +781,8 @@ public class ProductPageView extends javax.swing.JFrame {
         displayProduct(displayedCount, productId);
         displayedCount++;
     }
-}
+}    
 
-// Utility to clear all product panels
 private void clearAllProductPanels() {
     clearProductPanel(male1, name1, price1, category1, image1);
     clearProductPanel(male4, name2, price2, category2, image2);
@@ -766,7 +795,6 @@ private void clearAllProductPanels() {
     clearProductPanel(male11, name9, price9, category9, image9);
 }
 
-// Now this displayProduct accepts index to map labels
 private void displayProduct(int index, int productId) {
     String name = postDao.getProductNameDB(productId);
     int price = postDao.getProductPriceDB(productId);
@@ -846,8 +874,5 @@ private void displayProduct(int index, int productId) {
         CheckOut checkOut = new CheckOut(name, price, image);
         checkOut.setVisible(true);
     }
-
-
-    
 
 }
