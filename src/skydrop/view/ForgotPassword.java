@@ -57,12 +57,12 @@ public class ForgotPassword extends javax.swing.JFrame {
         CodeSendbtn = new javax.swing.JButton();
         backToLogin = new javax.swing.JButton();
         verifypanel = new javax.swing.JPanel();
-        verification = new javax.swing.JTextField();
+        verificationCodeField = new javax.swing.JTextField();
         code = new javax.swing.JLabel();
         verifybtn = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
+        submitpanel = new javax.swing.JPanel();
         newpassword = new javax.swing.JLabel();
-        passtxt = new javax.swing.JTextField();
+        passtxtfield = new javax.swing.JTextField();
         submitbtn = new javax.swing.JButton();
 
         jTextField1.setBackground(new java.awt.Color(0, 153, 153));
@@ -131,9 +131,9 @@ public class ForgotPassword extends javax.swing.JFrame {
         });
         jPanel2.add(backToLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 193, -1));
 
-        verification.addActionListener(new java.awt.event.ActionListener() {
+        verificationCodeField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                verificationActionPerformed(evt);
+                verificationCodeFieldActionPerformed(evt);
             }
         });
 
@@ -154,7 +154,7 @@ public class ForgotPassword extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(verifypanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(code)
-                    .addComponent(verification)
+                    .addComponent(verificationCodeField)
                     .addComponent(verifybtn, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
@@ -164,43 +164,48 @@ public class ForgotPassword extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(code)
                 .addGap(3, 3, 3)
-                .addComponent(verification, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(verificationCodeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(verifybtn)
-                .addContainerGap())
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        jPanel2.add(verifypanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 230, 80));
+        jPanel2.add(verifypanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 230, 90));
 
         newpassword.setText("New Password");
 
         submitbtn.setText("Submit");
+        submitbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitbtnActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout submitpanelLayout = new javax.swing.GroupLayout(submitpanel);
+        submitpanel.setLayout(submitpanelLayout);
+        submitpanelLayout.setHorizontalGroup(
+            submitpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(submitpanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(passtxt)
+                .addGroup(submitpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(passtxtfield)
                     .addComponent(newpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(submitbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        submitpanelLayout.setVerticalGroup(
+            submitpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(submitpanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(newpassword)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(passtxtfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(submitbtn)
                 .addContainerGap(11, Short.MAX_VALUE))
         );
 
-        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 230, 90));
+        jPanel2.add(submitpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 230, 90));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -242,13 +247,16 @@ public class ForgotPassword extends javax.swing.JFrame {
     }//GEN-LAST:event_emailTextFieldActionPerformed
 
     private void CodeSendbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CodeSendbtnActionPerformed
-        String email = emailTextField.getText();  // get user email input
+        String email = emailTextField.getText();  
         String code = String.valueOf((int)(Math.random() * 900000) + 100000); // generate 6-digit code
 
         boolean sent = EmailSender.sendVerificationCode(email, code);
         if (sent) {
             JOptionPane.showMessageDialog(this, "Verification code sent to your email.");
             verificationCode = code; // store code to check later
+            verificationCodeField.setEnabled(true);  // makes the Verifyfield enable
+            verifybtn.setEnabled(true); // makes verifybtn enable
+            
         } else {
             JOptionPane.showMessageDialog(this, "Failed to send code.");
         }
@@ -260,13 +268,26 @@ public class ForgotPassword extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_backToLoginActionPerformed
 
-    private void verificationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verificationActionPerformed
+    private void verificationCodeFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verificationCodeFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_verificationActionPerformed
+    }//GEN-LAST:event_verificationCodeFieldActionPerformed
 
     private void verifybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verifybtnActionPerformed
         // TODO add your handling code here:
+        String enteredCode = verificationCodeField.getText(); 
+        if (enteredCode.equals(verificationCode)) {
+            JOptionPane.showMessageDialog(this, "Verification successful! You may now reset your password.");
+            passtxtfield.setEnabled(true);  // makes the passfield enable
+            submitbtn.setEnabled(true); // makes submitbtn enable
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Invalid verification code. Please try again.");
+        }
     }//GEN-LAST:event_verifybtnActionPerformed
+
+    private void submitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitbtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_submitbtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -314,12 +335,12 @@ public class ForgotPassword extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel newpassword;
-    private javax.swing.JTextField passtxt;
+    private javax.swing.JTextField passtxtfield;
     private javax.swing.JButton submitbtn;
-    private javax.swing.JTextField verification;
+    private javax.swing.JPanel submitpanel;
+    private javax.swing.JTextField verificationCodeField;
     private javax.swing.JButton verifybtn;
     private javax.swing.JPanel verifypanel;
     // End of variables declaration//GEN-END:variables

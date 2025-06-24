@@ -17,7 +17,7 @@ public class EmailSender {
     public static boolean sendVerificationCode(String to, String code) {
         String from = "skydrop833@gmail.com";
         String host = "smtp.gmail.com";
-        String password = "yhzc qaba qwzy varu"; // use Gmail App Password
+        String password = "yhzc qaba qwzy varu"; // use Gmail App Password if changes or new app created 
 
         Properties props = new Properties();
         props.put("mail.smtp.host", host);
