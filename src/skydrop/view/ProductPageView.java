@@ -33,6 +33,11 @@ public class ProductPageView extends javax.swing.JFrame {
     public ProductPageView() {
         initComponents();
         displayAllProducts();
+        highlowbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                displayAllProducts();
+            }
+        });
     }
 
     /**
@@ -219,6 +224,11 @@ public class ProductPageView extends javax.swing.JFrame {
         jLabel5.setText("Price Range");
 
         highlowbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Higher to Lower", "Lower to Higher", " " }));
+        highlowbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                highlowboxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -586,6 +596,10 @@ public class ProductPageView extends javax.swing.JFrame {
         displayAllProducts();
     }//GEN-LAST:event_btnpreviousActionPerformed
 
+    private void highlowboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_highlowboxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_highlowboxActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -700,55 +714,7 @@ public class ProductPageView extends javax.swing.JFrame {
 
     
     
-//    private void displayAllProducts() {
-//        int totalProducts = postDao.getTotalProductCount();
-//        int productsPerPage = 9;
-//        int totalPages = (int) Math.ceil((double) totalProducts / productsPerPage);
-//
-//        if (placeHolder < 0) placeHolder = 0;
-//        if (placeHolder >= totalPages) placeHolder = totalPages - 1;
-//
-//        clearAllProductPanels();
-//
-//        String searchText = Search.getText().trim().toLowerCase();
-//        boolean showMale = Mcheckbox.isSelected();
-//        boolean showFemale = Fcheckbox.isSelected();
-//        boolean showKids = Kcheckbox.isSelected();
-//        boolean anyCategorySelected = showMale || showFemale || showKids;
-//
-//        List<Integer> validProductIDs = postDao.getAllProductIDs();
-//
-//        List<Integer> filteredProductIDs = new ArrayList<>();
-//        for (Integer productId : validProductIDs) {
-//            String name = postDao.getProductNameDB(productId);
-//            String category = postDao.getProductCategoryDB(productId);
-//
-//            if (!searchText.isEmpty() && !name.toLowerCase().contains(searchText)) {
-//                continue;
-//            }
-//
-//            if (anyCategorySelected) {
-//                boolean matchesCategory =
-//                        (showMale && category.equalsIgnoreCase("male")) ||
-//                        (showFemale && category.equalsIgnoreCase("female")) ||
-//                        (showKids && category.equalsIgnoreCase("kids"));
-//
-//                if (!matchesCategory) continue;
-//            }
-//
-//            filteredProductIDs.add(productId);
-//        }
-//
-//        int startIndex = placeHolder * productsPerPage;
-//        int endIndex = Math.min(startIndex + productsPerPage, filteredProductIDs.size());
-//
-//        int displayedCount = 0;
-//        for (int i = startIndex; i < endIndex; i++) {
-//            int productId = filteredProductIDs.get(i);
-//            displayProduct(displayedCount, productId);
-//            displayedCount++;
-//        }
-//    }
+
     
 private void displayAllProducts() {
     clearAllProductPanels();
@@ -759,8 +725,10 @@ private void displayAllProducts() {
     boolean showKids = Kcheckbox.isSelected();
     boolean anyCategorySelected = showMale || showFemale || showKids;
 
-    // Get filtered products
     List<Integer> filteredProductIDs = new ArrayList<>();
+    List<Integer> allProductIDs = postDao.getAllProductIDs();
+
+    
     for (Integer productId : postDao.getAllProductIDs()) {
         String name = postDao.getProductNameDB(productId);
         String category = postDao.getProductCategoryDB(productId);
@@ -780,17 +748,30 @@ private void displayAllProducts() {
 
         filteredProductIDs.add(productId);
     }
+    String priceSortOrder = (String) highlowbox.getSelectedItem();
+        if (priceSortOrder != null && !priceSortOrder.trim().isEmpty()) {
+            filteredProductIDs.sort((id1, id2) -> {
+                int price1 = postDao.getProductPriceDB(id1);
+                int price2 = postDao.getProductPriceDB(id2);
 
-    // Calculate pagination based on filtered products
+                if (priceSortOrder.equalsIgnoreCase("Higher to Lower")) {
+                    return Integer.compare(price2, price1); // descending
+                } else if (priceSortOrder.equalsIgnoreCase("Lower to Higher")) {
+                    return Integer.compare(price1, price2); // ascending
+                } else {
+                    return 0; // no change
+                }
+            });
+        }
+
+
     int productsPerPage = 9;
     int totalPages = (int) Math.ceil((double) filteredProductIDs.size() / productsPerPage);
 
-    // Adjust placeholder if needed
     if (placeHolder < 0) placeHolder = 0;
     if (totalPages > 0 && placeHolder >= totalPages) placeHolder = totalPages - 1;
     if (totalPages == 0) placeHolder = 0; // No products case
 
-    // Display products for current page
     int startIndex = placeHolder * productsPerPage;
     int endIndex = Math.min(startIndex + productsPerPage, filteredProductIDs.size());
 
@@ -895,6 +876,8 @@ private void displayProduct(int index, int productId) {
     }
 
 
-    
+    private void getBox(){
+        String valueBox = (String) highlowbox.getSelectedItem();
+    }
 
 }
