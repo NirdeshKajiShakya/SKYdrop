@@ -57,6 +57,7 @@ public class ForgotPassword extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         newpassword = new javax.swing.JPasswordField();
         submitbtn = new javax.swing.JButton();
+        verifybtn = new javax.swing.JButton();
 
         jTextField1.setBackground(new java.awt.Color(0, 153, 153));
         jTextField1.setText("             Reset Password");
@@ -144,6 +145,13 @@ public class ForgotPassword extends javax.swing.JFrame {
             }
         });
 
+        verifybtn.setText("Verify");
+        verifybtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verifybtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -173,7 +181,10 @@ public class ForgotPassword extends javax.swing.JFrame {
                                 .addComponent(newpassword))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(submitbtn)
-                        .addGap(74, 74, 74))))
+                        .addGap(74, 74, 74))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(verifybtn)
+                        .addGap(77, 77, 77))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,7 +203,9 @@ public class ForgotPassword extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(verificationCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(verifybtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(newpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -288,6 +301,10 @@ public class ForgotPassword extends javax.swing.JFrame {
 
     }//GEN-LAST:event_newpasswordActionPerformed
 
+    private void verifybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verifybtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_verifybtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -339,5 +356,6 @@ public class ForgotPassword extends javax.swing.JFrame {
     private javax.swing.JPasswordField newpassword;
     private javax.swing.JButton submitbtn;
     private javax.swing.JTextField verificationCode;
+    private javax.swing.JButton verifybtn;
     // End of variables declaration//GEN-END:variables
 }
