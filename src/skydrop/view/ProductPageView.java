@@ -755,11 +755,11 @@ private void displayAllProducts() {
                 int price2 = postDao.getProductPriceDB(id2);
 
                 if (priceSortOrder.equalsIgnoreCase("Higher to Lower")) {
-                    return Integer.compare(price2, price1); // descending
+                    return Integer.compare(price2, price1); 
                 } else if (priceSortOrder.equalsIgnoreCase("Lower to Higher")) {
-                    return Integer.compare(price1, price2); // ascending
+                    return Integer.compare(price1, price2); 
                 } else {
-                    return 0; // no change
+                    return 0; 
                 }
             });
         }
@@ -770,7 +770,7 @@ private void displayAllProducts() {
 
     if (placeHolder < 0) placeHolder = 0;
     if (totalPages > 0 && placeHolder >= totalPages) placeHolder = totalPages - 1;
-    if (totalPages == 0) placeHolder = 0; // No products case
+    if (totalPages == 0) placeHolder = 0; 
 
     int startIndex = placeHolder * productsPerPage;
     int endIndex = Math.min(startIndex + productsPerPage, filteredProductIDs.size());
@@ -873,11 +873,6 @@ private void displayProduct(int index, int productId) {
 
         CheckOut checkOut = new CheckOut(name, price, image);
         checkOut.setVisible(true);
-    }
-
-
-    private void getBox(){
-        String valueBox = (String) highlowbox.getSelectedItem();
     }
 
 }
