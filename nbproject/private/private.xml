@@ -5,6 +5,11 @@
         <group>
             <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/view/ForgotPassword.java</file>
             <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/utils/EmailSender.java</file>
+            <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/SKYdrop.java</file>
+            <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/controllers/AddProductController.java</file>
+            <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/controllers/AuthController.java</file>
+            <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/controllers/NavigationController.java</file>
+            <file>file:/C:/Users/Dell/OneDrive/Desktop/Sem2Project/SKYdrop/src/skydrop/controllers/StripeController.java</file>
         </group>
     </open-files>
 </project-private>
