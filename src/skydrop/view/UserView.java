@@ -186,7 +186,7 @@ public class UserView extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Call Us: +977 980000000 ");
+        jLabel9.setText("Call Us: +977 981000000 ");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);

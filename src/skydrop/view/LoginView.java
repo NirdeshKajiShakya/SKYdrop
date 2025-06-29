@@ -44,7 +44,7 @@ public class LoginView extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         passwordField = new javax.swing.JPasswordField();
         rememberCheckbox = new javax.swing.JCheckBox();
-        jLabel6 = new javax.swing.JLabel();
+        forpass = new javax.swing.JLabel();
         loginButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         signupLink = new javax.swing.JLabel();
@@ -102,11 +102,11 @@ public class LoginView extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setForeground(new java.awt.Color(0, 102, 255));
-        jLabel6.setText("Forgot password?");
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        forpass.setForeground(new java.awt.Color(0, 102, 255));
+        forpass.setText("Forgot password?");
+        forpass.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
+                forpassMouseClicked(evt);
             }
         });
 
@@ -127,7 +127,7 @@ public class LoginView extends javax.swing.JFrame {
                 .addGap(0, 139, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel6)
+                .addComponent(forpass)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -141,7 +141,7 @@ public class LoginView extends javax.swing.JFrame {
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel6)
+                .addComponent(forpass)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(rememberCheckbox)
                 .addContainerGap())
@@ -198,7 +198,7 @@ public class LoginView extends javax.swing.JFrame {
         });
         jPanel4.add(AdminCheckbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 318, 153, -1));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 530));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 560));
 
         jPanel5.setBackground(new java.awt.Color(236, 248, 227));
 
@@ -241,11 +241,11 @@ public class LoginView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordFieldActionPerformed
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+    private void forpassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_forpassMouseClicked
         this.dispose();
         ForgotPassword forgotPassword = new ForgotPassword();
         forgotPassword.setVisible(true);
-    }//GEN-LAST:event_jLabel6MouseClicked
+    }//GEN-LAST:event_forpassMouseClicked
 
     /**
      * @param args the command line arguments
@@ -284,12 +284,12 @@ public class LoginView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox AdminCheckbox;
     private javax.swing.JTextField emailField;
+    private javax.swing.JLabel forpass;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

@@ -38,11 +38,11 @@ public class NavigationController {
     }
 
     public void navigateToContactUs() {
-        new ContactUs().setVisible(true);  // You must have this class
+        new ContactUs().setVisible(true);  // must have  class dont delete
     }
 
     public void navigateToServices() {
-        new ContactUs().setVisible(true);  // You must have this class
+        new ContactUs().setVisible(true);  // dont delete
     }
 }
 
