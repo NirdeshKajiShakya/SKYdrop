@@ -250,7 +250,7 @@ public class AdminView extends javax.swing.JFrame {
         MyorderlistButton.setBackground(new java.awt.Color(0, 158, 158));
         MyorderlistButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         MyorderlistButton.setForeground(new java.awt.Color(255, 255, 255));
-        MyorderlistButton.setText("Add");
+        MyorderlistButton.setText("My Products");
         MyorderlistButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MyorderlistButtonActionPerformed(evt);
@@ -407,10 +407,10 @@ public class AdminView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void MyorderlistButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MyorderlistButtonActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(AdminView.this , "List of Orders");
-        
-        
+        this.dispose();
+        AdminProductEdit adminProduct = new AdminProductEdit();
+        adminProduct.setID(id);
+        adminProduct.setVisible(true);
     }//GEN-LAST:event_MyorderlistButtonActionPerformed
 
     private void btnAccountInformationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccountInformationActionPerformed
