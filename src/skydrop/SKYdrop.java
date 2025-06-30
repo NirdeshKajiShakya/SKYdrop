@@ -4,12 +4,7 @@
  */
 package skydrop;
 
-import skydrop.controllers.AuthController;
-//import skydrop.controllers.NavigationController;
-import skydrop.userDAO.UserDao;
 import skydrop.view.HomePage;
-import skydrop.view.LoginView;
-import skydrop.view.SignupView;
 //import skydrop.view.HomePage;
 //import skydrop.view.ServicePage;
 //import skydrop.view.ContactUs;
@@ -33,7 +28,7 @@ public class SKYdrop {
 //        AuthController authController = new AuthController(loginView, signupView);
 //        loginView.setVisible(true);
         HomePage homePage = new HomePage();
-        homePage.setVisible(true);
+        HomePage.setVisible(true);
         
     }
     
