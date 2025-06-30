@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/ACER/OneDrive/Desktop/java/SKYdrop/src/skydrop/view/RatingAndReview.java</file>
             <file>file:/C:/Users/ACER/OneDrive/Desktop/java/SKYdrop/src/skydrop/view/ProductPageView.java</file>
             <file>file:/C:/Users/ACER/OneDrive/Desktop/java/SKYdrop/src/skydrop/view/LoginView.java</file>
@@ -12,6 +13,10 @@
             <file>file:/C:/Users/ACER/OneDrive/Desktop/java/SKYdrop/src/skydrop/view/AdminProductPage.java</file>
             <file>file:/C:/Users/ACER/OneDrive/Desktop/java/SKYdrop/src/skydrop/view/AdminProductEdit.java</file>
             <file>file:/C:/Users/ACER/OneDrive/Desktop/java/SKYdrop/src/skydrop/view/AddProduct.java</file>
+=======
+            <file>file:/D:/sem2%20repo/SKYdrop/src/skydrop/view/AddProduct.java</file>
+            <file>file:/D:/sem2%20repo/SKYdrop/src/skydrop/view/orderhistory.java</file>
+>>>>>>> 2ca075767c3153ebc75fb0de54924b336050460d
         </group>
     </open-files>
 </project-private>
