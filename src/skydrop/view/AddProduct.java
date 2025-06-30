@@ -143,7 +143,7 @@ public class AddProduct extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 0, 48)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("ADD PRODUCT");
+        jLabel3.setText("ADD PRODUCTS");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
