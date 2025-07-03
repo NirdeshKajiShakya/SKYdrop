@@ -152,18 +152,54 @@ public class PostDao {
     }
     
     public List<Integer> getAllProductIDs() {
-    List<Integer> ids = new ArrayList<>();
-    String query = "SELECT product_id FROM products ORDER BY product_id";
-    try (Connection conn = DbConnection.getConnection();
-         PreparedStatement pstmt = conn.prepareStatement(query);
-         ResultSet rs = pstmt.executeQuery()) {
-        
-        while (rs.next()) {
-            ids.add(rs.getInt("product_id"));
+        List<Integer> ids = new ArrayList<>();
+        String query = "SELECT product_id FROM products ORDER BY product_id";
+        try (Connection conn = DbConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(query);
+             ResultSet rs = pstmt.executeQuery()) {
+
+            while (rs.next()) {
+                ids.add(rs.getInt("product_id"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-    } catch (SQLException e) {
-        e.printStackTrace();
+        return ids;
     }
-    return ids;
-}
+    
+    public List<Integer> getAdminProductIDs(int adminId) {
+        List<Integer> ids = new ArrayList<>();
+        String query = "SELECT product_id FROM products WHERE admin_id = ? ORDER BY product_id";
+
+        try (Connection conn = DbConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+
+            pstmt.setInt(1, adminId); 
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    ids.add(rs.getInt("product_id"));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return ids;
+    }
+
+    
+    
+    
+    public boolean deleteProduct(int productId) {
+        String query = "DELETE FROM products WHERE product_id = ?";
+        try (Connection conn = DbConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setInt(1, productId);
+            int affectedRows = pstmt.executeUpdate();
+            return affectedRows > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

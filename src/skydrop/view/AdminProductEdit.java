@@ -65,55 +65,55 @@ public class AdminProductEdit extends javax.swing.JFrame {
         ProductScrollPane = new javax.swing.JScrollPane();
         productGridPanel = new javax.swing.JPanel();
         male1 = new javax.swing.JPanel();
-        buyNow1 = new javax.swing.JButton();
+        delete1 = new javax.swing.JButton();
         image1 = new javax.swing.JLabel();
         category1 = new javax.swing.JLabel();
         price1 = new javax.swing.JLabel();
         name1 = new javax.swing.JLabel();
         male4 = new javax.swing.JPanel();
-        buyNow2 = new javax.swing.JButton();
+        delete2 = new javax.swing.JButton();
         image2 = new javax.swing.JLabel();
         category2 = new javax.swing.JLabel();
         price2 = new javax.swing.JLabel();
         name2 = new javax.swing.JLabel();
         male5 = new javax.swing.JPanel();
-        buyNow3 = new javax.swing.JButton();
+        delete3 = new javax.swing.JButton();
         image3 = new javax.swing.JLabel();
         category3 = new javax.swing.JLabel();
         price3 = new javax.swing.JLabel();
         name3 = new javax.swing.JLabel();
         male6 = new javax.swing.JPanel();
-        buyNow4 = new javax.swing.JButton();
+        delete4 = new javax.swing.JButton();
         image4 = new javax.swing.JLabel();
         category4 = new javax.swing.JLabel();
         price4 = new javax.swing.JLabel();
         name4 = new javax.swing.JLabel();
         male7 = new javax.swing.JPanel();
-        buyNow5 = new javax.swing.JButton();
+        delete5 = new javax.swing.JButton();
         image5 = new javax.swing.JLabel();
         category5 = new javax.swing.JLabel();
         price5 = new javax.swing.JLabel();
         name5 = new javax.swing.JLabel();
         male8 = new javax.swing.JPanel();
-        buyNow6 = new javax.swing.JButton();
+        delete6 = new javax.swing.JButton();
         image6 = new javax.swing.JLabel();
         category6 = new javax.swing.JLabel();
         price6 = new javax.swing.JLabel();
         name6 = new javax.swing.JLabel();
         male9 = new javax.swing.JPanel();
-        buyNow7 = new javax.swing.JButton();
+        delete7 = new javax.swing.JButton();
         image7 = new javax.swing.JLabel();
         category7 = new javax.swing.JLabel();
         price7 = new javax.swing.JLabel();
         name7 = new javax.swing.JLabel();
         male10 = new javax.swing.JPanel();
-        buyNow8 = new javax.swing.JButton();
+        delete8 = new javax.swing.JButton();
         image8 = new javax.swing.JLabel();
         category8 = new javax.swing.JLabel();
         price8 = new javax.swing.JLabel();
         name8 = new javax.swing.JLabel();
         male11 = new javax.swing.JPanel();
-        buyNow9 = new javax.swing.JButton();
+        delete9 = new javax.swing.JButton();
         image9 = new javax.swing.JLabel();
         category9 = new javax.swing.JLabel();
         price9 = new javax.swing.JLabel();
@@ -265,13 +265,13 @@ public class AdminProductEdit extends javax.swing.JFrame {
 
         male1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        buyNow1.setText("Buy now");
-        buyNow1.addActionListener(new java.awt.event.ActionListener() {
+        delete1.setText("Delete");
+        delete1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyNow1ActionPerformed(evt);
+                delete1ActionPerformed(evt);
             }
         });
-        male1.add(buyNow1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male1.add(delete1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
         male1.add(image1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
         category1.setText("men");
@@ -287,13 +287,13 @@ public class AdminProductEdit extends javax.swing.JFrame {
 
         male4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        buyNow2.setText("Buy now");
-        buyNow2.addActionListener(new java.awt.event.ActionListener() {
+        delete2.setText("Delete");
+        delete2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyNow2ActionPerformed(evt);
+                delete2ActionPerformed(evt);
             }
         });
-        male4.add(buyNow2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male4.add(delete2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
         male4.add(image2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
         category2.setText("men");
@@ -309,13 +309,13 @@ public class AdminProductEdit extends javax.swing.JFrame {
 
         male5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        buyNow3.setText("Buy now");
-        buyNow3.addActionListener(new java.awt.event.ActionListener() {
+        delete3.setText("Delete");
+        delete3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyNow3ActionPerformed(evt);
+                delete3ActionPerformed(evt);
             }
         });
-        male5.add(buyNow3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male5.add(delete3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
         male5.add(image3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
         category3.setText("men");
@@ -331,13 +331,13 @@ public class AdminProductEdit extends javax.swing.JFrame {
 
         male6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        buyNow4.setText("Buy now");
-        buyNow4.addActionListener(new java.awt.event.ActionListener() {
+        delete4.setText("Delete");
+        delete4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyNow4ActionPerformed(evt);
+                delete4ActionPerformed(evt);
             }
         });
-        male6.add(buyNow4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male6.add(delete4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
         male6.add(image4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
         category4.setText("men");
@@ -353,13 +353,13 @@ public class AdminProductEdit extends javax.swing.JFrame {
 
         male7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        buyNow5.setText("Buy now");
-        buyNow5.addActionListener(new java.awt.event.ActionListener() {
+        delete5.setText("Delete");
+        delete5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyNow5ActionPerformed(evt);
+                delete5ActionPerformed(evt);
             }
         });
-        male7.add(buyNow5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male7.add(delete5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
         male7.add(image5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
         category5.setText("men");
@@ -375,13 +375,13 @@ public class AdminProductEdit extends javax.swing.JFrame {
 
         male8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        buyNow6.setText("Buy now");
-        buyNow6.addActionListener(new java.awt.event.ActionListener() {
+        delete6.setText("Delete");
+        delete6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyNow6ActionPerformed(evt);
+                delete6ActionPerformed(evt);
             }
         });
-        male8.add(buyNow6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male8.add(delete6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
         male8.add(image6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
         category6.setText("men");
@@ -397,13 +397,13 @@ public class AdminProductEdit extends javax.swing.JFrame {
 
         male9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        buyNow7.setText("Buy now");
-        buyNow7.addActionListener(new java.awt.event.ActionListener() {
+        delete7.setText("Delete");
+        delete7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyNow7ActionPerformed(evt);
+                delete7ActionPerformed(evt);
             }
         });
-        male9.add(buyNow7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male9.add(delete7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
         male9.add(image7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
         category7.setText("men");
@@ -419,13 +419,13 @@ public class AdminProductEdit extends javax.swing.JFrame {
 
         male10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        buyNow8.setText("Buy now");
-        buyNow8.addActionListener(new java.awt.event.ActionListener() {
+        delete8.setText("Delete");
+        delete8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyNow8ActionPerformed(evt);
+                delete8ActionPerformed(evt);
             }
         });
-        male10.add(buyNow8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male10.add(delete8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
         male10.add(image8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
         category8.setText("men");
@@ -441,13 +441,13 @@ public class AdminProductEdit extends javax.swing.JFrame {
 
         male11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        buyNow9.setText("Buy now");
-        buyNow9.addActionListener(new java.awt.event.ActionListener() {
+        delete9.setText("Delete");
+        delete9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyNow9ActionPerformed(evt);
+                delete9ActionPerformed(evt);
             }
         });
-        male11.add(buyNow9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
+        male11.add(delete9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 241, -1, -1));
         male11.add(image9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 161, 149));
 
         category9.setText("men");
@@ -531,15 +531,15 @@ public class AdminProductEdit extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_McheckboxActionPerformed
 
-    private void buyNow1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyNow1ActionPerformed
-        handleBuyNow(price1,name1,image1);
-    }//GEN-LAST:event_buyNow1ActionPerformed
+    private void delete1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete1ActionPerformed
+        
+    }//GEN-LAST:event_delete1ActionPerformed
 
     private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed
         this.dispose();
-        UserView userView = new UserView();
-                userView.setId(id);
-                userView.setVisible(true);
+        AdminView adminView = new AdminView();
+                adminView.setId(id);
+                adminView.setVisible(true);
     }//GEN-LAST:event_btnbackActionPerformed
 
     private void FcheckboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FcheckboxActionPerformed
@@ -554,37 +554,37 @@ public class AdminProductEdit extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_SearchActionPerformed
 
-    private void buyNow2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyNow2ActionPerformed
-        handleBuyNow(price2,name2,image2);
-    }//GEN-LAST:event_buyNow2ActionPerformed
+    private void delete2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete2ActionPerformed
+        
+    }//GEN-LAST:event_delete2ActionPerformed
 
-    private void buyNow3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyNow3ActionPerformed
-        handleBuyNow(price3,name3,image3);
-    }//GEN-LAST:event_buyNow3ActionPerformed
+    private void delete3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete3ActionPerformed
+        
+    }//GEN-LAST:event_delete3ActionPerformed
 
-    private void buyNow4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyNow4ActionPerformed
-        handleBuyNow(price4,name4,image4);
-    }//GEN-LAST:event_buyNow4ActionPerformed
+    private void delete4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete4ActionPerformed
+        
+    }//GEN-LAST:event_delete4ActionPerformed
 
-    private void buyNow5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyNow5ActionPerformed
-        handleBuyNow(price5,name5,image5);
-    }//GEN-LAST:event_buyNow5ActionPerformed
+    private void delete5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete5ActionPerformed
+        
+    }//GEN-LAST:event_delete5ActionPerformed
 
-    private void buyNow6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyNow6ActionPerformed
-        handleBuyNow(price6,name6,image6);
-    }//GEN-LAST:event_buyNow6ActionPerformed
+    private void delete6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete6ActionPerformed
+        
+    }//GEN-LAST:event_delete6ActionPerformed
 
-    private void buyNow7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyNow7ActionPerformed
-        handleBuyNow(price7,name7,image7);
-    }//GEN-LAST:event_buyNow7ActionPerformed
+    private void delete7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete7ActionPerformed
+        
+    }//GEN-LAST:event_delete7ActionPerformed
 
-    private void buyNow8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyNow8ActionPerformed
-        handleBuyNow(price8,name8,image8);
-    }//GEN-LAST:event_buyNow8ActionPerformed
+    private void delete8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete8ActionPerformed
+        
+    }//GEN-LAST:event_delete8ActionPerformed
 
-    private void buyNow9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyNow9ActionPerformed
-        handleBuyNow(price9,name9,image9);
-    }//GEN-LAST:event_buyNow9ActionPerformed
+    private void delete9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete9ActionPerformed
+        
+    }//GEN-LAST:event_delete9ActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
         this.placeHolder = placeHolder + 1;
@@ -646,15 +646,6 @@ public class AdminProductEdit extends javax.swing.JFrame {
     private javax.swing.JButton btnNext;
     private javax.swing.JButton btnback;
     private javax.swing.JButton btnprevious;
-    private javax.swing.JButton buyNow1;
-    private javax.swing.JButton buyNow2;
-    private javax.swing.JButton buyNow3;
-    private javax.swing.JButton buyNow4;
-    private javax.swing.JButton buyNow5;
-    private javax.swing.JButton buyNow6;
-    private javax.swing.JButton buyNow7;
-    private javax.swing.JButton buyNow8;
-    private javax.swing.JButton buyNow9;
     private javax.swing.JLabel category1;
     private javax.swing.JLabel category2;
     private javax.swing.JLabel category3;
@@ -664,6 +655,15 @@ public class AdminProductEdit extends javax.swing.JFrame {
     private javax.swing.JLabel category7;
     private javax.swing.JLabel category8;
     private javax.swing.JLabel category9;
+    private javax.swing.JButton delete1;
+    private javax.swing.JButton delete2;
+    private javax.swing.JButton delete3;
+    private javax.swing.JButton delete4;
+    private javax.swing.JButton delete5;
+    private javax.swing.JButton delete6;
+    private javax.swing.JButton delete7;
+    private javax.swing.JButton delete8;
+    private javax.swing.JButton delete9;
     private javax.swing.JComboBox<String> highlowbox;
     private javax.swing.JLabel image1;
     private javax.swing.JLabel image2;
@@ -727,10 +727,10 @@ private void displayAllProducts() {
     boolean anyCategorySelected = showMale || showFemale || showKids;
 
     List<Integer> filteredProductIDs = new ArrayList<>();
-    List<Integer> allProductIDs = postDao.getAllProductIDs();
+    List<Integer> allProductIDs = postDao.getAdminProductIDs(id);
 
     
-    for (Integer productId : postDao.getAllProductIDs()) {
+    for (Integer productId : postDao.getAdminProductIDs(id)) {
         String name = postDao.getProductNameDB(productId);
         String category = postDao.getProductCategoryDB(productId);
 
@@ -804,17 +804,18 @@ private void displayProduct(int index, int productId) {
 
     JLabel nameLabel = null, priceLabel = null, categoryLabel = null, imageLabel = null;
     JPanel panel = null;
+    JButton deleteButton = null;
 
     switch (index) {
-        case 0 -> { nameLabel = name1; priceLabel = price1; categoryLabel = category1; imageLabel = image1; panel = male1; }
-        case 1 -> { nameLabel = name2; priceLabel = price2; categoryLabel = category2; imageLabel = image2; panel = male4; }
-        case 2 -> { nameLabel = name3; priceLabel = price3; categoryLabel = category3; imageLabel = image3; panel = male5; }
-        case 3 -> { nameLabel = name4; priceLabel = price4; categoryLabel = category4; imageLabel = image4; panel = male6; }
-        case 4 -> { nameLabel = name5; priceLabel = price5; categoryLabel = category5; imageLabel = image5; panel = male7; }
-        case 5 -> { nameLabel = name6; priceLabel = price6; categoryLabel = category6; imageLabel = image6; panel = male8; }
-        case 6 -> { nameLabel = name7; priceLabel = price7; categoryLabel = category7; imageLabel = image7; panel = male9; }
-        case 7 -> { nameLabel = name8; priceLabel = price8; categoryLabel = category8; imageLabel = image8; panel = male10; }
-        case 8 -> { nameLabel = name9; priceLabel = price9; categoryLabel = category9; imageLabel = image9; panel = male11; }
+        case 0 -> { nameLabel = name1; priceLabel = price1; categoryLabel = category1; imageLabel = image1; panel = male1; deleteButton = delete1; }
+        case 1 -> { nameLabel = name2; priceLabel = price2; categoryLabel = category2; imageLabel = image2; panel = male4; deleteButton = delete2; }
+        case 2 -> { nameLabel = name3; priceLabel = price3; categoryLabel = category3; imageLabel = image3; panel = male5; deleteButton = delete3; }
+        case 3 -> { nameLabel = name4; priceLabel = price4; categoryLabel = category4; imageLabel = image4; panel = male6; deleteButton = delete4; }
+        case 4 -> { nameLabel = name5; priceLabel = price5; categoryLabel = category5; imageLabel = image5; panel = male7; deleteButton = delete5; }
+        case 5 -> { nameLabel = name6; priceLabel = price6; categoryLabel = category6; imageLabel = image6; panel = male8; deleteButton = delete6; }
+        case 6 -> { nameLabel = name7; priceLabel = price7; categoryLabel = category7; imageLabel = image7; panel = male9; deleteButton = delete7; }
+        case 7 -> { nameLabel = name8; priceLabel = price8; categoryLabel = category8; imageLabel = image8; panel = male10; deleteButton = delete8; }
+        case 8 -> { nameLabel = name9; priceLabel = price9; categoryLabel = category9; imageLabel = image9; panel = male11; deleteButton = delete9; }
     }
 
     if (nameLabel != null) {
@@ -828,6 +829,11 @@ private void displayProduct(int index, int productId) {
             imageLabel.setIcon(null);
         }
         if (panel != null) panel.setVisible(true);
+    }
+    
+    if (deleteButton != null) {
+        removeAllActionListeners(deleteButton);
+        deleteButton.addActionListener(e -> handleDelete(productId));
     }
 }
 
@@ -844,36 +850,25 @@ private void displayProduct(int index, int productId) {
     }
 
     
-    private void handleBuyNow(JLabel priceLabel, JLabel nameLabel, JLabel imageLabel) {
-        this.dispose();
-
-        Icon icon = imageLabel.getIcon();
-        Image image = null;
-
-        if (icon == null) {
-            System.out.println("Icon is null");
-        } else if (icon instanceof ImageIcon) {
-            image = ((ImageIcon) icon).getImage();
-            if (image == null) {
-                System.out.println("Image extracted from icon is null");
+    private void handleDelete(int productId) {
+        int confirmation = JOptionPane.showConfirmDialog(this, "Are you sure you want to delete this product?", "Confirm Deletion", JOptionPane.YES_NO_OPTION);
+        if (confirmation == JOptionPane.YES_OPTION) {
+            
+            boolean success = postDao.deleteProduct(productId);
+            if (success) {
+                JOptionPane.showMessageDialog(this, "Product deleted successfully!");
+                displayAllProducts();  // Refresh UI
             } else {
-                System.out.println("Image successfully retrieved");
+                JOptionPane.showMessageDialog(this, "Failed to delete product.");
             }
-        } else {
-            System.out.println("Icon is not an ImageIcon");
         }
-
-        double price = 0;
-        try {
-            price = Double.parseDouble(priceLabel.getText());
-        } catch (NumberFormatException e) {
-            System.out.println("Price label text is not a valid number: " + priceLabel.getText());
-        }
-
-        String name = nameLabel.getText();
-
-        CheckOut checkOut = new CheckOut(name, price, image);
-        checkOut.setVisible(true);
     }
+    
+    private void removeAllActionListeners(AbstractButton button) {
+        for (java.awt.event.ActionListener al : button.getActionListeners()) {
+            button.removeActionListener(al);
+        }
+    }
+
 
 }
